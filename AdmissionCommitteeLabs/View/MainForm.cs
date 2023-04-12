@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdmissionCommitteeLabs.Properties;
 
 namespace AdmissionCommitteeLabs.View
 {
@@ -31,8 +32,14 @@ namespace AdmissionCommitteeLabs.View
 
         private void aboutProgramToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("(C)TUSUR,FVS,Viugin Kirill Vadimovich,571-2,2023", "About program",
+            MessageBox.Show("(C)TUSUR, FVS, Viugin Kirill Vadimovich, 571-2, 2023", 
+                "About program",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Settings.Default.Save();
         }
     }
 }
