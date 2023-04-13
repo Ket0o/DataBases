@@ -535,10 +535,10 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ApplicantsDataRow AddApplicantsDataRow(int applicant_ID, int Identity_and_citizenship_document_code, int Previous_education_document_code, int Admission_application_and_personal_data_processing_consent_code, int Enrollment_application_code, int Unified_State_Exam_scores) {
+            public ApplicantsDataRow AddApplicantsDataRow(int Identity_and_citizenship_document_code, int Previous_education_document_code, int Admission_application_and_personal_data_processing_consent_code, int Enrollment_application_code, int Unified_State_Exam_scores) {
                 ApplicantsDataRow rowApplicantsDataRow = ((ApplicantsDataRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        applicant_ID,
+                        null,
                         Identity_and_citizenship_document_code,
                         Previous_education_document_code,
                         Admission_application_and_personal_data_processing_consent_code,
@@ -598,6 +598,8 @@ namespace AdmissionCommitteeLabs {
                 base.Columns.Add(this.columnUnified_State_Exam_scores);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnapplicant_ID}, true));
+                this.columnapplicant_ID.AutoIncrement = true;
+                this.columnapplicant_ID.AutoIncrementSeed = 1;
                 this.columnapplicant_ID.AllowDBNull = false;
                 this.columnapplicant_ID.Unique = true;
                 this.columnIdentity_and_citizenship_document_code.AllowDBNull = false;
@@ -847,10 +849,10 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ApplicantsRankingListsRow AddApplicantsRankingListsRow(int ranking_list_ID, PersonalFileRow parentPersonalFileRowByFK_ApplicantsRankingLists_PersonalFile, int scores_with_all_achievements_considered, int rank_position) {
+            public ApplicantsRankingListsRow AddApplicantsRankingListsRow(PersonalFileRow parentPersonalFileRowByFK_ApplicantsRankingLists_PersonalFile, int scores_with_all_achievements_considered, int rank_position) {
                 ApplicantsRankingListsRow rowApplicantsRankingListsRow = ((ApplicantsRankingListsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ranking_list_ID,
+                        null,
                         null,
                         scores_with_all_achievements_considered,
                         rank_position};
@@ -905,6 +907,8 @@ namespace AdmissionCommitteeLabs {
                 base.Columns.Add(this.columnrank_position);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnranking_list_ID}, true));
+                this.columnranking_list_ID.AutoIncrement = true;
+                this.columnranking_list_ID.AutoIncrementSeed = 1;
                 this.columnranking_list_ID.AllowDBNull = false;
                 this.columnranking_list_ID.Unique = true;
                 this.columnscores_with_all_achievements_considered.AllowDBNull = false;
@@ -1152,10 +1156,10 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public EnrollmentOrdersRow AddEnrollmentOrdersRow(int enrollment_order_ID, ApplicantsRankingListsRow parentApplicantsRankingListsRowByFK_EnrollmentOrders_ApplicantsRankingLists, string full_name, string university_group) {
+            public EnrollmentOrdersRow AddEnrollmentOrdersRow(ApplicantsRankingListsRow parentApplicantsRankingListsRowByFK_EnrollmentOrders_ApplicantsRankingLists, string full_name, string university_group) {
                 EnrollmentOrdersRow rowEnrollmentOrdersRow = ((EnrollmentOrdersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        enrollment_order_ID,
+                        null,
                         null,
                         full_name,
                         university_group};
@@ -1210,6 +1214,8 @@ namespace AdmissionCommitteeLabs {
                 base.Columns.Add(this.columnuniversity_group);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnenrollment_order_ID}, true));
+                this.columnenrollment_order_ID.AutoIncrement = true;
+                this.columnenrollment_order_ID.AutoIncrementSeed = 1;
                 this.columnenrollment_order_ID.AllowDBNull = false;
                 this.columnenrollment_order_ID.Unique = true;
                 this.columnranking_list_ID.AllowDBNull = false;
@@ -1450,10 +1456,10 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PersonalFileRow AddPersonalFileRow(int personal_file_ID, ApplicantsDataRow parentApplicantsDataRowByFK_PersonalFile_ApplicantsData, System.DateTime Document_submission_date) {
+            public PersonalFileRow AddPersonalFileRow(ApplicantsDataRow parentApplicantsDataRowByFK_PersonalFile_ApplicantsData, System.DateTime Document_submission_date) {
                 PersonalFileRow rowPersonalFileRow = ((PersonalFileRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        personal_file_ID,
+                        null,
                         null,
                         Document_submission_date};
                 if ((parentApplicantsDataRowByFK_PersonalFile_ApplicantsData != null)) {
@@ -1504,6 +1510,8 @@ namespace AdmissionCommitteeLabs {
                 base.Columns.Add(this.columnDocument_submission_date);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnpersonal_file_ID}, true));
+                this.columnpersonal_file_ID.AutoIncrement = true;
+                this.columnpersonal_file_ID.AutoIncrementSeed = 1;
                 this.columnpersonal_file_ID.AllowDBNull = false;
                 this.columnpersonal_file_ID.Unique = true;
                 this.columnapplicant_ID.AllowDBNull = false;
