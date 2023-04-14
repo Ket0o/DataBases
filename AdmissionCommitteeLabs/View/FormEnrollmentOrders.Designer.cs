@@ -295,6 +295,7 @@
             this.Controls.Add(university_groupLabel);
             this.Controls.Add(this.university_groupTextBox);
             this.Controls.Add(this.enrollmentOrdersBindingNavigator);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormEnrollmentOrders";
             this.Text = "FormEnrollmentOrders";
             this.Load += new System.EventHandler(this.FormEnrollmentOrders_Load);

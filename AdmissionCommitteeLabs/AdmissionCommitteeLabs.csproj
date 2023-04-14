@@ -137,8 +137,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\about_program_16x16.png" />
+    <Content Include="Resources\personal_file_16x16.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\applicant_data_16x16.ico" />
+    <Content Include="Resources\applicant_ranking_list_16x16.ico" />
+    <Content Include="Resources\enrollment_orders_16x16.ico" />
     <Content Include="Resources\exit_16x16.png" />
   </ItemGroup>
   <ItemGroup>
