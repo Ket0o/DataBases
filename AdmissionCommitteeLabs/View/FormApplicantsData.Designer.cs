@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormApplicantsData));
             System.Windows.Forms.Label applicant_IDLabel;
             System.Windows.Forms.Label identity_and_citizenship_document_codeLabel;
             System.Windows.Forms.Label previous_education_document_codeLabel;
             System.Windows.Forms.Label admission_application_and_personal_data_processing_consent_codeLabel;
             System.Windows.Forms.Label enrollment_application_codeLabel;
             System.Windows.Forms.Label unified_State_Exam_scoresLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormApplicantsData));
             this.selection_committeeDataSet = new AdmissionCommitteeLabs.Selection_committeeDataSet();
             this.applicantsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.applicantsDataTableAdapter = new AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.ApplicantsDataTableAdapter();
             this.tableAdapterManager = new AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.TableAdapterManager();
             this.applicantsDataBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.applicantsDataBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.applicant_IDTextBox = new System.Windows.Forms.TextBox();
             this.identity_and_citizenship_document_codeTextBox = new System.Windows.Forms.TextBox();
@@ -70,6 +70,60 @@
             ((System.ComponentModel.ISupportInitialize)(this.applicantsDataBindingNavigator)).BeginInit();
             this.applicantsDataBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // applicant_IDLabel
+            // 
+            applicant_IDLabel.AutoSize = true;
+            applicant_IDLabel.Location = new System.Drawing.Point(12, 25);
+            applicant_IDLabel.Name = "applicant_IDLabel";
+            applicant_IDLabel.Size = new System.Drawing.Size(67, 13);
+            applicant_IDLabel.TabIndex = 1;
+            applicant_IDLabel.Text = "applicant ID:";
+            // 
+            // identity_and_citizenship_document_codeLabel
+            // 
+            identity_and_citizenship_document_codeLabel.AutoSize = true;
+            identity_and_citizenship_document_codeLabel.Location = new System.Drawing.Point(12, 51);
+            identity_and_citizenship_document_codeLabel.Name = "identity_and_citizenship_document_codeLabel";
+            identity_and_citizenship_document_codeLabel.Size = new System.Drawing.Size(194, 13);
+            identity_and_citizenship_document_codeLabel.TabIndex = 3;
+            identity_and_citizenship_document_codeLabel.Text = "Identity and citizenship document code:";
+            // 
+            // previous_education_document_codeLabel
+            // 
+            previous_education_document_codeLabel.AutoSize = true;
+            previous_education_document_codeLabel.Location = new System.Drawing.Point(12, 77);
+            previous_education_document_codeLabel.Name = "previous_education_document_codeLabel";
+            previous_education_document_codeLabel.Size = new System.Drawing.Size(178, 13);
+            previous_education_document_codeLabel.TabIndex = 5;
+            previous_education_document_codeLabel.Text = "Previous education document code:";
+            // 
+            // admission_application_and_personal_data_processing_consent_codeLabel
+            // 
+            admission_application_and_personal_data_processing_consent_codeLabel.AutoSize = true;
+            admission_application_and_personal_data_processing_consent_codeLabel.Location = new System.Drawing.Point(12, 103);
+            admission_application_and_personal_data_processing_consent_codeLabel.Name = "admission_application_and_personal_data_processing_consent_codeLabel";
+            admission_application_and_personal_data_processing_consent_codeLabel.Size = new System.Drawing.Size(321, 13);
+            admission_application_and_personal_data_processing_consent_codeLabel.TabIndex = 7;
+            admission_application_and_personal_data_processing_consent_codeLabel.Text = "Admission application and personal data processing consent code:";
+            // 
+            // enrollment_application_codeLabel
+            // 
+            enrollment_application_codeLabel.AutoSize = true;
+            enrollment_application_codeLabel.Location = new System.Drawing.Point(12, 129);
+            enrollment_application_codeLabel.Name = "enrollment_application_codeLabel";
+            enrollment_application_codeLabel.Size = new System.Drawing.Size(140, 13);
+            enrollment_application_codeLabel.TabIndex = 9;
+            enrollment_application_codeLabel.Text = "Enrollment application code:";
+            // 
+            // unified_State_Exam_scoresLabel
+            // 
+            unified_State_Exam_scoresLabel.AutoSize = true;
+            unified_State_Exam_scoresLabel.Location = new System.Drawing.Point(12, 155);
+            unified_State_Exam_scoresLabel.Name = "unified_State_Exam_scoresLabel";
+            unified_State_Exam_scoresLabel.Size = new System.Drawing.Size(134, 13);
+            unified_State_Exam_scoresLabel.TabIndex = 11;
+            unified_State_Exam_scoresLabel.Text = "Unified State Exam scores:";
             // 
             // selection_committeeDataSet
             // 
@@ -124,6 +178,31 @@
             this.applicantsDataBindingNavigator.TabIndex = 0;
             this.applicantsDataBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Добавить";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
+            this.bindingNavigatorCountItem.Text = "для {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Удалить";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -151,22 +230,16 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 15);
-            this.bindingNavigatorCountItem.Text = "для {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -174,7 +247,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
             // 
             // bindingNavigatorMoveLastItem
@@ -183,49 +256,22 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Добавить";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // applicantsDataBindingNavigatorSaveItem
             // 
             this.applicantsDataBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.applicantsDataBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("applicantsDataBindingNavigatorSaveItem.Image")));
             this.applicantsDataBindingNavigatorSaveItem.Name = "applicantsDataBindingNavigatorSaveItem";
-            this.applicantsDataBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.applicantsDataBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.applicantsDataBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.applicantsDataBindingNavigatorSaveItem.Click += new System.EventHandler(this.applicantsDataBindingNavigatorSaveItem_Click);
-            // 
-            // applicant_IDLabel
-            // 
-            applicant_IDLabel.AutoSize = true;
-            applicant_IDLabel.Location = new System.Drawing.Point(12, 25);
-            applicant_IDLabel.Name = "applicant_IDLabel";
-            applicant_IDLabel.Size = new System.Drawing.Size(67, 13);
-            applicant_IDLabel.TabIndex = 1;
-            applicant_IDLabel.Text = "applicant ID:";
             // 
             // applicant_IDTextBox
             // 
@@ -235,15 +281,6 @@
             this.applicant_IDTextBox.Size = new System.Drawing.Size(100, 20);
             this.applicant_IDTextBox.TabIndex = 2;
             // 
-            // identity_and_citizenship_document_codeLabel
-            // 
-            identity_and_citizenship_document_codeLabel.AutoSize = true;
-            identity_and_citizenship_document_codeLabel.Location = new System.Drawing.Point(12, 51);
-            identity_and_citizenship_document_codeLabel.Name = "identity_and_citizenship_document_codeLabel";
-            identity_and_citizenship_document_codeLabel.Size = new System.Drawing.Size(194, 13);
-            identity_and_citizenship_document_codeLabel.TabIndex = 3;
-            identity_and_citizenship_document_codeLabel.Text = "Identity and citizenship document code:";
-            // 
             // identity_and_citizenship_document_codeTextBox
             // 
             this.identity_and_citizenship_document_codeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.applicantsDataBindingSource, "Identity_and_citizenship_document_code", true));
@@ -251,15 +288,6 @@
             this.identity_and_citizenship_document_codeTextBox.Name = "identity_and_citizenship_document_codeTextBox";
             this.identity_and_citizenship_document_codeTextBox.Size = new System.Drawing.Size(100, 20);
             this.identity_and_citizenship_document_codeTextBox.TabIndex = 4;
-            // 
-            // previous_education_document_codeLabel
-            // 
-            previous_education_document_codeLabel.AutoSize = true;
-            previous_education_document_codeLabel.Location = new System.Drawing.Point(12, 77);
-            previous_education_document_codeLabel.Name = "previous_education_document_codeLabel";
-            previous_education_document_codeLabel.Size = new System.Drawing.Size(178, 13);
-            previous_education_document_codeLabel.TabIndex = 5;
-            previous_education_document_codeLabel.Text = "Previous education document code:";
             // 
             // previous_education_document_codeTextBox
             // 
@@ -269,15 +297,6 @@
             this.previous_education_document_codeTextBox.Size = new System.Drawing.Size(100, 20);
             this.previous_education_document_codeTextBox.TabIndex = 6;
             // 
-            // admission_application_and_personal_data_processing_consent_codeLabel
-            // 
-            admission_application_and_personal_data_processing_consent_codeLabel.AutoSize = true;
-            admission_application_and_personal_data_processing_consent_codeLabel.Location = new System.Drawing.Point(12, 103);
-            admission_application_and_personal_data_processing_consent_codeLabel.Name = "admission_application_and_personal_data_processing_consent_codeLabel";
-            admission_application_and_personal_data_processing_consent_codeLabel.Size = new System.Drawing.Size(321, 13);
-            admission_application_and_personal_data_processing_consent_codeLabel.TabIndex = 7;
-            admission_application_and_personal_data_processing_consent_codeLabel.Text = "Admission application and personal data processing consent code:";
-            // 
             // admission_application_and_personal_data_processing_consent_codeTextBox
             // 
             this.admission_application_and_personal_data_processing_consent_codeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.applicantsDataBindingSource, "Admission_application_and_personal_data_processing_consent_code", true));
@@ -286,15 +305,6 @@
             this.admission_application_and_personal_data_processing_consent_codeTextBox.Size = new System.Drawing.Size(100, 20);
             this.admission_application_and_personal_data_processing_consent_codeTextBox.TabIndex = 8;
             // 
-            // enrollment_application_codeLabel
-            // 
-            enrollment_application_codeLabel.AutoSize = true;
-            enrollment_application_codeLabel.Location = new System.Drawing.Point(12, 129);
-            enrollment_application_codeLabel.Name = "enrollment_application_codeLabel";
-            enrollment_application_codeLabel.Size = new System.Drawing.Size(140, 13);
-            enrollment_application_codeLabel.TabIndex = 9;
-            enrollment_application_codeLabel.Text = "Enrollment application code:";
-            // 
             // enrollment_application_codeTextBox
             // 
             this.enrollment_application_codeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.applicantsDataBindingSource, "Enrollment_application_code", true));
@@ -302,15 +312,6 @@
             this.enrollment_application_codeTextBox.Name = "enrollment_application_codeTextBox";
             this.enrollment_application_codeTextBox.Size = new System.Drawing.Size(100, 20);
             this.enrollment_application_codeTextBox.TabIndex = 10;
-            // 
-            // unified_State_Exam_scoresLabel
-            // 
-            unified_State_Exam_scoresLabel.AutoSize = true;
-            unified_State_Exam_scoresLabel.Location = new System.Drawing.Point(12, 155);
-            unified_State_Exam_scoresLabel.Name = "unified_State_Exam_scoresLabel";
-            unified_State_Exam_scoresLabel.Size = new System.Drawing.Size(134, 13);
-            unified_State_Exam_scoresLabel.TabIndex = 11;
-            unified_State_Exam_scoresLabel.Text = "Unified State Exam scores:";
             // 
             // unified_State_Exam_scoresTextBox
             // 
@@ -324,7 +325,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 450);
+            this.ClientSize = new System.Drawing.Size(452, 189);
             this.Controls.Add(applicant_IDLabel);
             this.Controls.Add(this.applicant_IDTextBox);
             this.Controls.Add(identity_and_citizenship_document_codeLabel);
@@ -338,6 +339,8 @@
             this.Controls.Add(unified_State_Exam_scoresLabel);
             this.Controls.Add(this.unified_State_Exam_scoresTextBox);
             this.Controls.Add(this.applicantsDataBindingNavigator);
+            this.MaximumSize = new System.Drawing.Size(468, 228);
+            this.MinimumSize = new System.Drawing.Size(468, 228);
             this.Name = "FormApplicantsData";
             this.Text = "Applicant Data";
             this.Load += new System.EventHandler(this.FormApplicantsData_Load);
