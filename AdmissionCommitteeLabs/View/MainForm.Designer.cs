@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -120,7 +119,7 @@
             // 
             // applicantsRankingListsToolStripMenuItem
             // 
-            this.applicantsRankingListsToolStripMenuItem.Image = global::AdmissionCommitteeLabs.Properties.Resources.list;
+            this.applicantsRankingListsToolStripMenuItem.Image = global::AdmissionCommitteeLabs.Properties.Resources.applicant_ranking_list_16x16;
             this.applicantsRankingListsToolStripMenuItem.Name = "applicantsRankingListsToolStripMenuItem";
             this.applicantsRankingListsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.B)));
             this.applicantsRankingListsToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
@@ -129,7 +128,7 @@
             // 
             // personalFileToolStripMenuItem
             // 
-            this.personalFileToolStripMenuItem.Image = global::AdmissionCommitteeLabs.Properties.Resources.phone_book;
+            this.personalFileToolStripMenuItem.Image = global::AdmissionCommitteeLabs.Properties.Resources.personal_file_16x16;
             this.personalFileToolStripMenuItem.Name = "personalFileToolStripMenuItem";
             this.personalFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
             this.personalFileToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
@@ -151,7 +150,7 @@
             this.fileToolStripMenuItem1,
             this.referencesToolStripMenuItem1});
             this.contextMenuStripMain.Name = "contextMenuStrip1";
-            this.contextMenuStripMain.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStripMain.Size = new System.Drawing.Size(132, 48);
             // 
             // fileToolStripMenuItem1
             // 
@@ -159,7 +158,7 @@
             this.exitToolStripMenuItem1,
             this.aboutProgramToolStripMenuItem1});
             this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.fileToolStripMenuItem1.Text = "File";
             // 
             // exitToolStripMenuItem1
@@ -188,7 +187,7 @@
             this.personalFileToolStripMenuItem1,
             this.enrollmentOrdersToolStripMenuItem1});
             this.referencesToolStripMenuItem1.Name = "referencesToolStripMenuItem1";
-            this.referencesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.referencesToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.referencesToolStripMenuItem1.Text = "References";
             // 
             // applicantsDataToolStripMenuItem1
@@ -202,7 +201,7 @@
             // 
             // applicantsRankingListsToolStripMenuItem1
             // 
-            this.applicantsRankingListsToolStripMenuItem1.Image = global::AdmissionCommitteeLabs.Properties.Resources.list;
+            this.applicantsRankingListsToolStripMenuItem1.Image = global::AdmissionCommitteeLabs.Properties.Resources.applicant_ranking_list_16x16;
             this.applicantsRankingListsToolStripMenuItem1.Name = "applicantsRankingListsToolStripMenuItem1";
             this.applicantsRankingListsToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.B)));
             this.applicantsRankingListsToolStripMenuItem1.Size = new System.Drawing.Size(237, 22);
@@ -211,7 +210,7 @@
             // 
             // personalFileToolStripMenuItem1
             // 
-            this.personalFileToolStripMenuItem1.Image = global::AdmissionCommitteeLabs.Properties.Resources.phone_book;
+            this.personalFileToolStripMenuItem1.Image = global::AdmissionCommitteeLabs.Properties.Resources.personal_file_16x16;
             this.personalFileToolStripMenuItem1.Name = "personalFileToolStripMenuItem1";
             this.personalFileToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
             this.personalFileToolStripMenuItem1.Size = new System.Drawing.Size(237, 22);
@@ -278,7 +277,7 @@
             // ApplicantsRankingListsButton
             // 
             this.ApplicantsRankingListsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ApplicantsRankingListsButton.Image = global::AdmissionCommitteeLabs.Properties.Resources.list;
+            this.ApplicantsRankingListsButton.Image = global::AdmissionCommitteeLabs.Properties.Resources.applicant_ranking_list_16x16;
             this.ApplicantsRankingListsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ApplicantsRankingListsButton.Name = "ApplicantsRankingListsButton";
             this.ApplicantsRankingListsButton.Size = new System.Drawing.Size(23, 22);
@@ -289,7 +288,7 @@
             // PersonalFileButton
             // 
             this.PersonalFileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.PersonalFileButton.Image = global::AdmissionCommitteeLabs.Properties.Resources.phone_book;
+            this.PersonalFileButton.Image = global::AdmissionCommitteeLabs.Properties.Resources.personal_file_16x16;
             this.PersonalFileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PersonalFileButton.Name = "PersonalFileButton";
             this.PersonalFileButton.Size = new System.Drawing.Size(23, 22);
@@ -317,10 +316,10 @@
             this.Controls.Add(this.toolStripMain);
             this.Controls.Add(this.menuStrip);
             this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::AdmissionCommitteeLabs.Properties.Settings.Default, "FormPos", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = global::AdmissionCommitteeLabs.Properties.Settings.Default.FormPos;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainForm";
+            this.ShowIcon = false;
             this.Text = "Program for admissions Committee";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);

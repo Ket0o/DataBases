@@ -124,19 +124,16 @@
   <data name="applicant_data_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\applicant_data_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="applicant_ranking_list_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\applicant_ranking_list_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="enrollment_orders_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\enrollment_orders_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="exit_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exit_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="list" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="people" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\people.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="phone_book" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phone-book.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="personal_file_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\personal_file_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
