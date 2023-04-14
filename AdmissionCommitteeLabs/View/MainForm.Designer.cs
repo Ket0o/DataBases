@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -316,10 +317,10 @@
             this.Controls.Add(this.toolStripMain);
             this.Controls.Add(this.menuStrip);
             this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::AdmissionCommitteeLabs.Properties.Settings.Default, "FormPos", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = global::AdmissionCommitteeLabs.Properties.Settings.Default.FormPos;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainForm";
-            this.ShowIcon = false;
             this.Text = "Program for admissions Committee";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
