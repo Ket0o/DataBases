@@ -82,7 +82,7 @@
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Image = global::AdmissionCommitteeLabs.Properties.Resources.logout;
+            this.exitToolStripMenuItem.Image = global::AdmissionCommitteeLabs.Properties.Resources.exit_16x16;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.X)));
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
@@ -91,7 +91,7 @@
             // 
             // aboutProgramToolStripMenuItem
             // 
-            this.aboutProgramToolStripMenuItem.Image = global::AdmissionCommitteeLabs.Properties.Resources.information;
+            this.aboutProgramToolStripMenuItem.Image = global::AdmissionCommitteeLabs.Properties.Resources.about_program_16x16;
             this.aboutProgramToolStripMenuItem.Name = "aboutProgramToolStripMenuItem";
             this.aboutProgramToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.I)));
             this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
@@ -111,11 +111,12 @@
             // 
             // applicantsDataToolStripMenuItem
             // 
-            this.applicantsDataToolStripMenuItem.Image = global::AdmissionCommitteeLabs.Properties.Resources.document;
+            this.applicantsDataToolStripMenuItem.Image = global::AdmissionCommitteeLabs.Properties.Resources.applicant_data_16x16;
             this.applicantsDataToolStripMenuItem.Name = "applicantsDataToolStripMenuItem";
             this.applicantsDataToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.W)));
             this.applicantsDataToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.applicantsDataToolStripMenuItem.Text = "Applicants data";
+            this.applicantsDataToolStripMenuItem.Click += new System.EventHandler(this.applicantsDataToolStripMenuItem_Click);
             // 
             // applicantsRankingListsToolStripMenuItem
             // 
@@ -124,6 +125,7 @@
             this.applicantsRankingListsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.B)));
             this.applicantsRankingListsToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.applicantsRankingListsToolStripMenuItem.Text = "Applicants ranking lists";
+            this.applicantsRankingListsToolStripMenuItem.Click += new System.EventHandler(this.applicantsRankingListsToolStripMenuItem_Click);
             // 
             // personalFileToolStripMenuItem
             // 
@@ -132,14 +134,16 @@
             this.personalFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
             this.personalFileToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.personalFileToolStripMenuItem.Text = "Personal file";
+            this.personalFileToolStripMenuItem.Click += new System.EventHandler(this.personalFileToolStripMenuItem_Click);
             // 
             // enrollmentOrdersToolStripMenuItem
             // 
-            this.enrollmentOrdersToolStripMenuItem.Image = global::AdmissionCommitteeLabs.Properties.Resources.decree;
+            this.enrollmentOrdersToolStripMenuItem.Image = global::AdmissionCommitteeLabs.Properties.Resources.enrollment_orders_16x16;
             this.enrollmentOrdersToolStripMenuItem.Name = "enrollmentOrdersToolStripMenuItem";
             this.enrollmentOrdersToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Y)));
             this.enrollmentOrdersToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.enrollmentOrdersToolStripMenuItem.Text = "Enrollment orders";
+            this.enrollmentOrdersToolStripMenuItem.Click += new System.EventHandler(this.enrollmentOrdersToolStripMenuItem_Click);
             // 
             // contextMenuStripMain
             // 
@@ -147,7 +151,7 @@
             this.fileToolStripMenuItem1,
             this.referencesToolStripMenuItem1});
             this.contextMenuStripMain.Name = "contextMenuStrip1";
-            this.contextMenuStripMain.Size = new System.Drawing.Size(132, 48);
+            this.contextMenuStripMain.Size = new System.Drawing.Size(181, 70);
             // 
             // fileToolStripMenuItem1
             // 
@@ -155,12 +159,12 @@
             this.exitToolStripMenuItem1,
             this.aboutProgramToolStripMenuItem1});
             this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.fileToolStripMenuItem1.Text = "File";
             // 
             // exitToolStripMenuItem1
             // 
-            this.exitToolStripMenuItem1.Image = global::AdmissionCommitteeLabs.Properties.Resources.logout;
+            this.exitToolStripMenuItem1.Image = global::AdmissionCommitteeLabs.Properties.Resources.exit_16x16;
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
             this.exitToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.X)));
             this.exitToolStripMenuItem1.Size = new System.Drawing.Size(193, 22);
@@ -169,7 +173,7 @@
             // 
             // aboutProgramToolStripMenuItem1
             // 
-            this.aboutProgramToolStripMenuItem1.Image = global::AdmissionCommitteeLabs.Properties.Resources.information;
+            this.aboutProgramToolStripMenuItem1.Image = global::AdmissionCommitteeLabs.Properties.Resources.about_program_16x16;
             this.aboutProgramToolStripMenuItem1.Name = "aboutProgramToolStripMenuItem1";
             this.aboutProgramToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.I)));
             this.aboutProgramToolStripMenuItem1.Size = new System.Drawing.Size(193, 22);
@@ -184,16 +188,17 @@
             this.personalFileToolStripMenuItem1,
             this.enrollmentOrdersToolStripMenuItem1});
             this.referencesToolStripMenuItem1.Name = "referencesToolStripMenuItem1";
-            this.referencesToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.referencesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.referencesToolStripMenuItem1.Text = "References";
             // 
             // applicantsDataToolStripMenuItem1
             // 
-            this.applicantsDataToolStripMenuItem1.Image = global::AdmissionCommitteeLabs.Properties.Resources.document;
+            this.applicantsDataToolStripMenuItem1.Image = global::AdmissionCommitteeLabs.Properties.Resources.applicant_data_16x16;
             this.applicantsDataToolStripMenuItem1.Name = "applicantsDataToolStripMenuItem1";
             this.applicantsDataToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.W)));
             this.applicantsDataToolStripMenuItem1.Size = new System.Drawing.Size(237, 22);
             this.applicantsDataToolStripMenuItem1.Text = "Applicants data";
+            this.applicantsDataToolStripMenuItem1.Click += new System.EventHandler(this.applicantsDataToolStripMenuItem_Click);
             // 
             // applicantsRankingListsToolStripMenuItem1
             // 
@@ -202,6 +207,7 @@
             this.applicantsRankingListsToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.B)));
             this.applicantsRankingListsToolStripMenuItem1.Size = new System.Drawing.Size(237, 22);
             this.applicantsRankingListsToolStripMenuItem1.Text = "Applicants ranking lists";
+            this.applicantsRankingListsToolStripMenuItem1.Click += new System.EventHandler(this.applicantsRankingListsToolStripMenuItem_Click);
             // 
             // personalFileToolStripMenuItem1
             // 
@@ -210,14 +216,16 @@
             this.personalFileToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
             this.personalFileToolStripMenuItem1.Size = new System.Drawing.Size(237, 22);
             this.personalFileToolStripMenuItem1.Text = "Personal file";
+            this.personalFileToolStripMenuItem1.Click += new System.EventHandler(this.personalFileToolStripMenuItem_Click);
             // 
             // enrollmentOrdersToolStripMenuItem1
             // 
-            this.enrollmentOrdersToolStripMenuItem1.Image = global::AdmissionCommitteeLabs.Properties.Resources.decree;
+            this.enrollmentOrdersToolStripMenuItem1.Image = global::AdmissionCommitteeLabs.Properties.Resources.enrollment_orders_16x16;
             this.enrollmentOrdersToolStripMenuItem1.Name = "enrollmentOrdersToolStripMenuItem1";
             this.enrollmentOrdersToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Y)));
             this.enrollmentOrdersToolStripMenuItem1.Size = new System.Drawing.Size(237, 22);
             this.enrollmentOrdersToolStripMenuItem1.Text = "Enrollment orders";
+            this.enrollmentOrdersToolStripMenuItem1.Click += new System.EventHandler(this.enrollmentOrdersToolStripMenuItem_Click);
             // 
             // toolStripMain
             // 
@@ -237,7 +245,7 @@
             // ExitButton
             // 
             this.ExitButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ExitButton.Image = global::AdmissionCommitteeLabs.Properties.Resources.logout;
+            this.ExitButton.Image = global::AdmissionCommitteeLabs.Properties.Resources.exit_16x16;
             this.ExitButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(23, 22);
@@ -248,7 +256,7 @@
             // AboutProgramButton
             // 
             this.AboutProgramButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AboutProgramButton.Image = global::AdmissionCommitteeLabs.Properties.Resources.information;
+            this.AboutProgramButton.Image = global::AdmissionCommitteeLabs.Properties.Resources.about_program_16x16;
             this.AboutProgramButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AboutProgramButton.Name = "AboutProgramButton";
             this.AboutProgramButton.Size = new System.Drawing.Size(23, 22);
@@ -259,12 +267,13 @@
             // ApplicantsDataButton
             // 
             this.ApplicantsDataButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ApplicantsDataButton.Image = global::AdmissionCommitteeLabs.Properties.Resources.document;
+            this.ApplicantsDataButton.Image = global::AdmissionCommitteeLabs.Properties.Resources.applicant_data_16x16;
             this.ApplicantsDataButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ApplicantsDataButton.Name = "ApplicantsDataButton";
             this.ApplicantsDataButton.Size = new System.Drawing.Size(23, 22);
             this.ApplicantsDataButton.Text = "toolStripButton1";
             this.ApplicantsDataButton.ToolTipText = "Applicants data button";
+            this.ApplicantsDataButton.Click += new System.EventHandler(this.applicantsDataToolStripMenuItem_Click);
             // 
             // ApplicantsRankingListsButton
             // 
@@ -275,6 +284,7 @@
             this.ApplicantsRankingListsButton.Size = new System.Drawing.Size(23, 22);
             this.ApplicantsRankingListsButton.Text = "toolStripButton2";
             this.ApplicantsRankingListsButton.ToolTipText = "Applicants ranking lists button";
+            this.ApplicantsRankingListsButton.Click += new System.EventHandler(this.applicantsRankingListsToolStripMenuItem_Click);
             // 
             // PersonalFileButton
             // 
@@ -285,16 +295,18 @@
             this.PersonalFileButton.Size = new System.Drawing.Size(23, 22);
             this.PersonalFileButton.Text = "toolStripButton3";
             this.PersonalFileButton.ToolTipText = "Personal file button";
+            this.PersonalFileButton.Click += new System.EventHandler(this.personalFileToolStripMenuItem_Click);
             // 
             // EnrollmentOrdersButton
             // 
             this.EnrollmentOrdersButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.EnrollmentOrdersButton.Image = global::AdmissionCommitteeLabs.Properties.Resources.decree;
+            this.EnrollmentOrdersButton.Image = global::AdmissionCommitteeLabs.Properties.Resources.enrollment_orders_16x16;
             this.EnrollmentOrdersButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.EnrollmentOrdersButton.Name = "EnrollmentOrdersButton";
             this.EnrollmentOrdersButton.Size = new System.Drawing.Size(23, 22);
             this.EnrollmentOrdersButton.Text = "toolStripButton4";
             this.EnrollmentOrdersButton.ToolTipText = "Enrollment orders button";
+            this.EnrollmentOrdersButton.Click += new System.EventHandler(this.enrollmentOrdersToolStripMenuItem_Click);
             // 
             // MainForm
             // 

@@ -46,6 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\FormApplicantsData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormApplicantsData.Designer.cs">
+      <DependentUpon>FormApplicantsData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormApplicantsRankingLists.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormApplicantsRankingLists.Designer.cs">
+      <DependentUpon>FormApplicantsRankingLists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormEnrollmentOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormEnrollmentOrders.Designer.cs">
+      <DependentUpon>FormEnrollmentOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPersonalFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPersonalFile.Designer.cs">
+      <DependentUpon>FormPersonalFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Selection_committeeDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -59,16 +83,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\FormApplicantsData.resx">
+      <DependentUpon>FormApplicantsData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormApplicantsRankingLists.resx">
+      <DependentUpon>FormApplicantsRankingLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormEnrollmentOrders.resx">
+      <DependentUpon>FormEnrollmentOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPersonalFile.resx">
+      <DependentUpon>FormPersonalFile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,25 +130,25 @@
     <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\information.png" />
+    <Content Include="Resources\about_program_16x16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logout.png" />
+    <Content Include="Resources\exit_16x16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\decree.png" />
+    <None Include="Resources\personal_file_16x16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\phone-book.png" />
+    <None Include="Resources\applicant_ranking_list_16x16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\list.png" />
+    <None Include="Resources\admission_committee_16x16.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\document.png" />
+    <None Include="Resources\applicant_data_16x16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\people.ico" />
+    <None Include="Resources\enrollment_orders_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

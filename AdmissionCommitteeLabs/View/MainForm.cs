@@ -41,5 +41,25 @@ namespace AdmissionCommitteeLabs.View
         {
             Settings.Default.Save();
         }
+
+        private void applicantsDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormApplicantsData.FormApplicantData.ShowForm();
+        }
+
+        private void personalFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPersonalFile.FormPersonalsFile.ShowForm();
+        }
+
+        private void applicantsRankingListsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormApplicantsRankingLists.FormApplicantRankingList.ShowForm();
+        }
+
+        private void enrollmentOrdersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEnrollmentOrders.FormEnrollmentOrder.ShowForm();
+        }
     }
 }
