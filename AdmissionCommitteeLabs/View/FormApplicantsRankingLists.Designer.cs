@@ -55,6 +55,7 @@
             this.personal_file_IDTextBox = new System.Windows.Forms.TextBox();
             this.scores_with_all_achievements_consideredTextBox = new System.Windows.Forms.TextBox();
             this.rank_positionTextBox = new System.Windows.Forms.TextBox();
+            this.groupBoxPersonalFile = new System.Windows.Forms.GroupBox();
             ranking_list_IDLabel = new System.Windows.Forms.Label();
             personal_file_IDLabel = new System.Windows.Forms.Label();
             scores_with_all_achievements_consideredLabel = new System.Windows.Forms.Label();
@@ -281,11 +282,21 @@
             this.rank_positionTextBox.Size = new System.Drawing.Size(100, 20);
             this.rank_positionTextBox.TabIndex = 8;
             // 
+            // groupBoxPersonalFile
+            // 
+            this.groupBoxPersonalFile.Location = new System.Drawing.Point(12, 126);
+            this.groupBoxPersonalFile.Name = "groupBoxPersonalFile";
+            this.groupBoxPersonalFile.Size = new System.Drawing.Size(306, 272);
+            this.groupBoxPersonalFile.TabIndex = 9;
+            this.groupBoxPersonalFile.TabStop = false;
+            this.groupBoxPersonalFile.Text = "Personal file";
+            // 
             // FormApplicantsRankingLists
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 132);
+            this.ClientSize = new System.Drawing.Size(332, 410);
+            this.Controls.Add(this.groupBoxPersonalFile);
             this.Controls.Add(ranking_list_IDLabel);
             this.Controls.Add(this.ranking_list_IDTextBox);
             this.Controls.Add(personal_file_IDLabel);
@@ -296,7 +307,6 @@
             this.Controls.Add(this.rank_positionTextBox);
             this.Controls.Add(this.applicantsRankingListsBindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(348, 171);
             this.MinimumSize = new System.Drawing.Size(348, 171);
             this.Name = "FormApplicantsRankingLists";
             this.Text = "FormApplicantsRankingLists";
@@ -334,5 +344,6 @@
         private System.Windows.Forms.TextBox personal_file_IDTextBox;
         private System.Windows.Forms.TextBox scores_with_all_achievements_consideredTextBox;
         private System.Windows.Forms.TextBox rank_positionTextBox;
+        private System.Windows.Forms.GroupBox groupBoxPersonalFile;
     }
 }
