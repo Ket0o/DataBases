@@ -55,6 +55,8 @@
             this.ApplicantsRankingListsButton = new System.Windows.Forms.ToolStripButton();
             this.PersonalFileButton = new System.Windows.Forms.ToolStripButton();
             this.EnrollmentOrdersButton = new System.Windows.Forms.ToolStripButton();
+            this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personalFileToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.contextMenuStripMain.SuspendLayout();
             this.toolStripMain.SuspendLayout();
@@ -64,7 +66,8 @@
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.referencesToolStripMenuItem});
+            this.referencesToolStripMenuItem,
+            this.documentsToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(800, 24);
@@ -308,6 +311,22 @@
             this.EnrollmentOrdersButton.ToolTipText = "Enrollment orders button";
             this.EnrollmentOrdersButton.Click += new System.EventHandler(this.enrollmentOrdersToolStripMenuItem_Click);
             // 
+            // documentsToolStripMenuItem
+            // 
+            this.documentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.personalFileToolStripMenuItem2});
+            this.documentsToolStripMenuItem.Name = "documentsToolStripMenuItem";
+            this.documentsToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.documentsToolStripMenuItem.Text = "documents";
+            // 
+            // personalFileToolStripMenuItem2
+            // 
+            this.personalFileToolStripMenuItem2.Name = "personalFileToolStripMenuItem2";
+            this.personalFileToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
+            this.personalFileToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.personalFileToolStripMenuItem2.Text = "Personal file";
+            this.personalFileToolStripMenuItem2.Click += new System.EventHandler(this.personalFileToolStripMenuItem2_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,6 +380,8 @@
         private System.Windows.Forms.ToolStripButton ApplicantsRankingListsButton;
         private System.Windows.Forms.ToolStripButton PersonalFileButton;
         private System.Windows.Forms.ToolStripButton EnrollmentOrdersButton;
+        private System.Windows.Forms.ToolStripMenuItem documentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem personalFileToolStripMenuItem2;
     }
 }
 

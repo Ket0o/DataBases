@@ -51,11 +51,14 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applicantsRankingListsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.applicantsRankingListsTableAdapter = new AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.ApplicantsRankingListsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.selection_committeeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalFileBindingNavigator)).BeginInit();
             this.personalFileBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personalFileDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.applicantsRankingListsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // selection_committeeDataSet
@@ -107,7 +110,7 @@
             this.personalFileBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.personalFileBindingNavigator.Name = "personalFileBindingNavigator";
             this.personalFileBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.personalFileBindingNavigator.Size = new System.Drawing.Size(560, 25);
+            this.personalFileBindingNavigator.Size = new System.Drawing.Size(604, 25);
             this.personalFileBindingNavigator.TabIndex = 0;
             this.personalFileBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -219,7 +222,7 @@
             this.personalFileDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.personalFileDataGridView.Location = new System.Drawing.Point(0, 25);
             this.personalFileDataGridView.Name = "personalFileDataGridView";
-            this.personalFileDataGridView.Size = new System.Drawing.Size(560, 425);
+            this.personalFileDataGridView.Size = new System.Drawing.Size(604, 304);
             this.personalFileDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -240,14 +243,24 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Document_submission_date";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
+            // applicantsRankingListsBindingSource
+            // 
+            this.applicantsRankingListsBindingSource.DataMember = "FK_ApplicantsRankingLists_PersonalFile";
+            this.applicantsRankingListsBindingSource.DataSource = this.personalFileBindingSource;
+            // 
+            // applicantsRankingListsTableAdapter
+            // 
+            this.applicantsRankingListsTableAdapter.ClearBeforeFill = true;
+            // 
             // FormPersonalFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 450);
+            this.ClientSize = new System.Drawing.Size(604, 329);
             this.Controls.Add(this.personalFileDataGridView);
             this.Controls.Add(this.personalFileBindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(533, 341);
             this.Name = "FormPersonalFile";
             this.Text = "FormPersonalFile";
             this.Load += new System.EventHandler(this.FormPersonalFile_Load);
@@ -257,6 +270,7 @@
             this.personalFileBindingNavigator.ResumeLayout(false);
             this.personalFileBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personalFileDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.applicantsRankingListsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,5 +299,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.BindingSource applicantsRankingListsBindingSource;
+        private Selection_committeeDataSetTableAdapters.ApplicantsRankingListsTableAdapter applicantsRankingListsTableAdapter;
     }
 }

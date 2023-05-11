@@ -61,5 +61,10 @@ namespace AdmissionCommitteeLabs.View
         {
             FormEnrollmentOrders.FormEnrollmentOrder.ShowForm();
         }
+
+        private void personalFileToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FormPersonalFileAndRankingLists.FormPersonalsFileAndRankingLists.ShowForm();
+        }
     }
 }
