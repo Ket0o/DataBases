@@ -14,6 +14,43 @@ namespace AdmissionCommitteeLabs.View
     {
         private static FormPersonalFile _formPersonalFile;
 
+        private void toolStripButtonFind_Click(object sender, EventArgs e)
+        {
+            if (personalFiletoolStripTextBoxFind.Text == "")
+            {
+                MessageBox.Show("Вы ничего не задали", "Внимание",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            int indexPos;
+            try
+            {
+                indexPos =
+                    personalFileBindingSource.Find(GetSelectedFieldName(),
+                        personalFiletoolStripTextBoxFind.Text);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Ошибка поиска \n" + err.Message);
+                return;
+            }
+            if (indexPos > -1)
+                personalFileBindingSource.Position = indexPos;
+            else
+            {
+                MessageBox.Show("Таких сотрудников нет", "Внимание",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                personalFileBindingSource.Position = 0;
+            }
+
+        }
+
+        string GetSelectedFieldName()
+        {
+            return
+                personalFileDataGridView.Columns[personalFileDataGridView.CurrentCell.ColumnIndex
+                ].DataPropertyName;
+        }
 
         private void FormPersonalFile_Load(object sender, EventArgs e)
         {
