@@ -55,6 +55,9 @@
             this.ranking_list_IDTextBox = new System.Windows.Forms.TextBox();
             this.full_nameTextBox = new System.Windows.Forms.TextBox();
             this.university_groupTextBox = new System.Windows.Forms.TextBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.enrollmentOrderstoolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.enrollmentOrderstoolStripButton = new System.Windows.Forms.ToolStripButton();
             enrollment_order_IDLabel = new System.Windows.Forms.Label();
             ranking_list_IDLabel = new System.Windows.Forms.Label();
             full_nameLabel = new System.Windows.Forms.Label();
@@ -68,7 +71,7 @@
             // enrollment_order_IDLabel
             // 
             enrollment_order_IDLabel.AutoSize = true;
-            enrollment_order_IDLabel.Location = new System.Drawing.Point(45, 35);
+            enrollment_order_IDLabel.Location = new System.Drawing.Point(12, 34);
             enrollment_order_IDLabel.Name = "enrollment_order_IDLabel";
             enrollment_order_IDLabel.Size = new System.Drawing.Size(99, 13);
             enrollment_order_IDLabel.TabIndex = 1;
@@ -77,7 +80,7 @@
             // ranking_list_IDLabel
             // 
             ranking_list_IDLabel.AutoSize = true;
-            ranking_list_IDLabel.Location = new System.Drawing.Point(45, 61);
+            ranking_list_IDLabel.Location = new System.Drawing.Point(12, 60);
             ranking_list_IDLabel.Name = "ranking_list_IDLabel";
             ranking_list_IDLabel.Size = new System.Drawing.Size(74, 13);
             ranking_list_IDLabel.TabIndex = 3;
@@ -86,7 +89,7 @@
             // full_nameLabel
             // 
             full_nameLabel.AutoSize = true;
-            full_nameLabel.Location = new System.Drawing.Point(45, 87);
+            full_nameLabel.Location = new System.Drawing.Point(12, 86);
             full_nameLabel.Name = "full_nameLabel";
             full_nameLabel.Size = new System.Drawing.Size(52, 13);
             full_nameLabel.TabIndex = 5;
@@ -95,7 +98,7 @@
             // university_groupLabel
             // 
             university_groupLabel.AutoSize = true;
-            university_groupLabel.Location = new System.Drawing.Point(45, 113);
+            university_groupLabel.Location = new System.Drawing.Point(12, 112);
             university_groupLabel.Name = "university_groupLabel";
             university_groupLabel.Size = new System.Drawing.Size(84, 13);
             university_groupLabel.TabIndex = 7;
@@ -142,7 +145,10 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.enrollmentOrdersBindingNavigatorSaveItem});
+            this.enrollmentOrdersBindingNavigatorSaveItem,
+            this.toolStripSeparator1,
+            this.enrollmentOrderstoolStripTextBox,
+            this.enrollmentOrderstoolStripButton});
             this.enrollmentOrdersBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.enrollmentOrdersBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.enrollmentOrdersBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -150,7 +156,7 @@
             this.enrollmentOrdersBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.enrollmentOrdersBindingNavigator.Name = "enrollmentOrdersBindingNavigator";
             this.enrollmentOrdersBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.enrollmentOrdersBindingNavigator.Size = new System.Drawing.Size(294, 25);
+            this.enrollmentOrdersBindingNavigator.Size = new System.Drawing.Size(514, 25);
             this.enrollmentOrdersBindingNavigator.TabIndex = 0;
             this.enrollmentOrdersBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -252,7 +258,7 @@
             // enrollment_order_IDTextBox
             // 
             this.enrollment_order_IDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enrollmentOrdersBindingSource, "enrollment_order_ID", true));
-            this.enrollment_order_IDTextBox.Location = new System.Drawing.Point(150, 32);
+            this.enrollment_order_IDTextBox.Location = new System.Drawing.Point(117, 31);
             this.enrollment_order_IDTextBox.Name = "enrollment_order_IDTextBox";
             this.enrollment_order_IDTextBox.Size = new System.Drawing.Size(100, 20);
             this.enrollment_order_IDTextBox.TabIndex = 2;
@@ -260,7 +266,7 @@
             // ranking_list_IDTextBox
             // 
             this.ranking_list_IDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enrollmentOrdersBindingSource, "ranking_list_ID", true));
-            this.ranking_list_IDTextBox.Location = new System.Drawing.Point(150, 58);
+            this.ranking_list_IDTextBox.Location = new System.Drawing.Point(117, 57);
             this.ranking_list_IDTextBox.Name = "ranking_list_IDTextBox";
             this.ranking_list_IDTextBox.Size = new System.Drawing.Size(100, 20);
             this.ranking_list_IDTextBox.TabIndex = 4;
@@ -268,7 +274,7 @@
             // full_nameTextBox
             // 
             this.full_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enrollmentOrdersBindingSource, "full_name", true));
-            this.full_nameTextBox.Location = new System.Drawing.Point(150, 84);
+            this.full_nameTextBox.Location = new System.Drawing.Point(117, 83);
             this.full_nameTextBox.Name = "full_nameTextBox";
             this.full_nameTextBox.Size = new System.Drawing.Size(100, 20);
             this.full_nameTextBox.TabIndex = 6;
@@ -276,16 +282,36 @@
             // university_groupTextBox
             // 
             this.university_groupTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enrollmentOrdersBindingSource, "university_group", true));
-            this.university_groupTextBox.Location = new System.Drawing.Point(150, 110);
+            this.university_groupTextBox.Location = new System.Drawing.Point(117, 109);
             this.university_groupTextBox.Name = "university_groupTextBox";
             this.university_groupTextBox.Size = new System.Drawing.Size(100, 20);
             this.university_groupTextBox.TabIndex = 8;
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // enrollmentOrderstoolStripTextBox
+            // 
+            this.enrollmentOrderstoolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.enrollmentOrderstoolStripTextBox.Name = "enrollmentOrderstoolStripTextBox";
+            this.enrollmentOrderstoolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // enrollmentOrderstoolStripButton
+            // 
+            this.enrollmentOrderstoolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("enrollmentOrderstoolStripButton.Image")));
+            this.enrollmentOrderstoolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.enrollmentOrderstoolStripButton.Name = "enrollmentOrderstoolStripButton";
+            this.enrollmentOrderstoolStripButton.Size = new System.Drawing.Size(62, 22);
+            this.enrollmentOrderstoolStripButton.Text = "Поиск";
+            this.enrollmentOrderstoolStripButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FormEnrollmentOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(294, 159);
+            this.ClientSize = new System.Drawing.Size(514, 134);
             this.Controls.Add(enrollment_order_IDLabel);
             this.Controls.Add(this.enrollment_order_IDTextBox);
             this.Controls.Add(ranking_list_IDLabel);
@@ -332,5 +358,8 @@
         private System.Windows.Forms.TextBox ranking_list_IDTextBox;
         private System.Windows.Forms.TextBox full_nameTextBox;
         private System.Windows.Forms.TextBox university_groupTextBox;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripTextBox enrollmentOrderstoolStripTextBox;
+        private System.Windows.Forms.ToolStripButton enrollmentOrderstoolStripButton;
     }
 }

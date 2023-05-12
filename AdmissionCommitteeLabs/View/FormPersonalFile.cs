@@ -73,6 +73,5 @@ namespace AdmissionCommitteeLabs.View
             Show();
             Activate();
         }
-
     }
 }

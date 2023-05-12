@@ -14,14 +14,6 @@ namespace AdmissionCommitteeLabs.View
     {
         private static FormApplicantsRankingLists _formApplicantRankingList;
 
-        private void applicantsRankingListsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.applicantsRankingListsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.selection_committeeDataSet);
-
-        }
-
         private void FormApplicantsRankingLists_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "selection_committeeDataSet.ApplicantsRankingLists". При необходимости она может быть перемещена или удалена.
@@ -33,10 +25,17 @@ namespace AdmissionCommitteeLabs.View
 
         private void applicantsRankingListsBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
-            this.Validate();
-            this.applicantsRankingListsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.selection_committeeDataSet);
-
+            try
+            {
+                this.Validate();
+                this.applicantsRankingListsBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.selection_committeeDataSet);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Ошибка", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         public static FormApplicantsRankingLists FormApplicantRankingList

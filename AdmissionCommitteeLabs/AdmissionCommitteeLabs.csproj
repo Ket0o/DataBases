@@ -147,6 +147,7 @@
   <ItemGroup>
     <Content Include="Resources\about_program_16x16.png" />
     <Content Include="Resources\personal_file_16x16.ico" />
+    <Content Include="Resources\search_16x16.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\applicant_data_16x16.ico" />

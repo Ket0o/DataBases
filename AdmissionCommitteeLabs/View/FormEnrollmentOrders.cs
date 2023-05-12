@@ -16,10 +16,17 @@ namespace AdmissionCommitteeLabs.View
 
         private void enrollmentOrdersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.enrollmentOrdersBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.selection_committeeDataSet);
-
+            try
+            {
+                this.Validate();
+                this.enrollmentOrdersBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.selection_committeeDataSet);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Ошибка", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void FormEnrollmentOrders_Load(object sender, EventArgs e)
