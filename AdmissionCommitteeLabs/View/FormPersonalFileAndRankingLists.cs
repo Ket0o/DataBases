@@ -17,10 +17,17 @@ namespace AdmissionCommitteeLabs.View
 
         private void personalFileBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.personalFileBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.selection_committeeDataSet);
-
+            try
+            {
+                this.Validate();
+                this.personalFileBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.selection_committeeDataSet);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Ошибка", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void FormPersonalFileAndRankingLists_Load(object sender, EventArgs e)

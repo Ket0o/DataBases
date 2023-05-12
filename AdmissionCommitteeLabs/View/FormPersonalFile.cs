@@ -34,7 +34,7 @@ namespace AdmissionCommitteeLabs.View
                 MessageBox.Show("Ошибка поиска \n" + err.Message);
                 return;
             }
-            if (indexPos > -1)
+            if (indexPos != -1)
                 personalFileBindingSource.Position = indexPos;
             else
             {

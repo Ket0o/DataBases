@@ -29,27 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPersonalFileAndRankingLists));
             System.Windows.Forms.Label ranking_list_IDLabel;
             System.Windows.Forms.Label personal_file_IDLabel;
             System.Windows.Forms.Label scores_with_all_achievements_consideredLabel;
             System.Windows.Forms.Label rank_positionLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPersonalFileAndRankingLists));
             this.selection_committeeDataSet = new AdmissionCommitteeLabs.Selection_committeeDataSet();
             this.personalFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.personalFileTableAdapter = new AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.PersonalFileTableAdapter();
             this.tableAdapterManager = new AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.TableAdapterManager();
+            this.applicantsRankingListsTableAdapter = new AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.ApplicantsRankingListsTableAdapter();
             this.personalFileBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.personalFileBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.personalFileDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +58,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.applicantsRankingListsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.applicantsRankingListsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
@@ -68,8 +70,6 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.applicantsRankingListsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.applicantsRankingListsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.applicantsRankingListsTableAdapter = new AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.ApplicantsRankingListsTableAdapter();
             this.ranking_list_IDTextBox = new System.Windows.Forms.TextBox();
             this.personal_file_IDTextBox = new System.Windows.Forms.TextBox();
             this.scores_with_all_achievements_consideredTextBox = new System.Windows.Forms.TextBox();
@@ -87,6 +87,42 @@
             this.applicantsRankingListsBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.applicantsRankingListsBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ranking_list_IDLabel
+            // 
+            ranking_list_IDLabel.AutoSize = true;
+            ranking_list_IDLabel.Location = new System.Drawing.Point(12, 263);
+            ranking_list_IDLabel.Name = "ranking_list_IDLabel";
+            ranking_list_IDLabel.Size = new System.Drawing.Size(74, 13);
+            ranking_list_IDLabel.TabIndex = 3;
+            ranking_list_IDLabel.Text = "ranking list ID:";
+            // 
+            // personal_file_IDLabel
+            // 
+            personal_file_IDLabel.AutoSize = true;
+            personal_file_IDLabel.Location = new System.Drawing.Point(12, 289);
+            personal_file_IDLabel.Name = "personal_file_IDLabel";
+            personal_file_IDLabel.Size = new System.Drawing.Size(80, 13);
+            personal_file_IDLabel.TabIndex = 5;
+            personal_file_IDLabel.Text = "personal file ID:";
+            // 
+            // scores_with_all_achievements_consideredLabel
+            // 
+            scores_with_all_achievements_consideredLabel.AutoSize = true;
+            scores_with_all_achievements_consideredLabel.Location = new System.Drawing.Point(12, 315);
+            scores_with_all_achievements_consideredLabel.Name = "scores_with_all_achievements_consideredLabel";
+            scores_with_all_achievements_consideredLabel.Size = new System.Drawing.Size(200, 13);
+            scores_with_all_achievements_consideredLabel.TabIndex = 7;
+            scores_with_all_achievements_consideredLabel.Text = "scores with all achievements considered:";
+            // 
+            // rank_positionLabel
+            // 
+            rank_positionLabel.AutoSize = true;
+            rank_positionLabel.Location = new System.Drawing.Point(12, 341);
+            rank_positionLabel.Name = "rank_positionLabel";
+            rank_positionLabel.Size = new System.Drawing.Size(70, 13);
+            rank_positionLabel.TabIndex = 9;
+            rank_positionLabel.Text = "rank position:";
             // 
             // selection_committeeDataSet
             // 
@@ -110,6 +146,10 @@
             this.tableAdapterManager.EnrollmentOrdersTableAdapter = null;
             this.tableAdapterManager.PersonalFileTableAdapter = this.personalFileTableAdapter;
             this.tableAdapterManager.UpdateOrder = AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // applicantsRankingListsTableAdapter
+            // 
+            this.applicantsRankingListsTableAdapter.ClearBeforeFill = true;
             // 
             // personalFileBindingNavigator
             // 
@@ -140,6 +180,31 @@
             this.personalFileBindingNavigator.Size = new System.Drawing.Size(800, 25);
             this.personalFileBindingNavigator.TabIndex = 0;
             this.personalFileBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Добавить";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
+            this.bindingNavigatorCountItem.Text = "для {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Удалить";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -174,16 +239,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
-            this.bindingNavigatorCountItem.Text = "для {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -206,26 +264,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Добавить";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
             // 
             // personalFileBindingNavigatorSaveItem
             // 
@@ -308,6 +348,11 @@
             this.toolStripButton1.RightToLeftAutoMirrorImage = true;
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "Добавить";
+            // 
+            // applicantsRankingListsBindingSource
+            // 
+            this.applicantsRankingListsBindingSource.DataMember = "FK_ApplicantsRankingLists_PersonalFile";
+            this.applicantsRankingListsBindingSource.DataSource = this.personalFileBindingSource;
             // 
             // toolStripLabel1
             // 
@@ -395,24 +440,6 @@
             this.applicantsRankingListsBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.applicantsRankingListsBindingNavigatorSaveItem.Click += new System.EventHandler(this.applicantsRankingListsBindingNavigatorSaveItem_Click);
             // 
-            // applicantsRankingListsBindingSource
-            // 
-            this.applicantsRankingListsBindingSource.DataMember = "FK_ApplicantsRankingLists_PersonalFile";
-            this.applicantsRankingListsBindingSource.DataSource = this.personalFileBindingSource;
-            // 
-            // applicantsRankingListsTableAdapter
-            // 
-            this.applicantsRankingListsTableAdapter.ClearBeforeFill = true;
-            // 
-            // ranking_list_IDLabel
-            // 
-            ranking_list_IDLabel.AutoSize = true;
-            ranking_list_IDLabel.Location = new System.Drawing.Point(12, 263);
-            ranking_list_IDLabel.Name = "ranking_list_IDLabel";
-            ranking_list_IDLabel.Size = new System.Drawing.Size(74, 13);
-            ranking_list_IDLabel.TabIndex = 3;
-            ranking_list_IDLabel.Text = "ranking list ID:";
-            // 
             // ranking_list_IDTextBox
             // 
             this.ranking_list_IDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.applicantsRankingListsBindingSource, "ranking_list_ID", true));
@@ -420,15 +447,6 @@
             this.ranking_list_IDTextBox.Name = "ranking_list_IDTextBox";
             this.ranking_list_IDTextBox.Size = new System.Drawing.Size(100, 20);
             this.ranking_list_IDTextBox.TabIndex = 4;
-            // 
-            // personal_file_IDLabel
-            // 
-            personal_file_IDLabel.AutoSize = true;
-            personal_file_IDLabel.Location = new System.Drawing.Point(12, 289);
-            personal_file_IDLabel.Name = "personal_file_IDLabel";
-            personal_file_IDLabel.Size = new System.Drawing.Size(80, 13);
-            personal_file_IDLabel.TabIndex = 5;
-            personal_file_IDLabel.Text = "personal file ID:";
             // 
             // personal_file_IDTextBox
             // 
@@ -438,15 +456,6 @@
             this.personal_file_IDTextBox.Size = new System.Drawing.Size(100, 20);
             this.personal_file_IDTextBox.TabIndex = 6;
             // 
-            // scores_with_all_achievements_consideredLabel
-            // 
-            scores_with_all_achievements_consideredLabel.AutoSize = true;
-            scores_with_all_achievements_consideredLabel.Location = new System.Drawing.Point(12, 315);
-            scores_with_all_achievements_consideredLabel.Name = "scores_with_all_achievements_consideredLabel";
-            scores_with_all_achievements_consideredLabel.Size = new System.Drawing.Size(200, 13);
-            scores_with_all_achievements_consideredLabel.TabIndex = 7;
-            scores_with_all_achievements_consideredLabel.Text = "scores with all achievements considered:";
-            // 
             // scores_with_all_achievements_consideredTextBox
             // 
             this.scores_with_all_achievements_consideredTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.applicantsRankingListsBindingSource, "scores_with_all_achievements_considered", true));
@@ -454,15 +463,6 @@
             this.scores_with_all_achievements_consideredTextBox.Name = "scores_with_all_achievements_consideredTextBox";
             this.scores_with_all_achievements_consideredTextBox.Size = new System.Drawing.Size(100, 20);
             this.scores_with_all_achievements_consideredTextBox.TabIndex = 8;
-            // 
-            // rank_positionLabel
-            // 
-            rank_positionLabel.AutoSize = true;
-            rank_positionLabel.Location = new System.Drawing.Point(12, 341);
-            rank_positionLabel.Name = "rank_positionLabel";
-            rank_positionLabel.Size = new System.Drawing.Size(70, 13);
-            rank_positionLabel.TabIndex = 9;
-            rank_positionLabel.Text = "rank position:";
             // 
             // rank_positionTextBox
             // 
@@ -476,7 +476,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 371);
             this.Controls.Add(ranking_list_IDLabel);
             this.Controls.Add(this.ranking_list_IDTextBox);
             this.Controls.Add(personal_file_IDLabel);
