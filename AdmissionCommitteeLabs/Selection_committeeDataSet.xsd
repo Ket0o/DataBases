@@ -106,7 +106,7 @@ SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considere
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considered, rank_position FROM dbo.ApplicantsRankingLists</CommandText>
+                    <CommandText>SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considered, rank_position FROM ApplicantsRankingLists</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -275,7 +275,6 @@ SELECT personal_file_ID, applicant_ID, Document_submission_date FROM PersonalFil
               <xs:element name="personal_file_ID" msprop:Generator_ColumnPropNameInTable="personal_file_IDColumn" msprop:Generator_ColumnPropNameInRow="personal_file_ID" msprop:Generator_UserColumnName="personal_file_ID" msprop:Generator_ColumnVarNameInTable="columnpersonal_file_ID" type="xs:int" minOccurs="0" />
               <xs:element name="scores_with_all_achievements_considered" msprop:Generator_ColumnPropNameInTable="scores_with_all_achievements_consideredColumn" msprop:Generator_ColumnPropNameInRow="scores_with_all_achievements_considered" msprop:Generator_UserColumnName="scores_with_all_achievements_considered" msprop:Generator_ColumnVarNameInTable="columnscores_with_all_achievements_considered" type="xs:int" />
               <xs:element name="rank_position" msprop:Generator_ColumnPropNameInTable="rank_positionColumn" msprop:Generator_ColumnPropNameInRow="rank_position" msprop:Generator_UserColumnName="rank_position" msprop:Generator_ColumnVarNameInTable="columnrank_position" type="xs:int" />
-              <xs:element name="Document_submission_date" msdata:ReadOnly="true" msdata:Expression="Parent(FK_ApplicantsRankingLists_PersonalFile).Document_submission_date" msprop:Generator_ColumnPropNameInRow="Document_submission_date" msprop:Generator_ColumnPropNameInTable="Document_submission_dateColumn" msprop:Generator_ColumnVarNameInTable="columnDocument_submission_date" msprop:Generator_UserColumnName="Document_submission_date" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -293,7 +293,7 @@ namespace AdmissionCommitteeLabs {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableApplicantsData = new ApplicantsDataDataTable();
             base.Tables.Add(this.tableApplicantsData);
-            this.tableApplicantsRankingLists = new ApplicantsRankingListsDataTable(false);
+            this.tableApplicantsRankingLists = new ApplicantsRankingListsDataTable();
             base.Tables.Add(this.tableApplicantsRankingLists);
             this.tableEnrollmentOrders = new EnrollmentOrdersDataTable(false);
             base.Tables.Add(this.tableEnrollmentOrders);
@@ -395,7 +395,6 @@ namespace AdmissionCommitteeLabs {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitExpressions() {
-            this.ApplicantsRankingLists.Document_submission_dateColumn.Expression = "Parent(FK_ApplicantsRankingLists_PersonalFile).Document_submission_date";
             this.EnrollmentOrders.studentColumn.Expression = "ranking_list_ID+\' \'+full_name+\' \'+university_group";
         }
         
@@ -760,23 +759,12 @@ namespace AdmissionCommitteeLabs {
             
             private global::System.Data.DataColumn columnrank_position;
             
-            private global::System.Data.DataColumn columnDocument_submission_date;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ApplicantsRankingListsDataTable() : 
-                    this(false) {
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ApplicantsRankingListsDataTable(bool initExpressions) {
+            public ApplicantsRankingListsDataTable() {
                 this.TableName = "ApplicantsRankingLists";
                 this.BeginInit();
                 this.InitClass();
-                if ((initExpressions == true)) {
-                    this.InitExpressions();
-                }
                 this.EndInit();
             }
             
@@ -838,14 +826,6 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Document_submission_dateColumn {
-                get {
-                    return this.columnDocument_submission_date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -881,32 +861,13 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ApplicantsRankingListsRow AddApplicantsRankingListsRow(PersonalFileRow parentPersonalFileRowByFK_ApplicantsRankingLists_PersonalFile, int scores_with_all_achievements_considered, int rank_position, string Document_submission_date) {
-                ApplicantsRankingListsRow rowApplicantsRankingListsRow = ((ApplicantsRankingListsRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        null,
-                        scores_with_all_achievements_considered,
-                        rank_position,
-                        Document_submission_date};
-                if ((parentPersonalFileRowByFK_ApplicantsRankingLists_PersonalFile != null)) {
-                    columnValuesArray[1] = parentPersonalFileRowByFK_ApplicantsRankingLists_PersonalFile[0];
-                }
-                rowApplicantsRankingListsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowApplicantsRankingListsRow);
-                return rowApplicantsRankingListsRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ApplicantsRankingListsRow AddApplicantsRankingListsRow(PersonalFileRow parentPersonalFileRowByFK_ApplicantsRankingLists_PersonalFile, int scores_with_all_achievements_considered, int rank_position) {
                 ApplicantsRankingListsRow rowApplicantsRankingListsRow = ((ApplicantsRankingListsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         scores_with_all_achievements_considered,
-                        rank_position,
-                        null};
+                        rank_position};
                 if ((parentPersonalFileRowByFK_ApplicantsRankingLists_PersonalFile != null)) {
                     columnValuesArray[1] = parentPersonalFileRowByFK_ApplicantsRankingLists_PersonalFile[0];
                 }
@@ -943,7 +904,6 @@ namespace AdmissionCommitteeLabs {
                 this.columnpersonal_file_ID = base.Columns["personal_file_ID"];
                 this.columnscores_with_all_achievements_considered = base.Columns["scores_with_all_achievements_considered"];
                 this.columnrank_position = base.Columns["rank_position"];
-                this.columnDocument_submission_date = base.Columns["Document_submission_date"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -957,8 +917,6 @@ namespace AdmissionCommitteeLabs {
                 base.Columns.Add(this.columnscores_with_all_achievements_considered);
                 this.columnrank_position = new global::System.Data.DataColumn("rank_position", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrank_position);
-                this.columnDocument_submission_date = new global::System.Data.DataColumn("Document_submission_date", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDocument_submission_date);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnranking_list_ID}, true));
                 this.columnranking_list_ID.AutoIncrement = true;
@@ -967,7 +925,6 @@ namespace AdmissionCommitteeLabs {
                 this.columnranking_list_ID.Unique = true;
                 this.columnscores_with_all_achievements_considered.AllowDBNull = false;
                 this.columnrank_position.AllowDBNull = false;
-                this.columnDocument_submission_date.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -986,12 +943,6 @@ namespace AdmissionCommitteeLabs {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
                 return typeof(ApplicantsRankingListsRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitExpressions() {
-                this.Document_submission_dateColumn.Expression = "Parent(FK_ApplicantsRankingLists_PersonalFile).Document_submission_date";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1927,23 +1878,6 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Document_submission_date {
-                get {
-                    try {
-                        return ((string)(this[this.tableApplicantsRankingLists.Document_submission_dateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Document_submission_date\' в таблице \'ApplicantsRankingLists" +
-                                "\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableApplicantsRankingLists.Document_submission_dateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public PersonalFileRow PersonalFileRow {
                 get {
                     return ((PersonalFileRow)(this.GetParentRow(this.Table.ParentRelations["FK_ApplicantsRankingLists_PersonalFile"])));
@@ -1963,18 +1897,6 @@ namespace AdmissionCommitteeLabs {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setpersonal_file_IDNull() {
                 this[this.tableApplicantsRankingLists.personal_file_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDocument_submission_dateNull() {
-                return this.IsNull(this.tableApplicantsRankingLists.Document_submission_dateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDocument_submission_dateNull() {
-                this[this.tableApplicantsRankingLists.Document_submission_dateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2833,7 +2755,7 @@ SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considere
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considered" +
-                ", rank_position FROM dbo.ApplicantsRankingLists";
+                ", rank_position FROM ApplicantsRankingLists";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2856,7 +2778,7 @@ SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considere
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual Selection_committeeDataSet.ApplicantsRankingListsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Selection_committeeDataSet.ApplicantsRankingListsDataTable dataTable = new Selection_committeeDataSet.ApplicantsRankingListsDataTable(true);
+            Selection_committeeDataSet.ApplicantsRankingListsDataTable dataTable = new Selection_committeeDataSet.ApplicantsRankingListsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
