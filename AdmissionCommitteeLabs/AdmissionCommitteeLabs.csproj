@@ -51,6 +51,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Selection_committeeDataSet.cs">
+      <DependentUpon>Selection_committeeDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="View\FormApplicantsData.cs">
       <SubType>Form</SubType>
     </Compile>

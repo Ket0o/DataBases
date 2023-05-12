@@ -289,6 +289,7 @@
             this.checkBoxFind.TabIndex = 2;
             this.checkBoxFind.Text = "Фильтр";
             this.checkBoxFind.UseVisualStyleBackColor = true;
+            this.checkBoxFind.CheckedChanged += new System.EventHandler(this.checkBoxFind_CheckedChanged);
             // 
             // FormPersonalFile
             // 

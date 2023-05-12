@@ -16,6 +16,8 @@ namespace AdmissionCommitteeLabs.View
 
         private void FormApplicantsRankingLists_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "selection_committeeDataSet.EnrollmentOrders". При необходимости она может быть перемещена или удалена.
+            this.enrollmentOrdersTableAdapter.Fill(this.selection_committeeDataSet.EnrollmentOrders);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "selection_committeeDataSet.ApplicantsRankingLists". При необходимости она может быть перемещена или удалена.
             this.applicantsRankingListsTableAdapter.Fill(this.selection_committeeDataSet.ApplicantsRankingLists);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "selection_committeeDataSet.ApplicantsRankingLists". При необходимости она может быть перемещена или удалена.

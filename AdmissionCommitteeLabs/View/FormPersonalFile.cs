@@ -38,7 +38,7 @@ namespace AdmissionCommitteeLabs.View
                 personalFileBindingSource.Position = indexPos;
             else
             {
-                MessageBox.Show("Таких сотрудников нет", "Внимание",
+                MessageBox.Show("Таких id нет", "Внимание",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 personalFileBindingSource.Position = 0;
             }
@@ -69,6 +69,35 @@ namespace AdmissionCommitteeLabs.View
             // При необходимости она может быть перемещена или удалена.
             this.personalFileTableAdapter.Fill(this.selection_committeeDataSet.PersonalFile);
 
+        }
+
+        private void checkBoxFind_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxFind.Checked)
+            {
+                if (personalFiletoolStripTextBoxFind.Text == "")
+                    MessageBox.Show("Вы ничего не задали", "Внимание",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    try
+                    {
+                        personalFileBindingSource.Filter =
+                            GetSelectedFieldName() + "='" + personalFiletoolStripTextBoxFind.Text + "'";
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show("Ошибка фильтрации \n" +
+                                        err.Message);
+                    }
+            }
+            else
+                personalFileBindingSource.Filter = "";
+            if (personalFileBindingSource.Count == 0)
+            {
+                MessageBox.Show("Нет таких");
+                personalFileBindingSource.Filter = "";
+                checkBoxFind.Checked = false;
+            }
         }
 
         private void personalFileBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
@@ -110,5 +139,6 @@ namespace AdmissionCommitteeLabs.View
             Show();
             Activate();
         }
+
     }
 }
