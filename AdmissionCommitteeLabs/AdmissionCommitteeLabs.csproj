@@ -89,6 +89,12 @@
     <Compile Include="View\FormPersonalFileAndRankingLists.Designer.cs">
       <DependentUpon>FormPersonalFileAndRankingLists.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FormSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormSQL.Designer.cs">
+      <DependentUpon>FormSQL.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormPersonalFileAndRankingLists.resx">
       <DependentUpon>FormPersonalFileAndRankingLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormSQL.resx">
+      <DependentUpon>FormSQL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

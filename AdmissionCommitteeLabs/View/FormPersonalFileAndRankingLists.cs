@@ -14,7 +14,6 @@ namespace AdmissionCommitteeLabs.View
     {
         private static FormPersonalFileAndRankingLists _formPersonalFileAndRankingLists;
 
-
         private void personalFileBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             try

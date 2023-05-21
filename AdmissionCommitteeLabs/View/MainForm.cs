@@ -66,5 +66,10 @@ namespace AdmissionCommitteeLabs.View
         {
             FormPersonalFileAndRankingLists.FormPersonalsFileAndRankingLists.ShowForm();
         }
+
+        private void sQLRequestsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSQL.FormSql.ShowForm();
+        }
     }
 }
