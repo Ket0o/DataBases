@@ -48,12 +48,14 @@ namespace AdmissionCommitteeLabs.View
 
         private void radioButtonPersonalFile_CheckedChanged(object sender, EventArgs e)
         {
-            dataGridViewSelect.DataSource = FillDataGridView($"SELECT Document_submission_date, applicant_ID FROM PersonalFile");
+            dataGridViewSelect.DataSource = FillDataGridView($"SELECT Document_submission_date," +
+                                                             $" applicant_ID FROM PersonalFile");
         }
 
         private void radioButtonApplicantsRankingLists_CheckedChanged(object sender, EventArgs e)
         {
-            dataGridViewSelect.DataSource = FillDataGridView("SELECT * FROM ApplicantsRankingLists");
+            dataGridViewSelect.DataSource = FillDataGridView("SELECT * " +
+                                                             "FROM ApplicantsRankingLists");
         }
         public static FormSQL FormSql
         {
@@ -73,5 +75,29 @@ namespace AdmissionCommitteeLabs.View
             Activate();
         }
 
+        private void buttonF_select_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBoxApplicant.Text))
+            {
+                MessageBox.Show("Обязательно укажите id необходимого" +
+                                "абитуриента.\nДопустим ввод первых символов.", 
+                    "Внимание", MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (checkBoxMore.Checked && String.IsNullOrEmpty(textBoxMore.Text))
+            {
+                MessageBox.Show("Не указан балл в условии", "Внимание",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                checkBoxMore.Checked = false;
+                return;
+            }
+            string sqlSelect = "";
+            if (radioButtonDet_Date.Checked)
+            {
+                sqlSelect = @""
+            }
+        }
     }
 }
