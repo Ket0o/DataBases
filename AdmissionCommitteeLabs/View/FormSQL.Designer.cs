@@ -49,13 +49,16 @@
             this.textBoxApplicant = new System.Windows.Forms.TextBox();
             this.labelApplicant = new System.Windows.Forms.Label();
             this.tabPageSubquery = new System.Windows.Forms.TabPage();
-            this.groupBoxSubquery = new System.Windows.Forms.GroupBox();
-            this.radioButtonCorrelated = new System.Windows.Forms.RadioButton();
-            this.radioButtonNoCorrelated = new System.Windows.Forms.RadioButton();
-            this.labelNumber = new System.Windows.Forms.Label();
-            this.textBoxPersonalFileID = new System.Windows.Forms.TextBox();
-            this.buttonSubquery = new System.Windows.Forms.Button();
             this.dataGridViewSubquery = new System.Windows.Forms.DataGridView();
+            this.groupBoxSubquery = new System.Windows.Forms.GroupBox();
+            this.buttonSubquery = new System.Windows.Forms.Button();
+            this.textBoxPersonalFileID = new System.Windows.Forms.TextBox();
+            this.labelNumber = new System.Windows.Forms.Label();
+            this.radioButtonNoCorrelated = new System.Windows.Forms.RadioButton();
+            this.radioButtonCorrelated = new System.Windows.Forms.RadioButton();
+            this.tabPageDML = new System.Windows.Forms.TabPage();
+            this.groupBoxDML = new System.Windows.Forms.GroupBox();
+            this.radioButtonInsert_dish = new System.Windows.Forms.RadioButton();
             this.tabControlSQL.SuspendLayout();
             this.tabPagePrimer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSelect)).BeginInit();
@@ -65,8 +68,10 @@
             this.groupBoxFSelect.SuspendLayout();
             this.groupBoxDet.SuspendLayout();
             this.tabPageSubquery.SuspendLayout();
-            this.groupBoxSubquery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSubquery)).BeginInit();
+            this.groupBoxSubquery.SuspendLayout();
+            this.tabPageDML.SuspendLayout();
+            this.groupBoxDML.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlSQL
@@ -74,6 +79,7 @@
             this.tabControlSQL.Controls.Add(this.tabPagePrimer);
             this.tabControlSQL.Controls.Add(this.tabPageSelect);
             this.tabControlSQL.Controls.Add(this.tabPageSubquery);
+            this.tabControlSQL.Controls.Add(this.tabPageDML);
             this.tabControlSQL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlSQL.Location = new System.Drawing.Point(0, 0);
             this.tabControlSQL.Name = "tabControlSQL";
@@ -299,6 +305,15 @@
             this.tabPageSubquery.Text = "Примеры подзапросов";
             this.tabPageSubquery.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewSubquery
+            // 
+            this.dataGridViewSubquery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSubquery.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewSubquery.Location = new System.Drawing.Point(3, 129);
+            this.dataGridViewSubquery.Name = "dataGridViewSubquery";
+            this.dataGridViewSubquery.Size = new System.Drawing.Size(786, 292);
+            this.dataGridViewSubquery.TabIndex = 1;
+            // 
             // groupBoxSubquery
             // 
             this.groupBoxSubquery.Controls.Add(this.buttonSubquery);
@@ -314,16 +329,31 @@
             this.groupBoxSubquery.TabStop = false;
             this.groupBoxSubquery.Text = "Подзапросы по данным";
             // 
-            // radioButtonCorrelated
+            // buttonSubquery
             // 
-            this.radioButtonCorrelated.AutoSize = true;
-            this.radioButtonCorrelated.Location = new System.Drawing.Point(6, 19);
-            this.radioButtonCorrelated.Name = "radioButtonCorrelated";
-            this.radioButtonCorrelated.Size = new System.Drawing.Size(175, 17);
-            this.radioButtonCorrelated.TabIndex = 0;
-            this.radioButtonCorrelated.TabStop = true;
-            this.radioButtonCorrelated.Text = "Коррелированный подзапрос";
-            this.radioButtonCorrelated.UseVisualStyleBackColor = true;
+            this.buttonSubquery.Location = new System.Drawing.Point(6, 88);
+            this.buttonSubquery.Name = "buttonSubquery";
+            this.buttonSubquery.Size = new System.Drawing.Size(140, 32);
+            this.buttonSubquery.TabIndex = 4;
+            this.buttonSubquery.Text = "Выполнить подзапрос";
+            this.buttonSubquery.UseVisualStyleBackColor = true;
+            this.buttonSubquery.Click += new System.EventHandler(this.buttonSubquery_Click);
+            // 
+            // textBoxPersonalFileID
+            // 
+            this.textBoxPersonalFileID.Location = new System.Drawing.Point(97, 45);
+            this.textBoxPersonalFileID.Name = "textBoxPersonalFileID";
+            this.textBoxPersonalFileID.Size = new System.Drawing.Size(363, 20);
+            this.textBoxPersonalFileID.TabIndex = 3;
+            // 
+            // labelNumber
+            // 
+            this.labelNumber.AutoSize = true;
+            this.labelNumber.Location = new System.Drawing.Point(3, 48);
+            this.labelNumber.Name = "labelNumber";
+            this.labelNumber.Size = new System.Drawing.Size(83, 13);
+            this.labelNumber.TabIndex = 2;
+            this.labelNumber.Text = "personal_file_ID";
             // 
             // radioButtonNoCorrelated
             // 
@@ -336,40 +366,49 @@
             this.radioButtonNoCorrelated.Text = "Некоррелированный подзапрос";
             this.radioButtonNoCorrelated.UseVisualStyleBackColor = true;
             // 
-            // labelNumber
+            // radioButtonCorrelated
             // 
-            this.labelNumber.AutoSize = true;
-            this.labelNumber.Location = new System.Drawing.Point(3, 48);
-            this.labelNumber.Name = "labelNumber";
-            this.labelNumber.Size = new System.Drawing.Size(83, 13);
-            this.labelNumber.TabIndex = 2;
-            this.labelNumber.Text = "personal_file_ID";
+            this.radioButtonCorrelated.AutoSize = true;
+            this.radioButtonCorrelated.Location = new System.Drawing.Point(6, 19);
+            this.radioButtonCorrelated.Name = "radioButtonCorrelated";
+            this.radioButtonCorrelated.Size = new System.Drawing.Size(175, 17);
+            this.radioButtonCorrelated.TabIndex = 0;
+            this.radioButtonCorrelated.TabStop = true;
+            this.radioButtonCorrelated.Text = "Коррелированный подзапрос";
+            this.radioButtonCorrelated.UseVisualStyleBackColor = true;
             // 
-            // textBoxPersonalFileID
+            // tabPageDML
             // 
-            this.textBoxPersonalFileID.Location = new System.Drawing.Point(97, 45);
-            this.textBoxPersonalFileID.Name = "textBoxPersonalFileID";
-            this.textBoxPersonalFileID.Size = new System.Drawing.Size(363, 20);
-            this.textBoxPersonalFileID.TabIndex = 3;
+            this.tabPageDML.Controls.Add(this.groupBoxDML);
+            this.tabPageDML.Location = new System.Drawing.Point(4, 22);
+            this.tabPageDML.Name = "tabPageDML";
+            this.tabPageDML.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageDML.Size = new System.Drawing.Size(792, 424);
+            this.tabPageDML.TabIndex = 3;
+            this.tabPageDML.Text = "Запросы изменения данных";
+            this.tabPageDML.UseVisualStyleBackColor = true;
             // 
-            // buttonSubquery
+            // groupBoxDML
             // 
-            this.buttonSubquery.Location = new System.Drawing.Point(6, 88);
-            this.buttonSubquery.Name = "buttonSubquery";
-            this.buttonSubquery.Size = new System.Drawing.Size(140, 32);
-            this.buttonSubquery.TabIndex = 4;
-            this.buttonSubquery.Text = "Выполнить подзапрос";
-            this.buttonSubquery.UseVisualStyleBackColor = true;
-            this.buttonSubquery.Click += new System.EventHandler(this.buttonSubquery_Click);
+            this.groupBoxDML.Controls.Add(this.radioButtonInsert_dish);
+            this.groupBoxDML.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBoxDML.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxDML.Name = "groupBoxDML";
+            this.groupBoxDML.Size = new System.Drawing.Size(786, 186);
+            this.groupBoxDML.TabIndex = 0;
+            this.groupBoxDML.TabStop = false;
+            this.groupBoxDML.Text = "Операторы";
             // 
-            // dataGridViewSubquery
+            // radioButtonInsert_dish
             // 
-            this.dataGridViewSubquery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSubquery.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewSubquery.Location = new System.Drawing.Point(3, 129);
-            this.dataGridViewSubquery.Name = "dataGridViewSubquery";
-            this.dataGridViewSubquery.Size = new System.Drawing.Size(786, 292);
-            this.dataGridViewSubquery.TabIndex = 1;
+            this.radioButtonInsert_dish.AutoSize = true;
+            this.radioButtonInsert_dish.Location = new System.Drawing.Point(319, 76);
+            this.radioButtonInsert_dish.Name = "radioButtonInsert_dish";
+            this.radioButtonInsert_dish.Size = new System.Drawing.Size(85, 17);
+            this.radioButtonInsert_dish.TabIndex = 0;
+            this.radioButtonInsert_dish.TabStop = true;
+            this.radioButtonInsert_dish.Text = "radioButton1";
+            this.radioButtonInsert_dish.UseVisualStyleBackColor = true;
             // 
             // FormSQL
             // 
@@ -391,9 +430,12 @@
             this.groupBoxDet.ResumeLayout(false);
             this.groupBoxDet.PerformLayout();
             this.tabPageSubquery.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSubquery)).EndInit();
             this.groupBoxSubquery.ResumeLayout(false);
             this.groupBoxSubquery.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSubquery)).EndInit();
+            this.tabPageDML.ResumeLayout(false);
+            this.groupBoxDML.ResumeLayout(false);
+            this.groupBoxDML.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -428,5 +470,8 @@
         private System.Windows.Forms.Label labelNumber;
         private System.Windows.Forms.RadioButton radioButtonNoCorrelated;
         private System.Windows.Forms.RadioButton radioButtonCorrelated;
+        private System.Windows.Forms.TabPage tabPageDML;
+        private System.Windows.Forms.GroupBox groupBoxDML;
+        private System.Windows.Forms.RadioButton radioButtonInsert_dish;
     }
 }
