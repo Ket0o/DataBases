@@ -185,23 +185,31 @@ namespace AdmissionCommitteeLabs.View
 
             if (radioButtonCorrelated.Checked)
             {
-                sqlSelect = @"SELECT PersonalFile.personal_file_ID, PersonalFile.applicant_ID, 
-                            (SELECT full_name+' '+university_group 
-                            FROM EnrollmentOrders 
-                            WHERE PersonalFile.personal_file_ID =ApplicantsRankingLists.personal_file_ID) 
-                            AS Student
-                            FROM PersonalFile
-                            WHERE personal_file_ID = @number";
+                sqlSelect = @"SELECT pf.personal_file_ID, a.applicant_ID,
+                              CONCAT(
+                                (SELECT eo.full_name FROM EnrollmentOrders eo 
+                                WHERE eo.ranking_list_ID = arl.ranking_list_ID),
+                                ' - ',
+                                (SELECT eo.university_group FROM EnrollmentOrders eo 
+                                WHERE eo.ranking_list_ID = arl.ranking_list_ID)
+                              ) AS Student
+                            FROM PersonalFile pf
+                            JOIN ApplicantsData a ON pf.applicant_ID = a.applicant_ID
+                            JOIN ApplicantsRankingLists arl ON arl.personal_file_ID = pf.personal_file_ID
+                            WHERE pf.personal_file_ID = @number";
             }
             else
             {
-                if (radioButtonCorrelated.Checked)
+                if (radioButtonNoCorrelated.Checked)
                 {
-                    sqlSelect = @"SELECT d.*, s.scores_with_all_achievements_considered  
-                                FROM PersonalFile d, ApplicantsRankingLists s
-                                WHERE d.personal_file_ID =@number AND 
-                                s.scores_with_all_achievements_considered > 
-                                (SELECTED AVG(s.scores_with_all_achievements_considered))";
+                    sqlSelect = @"SELECT pf.personal_file_ID, a.applicant_ID, CONCAT(eo.full_name,
+                                ' - ', eo.university_group) AS Student, 
+                                arl.scores_with_all_achievements_considered AS Scores
+                                FROM PersonalFile pf
+                                JOIN ApplicantsData a ON pf.applicant_ID = a.applicant_ID
+                                JOIN ApplicantsRankingLists arl ON arl.personal_file_ID = pf.personal_file_ID
+                                JOIN EnrollmentOrders eo ON eo.ranking_list_ID = arl.ranking_list_ID
+                                WHERE pf.personal_file_ID = @number";
                 }
                 else
                 {
