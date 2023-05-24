@@ -58,7 +58,12 @@
             this.radioButtonCorrelated = new System.Windows.Forms.RadioButton();
             this.tabPageDML = new System.Windows.Forms.TabPage();
             this.groupBoxDML = new System.Windows.Forms.GroupBox();
-            this.radioButtonInsert_dish = new System.Windows.Forms.RadioButton();
+            this.radioButtonInsert_applicant = new System.Windows.Forms.RadioButton();
+            this.radioButtonUpdate_applicant = new System.Windows.Forms.RadioButton();
+            this.radioButtonDelete_applicant = new System.Windows.Forms.RadioButton();
+            this.labelId_applicant = new System.Windows.Forms.Label();
+            this.textBoxId_applicant = new System.Windows.Forms.TextBox();
+            this.panelApplicant = new System.Windows.Forms.Panel();
             this.tabControlSQL.SuspendLayout();
             this.tabPagePrimer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSelect)).BeginInit();
@@ -379,6 +384,7 @@
             // 
             // tabPageDML
             // 
+            this.tabPageDML.Controls.Add(this.panelApplicant);
             this.tabPageDML.Controls.Add(this.groupBoxDML);
             this.tabPageDML.Location = new System.Drawing.Point(4, 22);
             this.tabPageDML.Name = "tabPageDML";
@@ -390,25 +396,75 @@
             // 
             // groupBoxDML
             // 
-            this.groupBoxDML.Controls.Add(this.radioButtonInsert_dish);
+            this.groupBoxDML.Controls.Add(this.textBoxId_applicant);
+            this.groupBoxDML.Controls.Add(this.labelId_applicant);
+            this.groupBoxDML.Controls.Add(this.radioButtonDelete_applicant);
+            this.groupBoxDML.Controls.Add(this.radioButtonUpdate_applicant);
+            this.groupBoxDML.Controls.Add(this.radioButtonInsert_applicant);
             this.groupBoxDML.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBoxDML.Location = new System.Drawing.Point(3, 3);
             this.groupBoxDML.Name = "groupBoxDML";
-            this.groupBoxDML.Size = new System.Drawing.Size(786, 186);
+            this.groupBoxDML.Size = new System.Drawing.Size(786, 80);
             this.groupBoxDML.TabIndex = 0;
             this.groupBoxDML.TabStop = false;
             this.groupBoxDML.Text = "Операторы";
             // 
-            // radioButtonInsert_dish
+            // radioButtonInsert_applicant
             // 
-            this.radioButtonInsert_dish.AutoSize = true;
-            this.radioButtonInsert_dish.Location = new System.Drawing.Point(319, 76);
-            this.radioButtonInsert_dish.Name = "radioButtonInsert_dish";
-            this.radioButtonInsert_dish.Size = new System.Drawing.Size(85, 17);
-            this.radioButtonInsert_dish.TabIndex = 0;
-            this.radioButtonInsert_dish.TabStop = true;
-            this.radioButtonInsert_dish.Text = "radioButton1";
-            this.radioButtonInsert_dish.UseVisualStyleBackColor = true;
+            this.radioButtonInsert_applicant.AutoSize = true;
+            this.radioButtonInsert_applicant.Location = new System.Drawing.Point(5, 19);
+            this.radioButtonInsert_applicant.Name = "radioButtonInsert_applicant";
+            this.radioButtonInsert_applicant.Size = new System.Drawing.Size(196, 17);
+            this.radioButtonInsert_applicant.TabIndex = 0;
+            this.radioButtonInsert_applicant.TabStop = true;
+            this.radioButtonInsert_applicant.Text = "Добавить данные по абитуриенту";
+            this.radioButtonInsert_applicant.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonUpdate_applicant
+            // 
+            this.radioButtonUpdate_applicant.AutoSize = true;
+            this.radioButtonUpdate_applicant.Location = new System.Drawing.Point(207, 19);
+            this.radioButtonUpdate_applicant.Name = "radioButtonUpdate_applicant";
+            this.radioButtonUpdate_applicant.Size = new System.Drawing.Size(275, 17);
+            this.radioButtonUpdate_applicant.TabIndex = 1;
+            this.radioButtonUpdate_applicant.TabStop = true;
+            this.radioButtonUpdate_applicant.Text = " Изменить данные по абитуриенту с заданным id";
+            this.radioButtonUpdate_applicant.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonDelete_applicant
+            // 
+            this.radioButtonDelete_applicant.AutoSize = true;
+            this.radioButtonDelete_applicant.Location = new System.Drawing.Point(488, 19);
+            this.radioButtonDelete_applicant.Name = "radioButtonDelete_applicant";
+            this.radioButtonDelete_applicant.Size = new System.Drawing.Size(264, 17);
+            this.radioButtonDelete_applicant.TabIndex = 2;
+            this.radioButtonDelete_applicant.TabStop = true;
+            this.radioButtonDelete_applicant.Text = "Удалить данные по абитуриенту с заданным id";
+            this.radioButtonDelete_applicant.UseVisualStyleBackColor = true;
+            // 
+            // labelId_applicant
+            // 
+            this.labelId_applicant.AutoSize = true;
+            this.labelId_applicant.Location = new System.Drawing.Point(2, 49);
+            this.labelId_applicant.Name = "labelId_applicant";
+            this.labelId_applicant.Size = new System.Drawing.Size(81, 13);
+            this.labelId_applicant.TabIndex = 3;
+            this.labelId_applicant.Text = "id абитуриента";
+            // 
+            // textBoxId_applicant
+            // 
+            this.textBoxId_applicant.Location = new System.Drawing.Point(89, 46);
+            this.textBoxId_applicant.Name = "textBoxId_applicant";
+            this.textBoxId_applicant.Size = new System.Drawing.Size(100, 20);
+            this.textBoxId_applicant.TabIndex = 4;
+            // 
+            // panelApplicant
+            // 
+            this.panelApplicant.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelApplicant.Location = new System.Drawing.Point(3, 83);
+            this.panelApplicant.Name = "panelApplicant";
+            this.panelApplicant.Size = new System.Drawing.Size(786, 145);
+            this.panelApplicant.TabIndex = 1;
             // 
             // FormSQL
             // 
@@ -472,6 +528,11 @@
         private System.Windows.Forms.RadioButton radioButtonCorrelated;
         private System.Windows.Forms.TabPage tabPageDML;
         private System.Windows.Forms.GroupBox groupBoxDML;
-        private System.Windows.Forms.RadioButton radioButtonInsert_dish;
+        private System.Windows.Forms.RadioButton radioButtonInsert_applicant;
+        private System.Windows.Forms.RadioButton radioButtonDelete_applicant;
+        private System.Windows.Forms.RadioButton radioButtonUpdate_applicant;
+        private System.Windows.Forms.Panel panelApplicant;
+        private System.Windows.Forms.TextBox textBoxId_applicant;
+        private System.Windows.Forms.Label labelId_applicant;
     }
 }
