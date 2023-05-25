@@ -57,13 +57,30 @@
             this.radioButtonNoCorrelated = new System.Windows.Forms.RadioButton();
             this.radioButtonCorrelated = new System.Windows.Forms.RadioButton();
             this.tabPageDML = new System.Windows.Forms.TabPage();
-            this.groupBoxDML = new System.Windows.Forms.GroupBox();
-            this.radioButtonInsert_applicant = new System.Windows.Forms.RadioButton();
-            this.radioButtonUpdate_applicant = new System.Windows.Forms.RadioButton();
-            this.radioButtonDelete_applicant = new System.Windows.Forms.RadioButton();
-            this.labelId_applicant = new System.Windows.Forms.Label();
-            this.textBoxId_applicant = new System.Windows.Forms.TextBox();
+            this.buttonSelectApplicants = new System.Windows.Forms.Button();
+            this.dataGridViewApplicants = new System.Windows.Forms.DataGridView();
             this.panelApplicant = new System.Windows.Forms.Panel();
+            this.buttonOpenPhoto_Applicant = new System.Windows.Forms.Button();
+            this.pictureBoxPhoto_Applicant = new System.Windows.Forms.PictureBox();
+            this.labelPhoto_Applicant = new System.Windows.Forms.Label();
+            this.textBoxAdmission = new System.Windows.Forms.TextBox();
+            this.textBoxPersonal_dp = new System.Windows.Forms.TextBox();
+            this.labelAdmission = new System.Windows.Forms.Label();
+            this.labelPersonal_dp = new System.Windows.Forms.Label();
+            this.textBoxPrevious_education = new System.Windows.Forms.TextBox();
+            this.labelPrevious_education = new System.Windows.Forms.Label();
+            this.textBoxl_identity = new System.Windows.Forms.TextBox();
+            this.labelName_identity = new System.Windows.Forms.Label();
+            this.groupBoxDML = new System.Windows.Forms.GroupBox();
+            this.buttonExecuteDML = new System.Windows.Forms.Button();
+            this.textBoxId_applicant = new System.Windows.Forms.TextBox();
+            this.labelId_applicant = new System.Windows.Forms.Label();
+            this.radioButtonDelete_applicant = new System.Windows.Forms.RadioButton();
+            this.radioButtonUpdate_applicant = new System.Windows.Forms.RadioButton();
+            this.radioButtonInsert_applicant = new System.Windows.Forms.RadioButton();
+            this.openFileDialogApplicant = new System.Windows.Forms.OpenFileDialog();
+            this.labelScores = new System.Windows.Forms.Label();
+            this.textBoxScores = new System.Windows.Forms.TextBox();
             this.tabControlSQL.SuspendLayout();
             this.tabPagePrimer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSelect)).BeginInit();
@@ -76,6 +93,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSubquery)).BeginInit();
             this.groupBoxSubquery.SuspendLayout();
             this.tabPageDML.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewApplicants)).BeginInit();
+            this.panelApplicant.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto_Applicant)).BeginInit();
             this.groupBoxDML.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -384,6 +404,8 @@
             // 
             // tabPageDML
             // 
+            this.tabPageDML.Controls.Add(this.buttonSelectApplicants);
+            this.tabPageDML.Controls.Add(this.dataGridViewApplicants);
             this.tabPageDML.Controls.Add(this.panelApplicant);
             this.tabPageDML.Controls.Add(this.groupBoxDML);
             this.tabPageDML.Location = new System.Drawing.Point(4, 22);
@@ -394,8 +416,141 @@
             this.tabPageDML.Text = "Запросы изменения данных";
             this.tabPageDML.UseVisualStyleBackColor = true;
             // 
+            // buttonSelectApplicants
+            // 
+            this.buttonSelectApplicants.Location = new System.Drawing.Point(294, 234);
+            this.buttonSelectApplicants.Name = "buttonSelectApplicants";
+            this.buttonSelectApplicants.Size = new System.Drawing.Size(212, 23);
+            this.buttonSelectApplicants.TabIndex = 3;
+            this.buttonSelectApplicants.Text = "Показать список абитуриентов";
+            this.buttonSelectApplicants.UseVisualStyleBackColor = true;
+            this.buttonSelectApplicants.Click += new System.EventHandler(this.buttonSelectApplicants_Click);
+            // 
+            // dataGridViewApplicants
+            // 
+            this.dataGridViewApplicants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewApplicants.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridViewApplicants.Location = new System.Drawing.Point(3, 263);
+            this.dataGridViewApplicants.Name = "dataGridViewApplicants";
+            this.dataGridViewApplicants.Size = new System.Drawing.Size(786, 158);
+            this.dataGridViewApplicants.TabIndex = 2;
+            // 
+            // panelApplicant
+            // 
+            this.panelApplicant.Controls.Add(this.textBoxScores);
+            this.panelApplicant.Controls.Add(this.labelScores);
+            this.panelApplicant.Controls.Add(this.buttonOpenPhoto_Applicant);
+            this.panelApplicant.Controls.Add(this.pictureBoxPhoto_Applicant);
+            this.panelApplicant.Controls.Add(this.labelPhoto_Applicant);
+            this.panelApplicant.Controls.Add(this.textBoxAdmission);
+            this.panelApplicant.Controls.Add(this.textBoxPersonal_dp);
+            this.panelApplicant.Controls.Add(this.labelAdmission);
+            this.panelApplicant.Controls.Add(this.labelPersonal_dp);
+            this.panelApplicant.Controls.Add(this.textBoxPrevious_education);
+            this.panelApplicant.Controls.Add(this.labelPrevious_education);
+            this.panelApplicant.Controls.Add(this.textBoxl_identity);
+            this.panelApplicant.Controls.Add(this.labelName_identity);
+            this.panelApplicant.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelApplicant.Location = new System.Drawing.Point(3, 83);
+            this.panelApplicant.Name = "panelApplicant";
+            this.panelApplicant.Size = new System.Drawing.Size(786, 145);
+            this.panelApplicant.TabIndex = 1;
+            // 
+            // buttonOpenPhoto_Applicant
+            // 
+            this.buttonOpenPhoto_Applicant.Location = new System.Drawing.Point(685, 119);
+            this.buttonOpenPhoto_Applicant.Name = "buttonOpenPhoto_Applicant";
+            this.buttonOpenPhoto_Applicant.Size = new System.Drawing.Size(98, 23);
+            this.buttonOpenPhoto_Applicant.TabIndex = 10;
+            this.buttonOpenPhoto_Applicant.Text = "Открыть фото";
+            this.buttonOpenPhoto_Applicant.UseVisualStyleBackColor = true;
+            this.buttonOpenPhoto_Applicant.Click += new System.EventHandler(this.buttonOpenPhoto_Applicant_Click);
+            // 
+            // pictureBoxPhoto_Applicant
+            // 
+            this.pictureBoxPhoto_Applicant.Location = new System.Drawing.Point(536, 29);
+            this.pictureBoxPhoto_Applicant.Name = "pictureBoxPhoto_Applicant";
+            this.pictureBoxPhoto_Applicant.Size = new System.Drawing.Size(133, 104);
+            this.pictureBoxPhoto_Applicant.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPhoto_Applicant.TabIndex = 9;
+            this.pictureBoxPhoto_Applicant.TabStop = false;
+            // 
+            // labelPhoto_Applicant
+            // 
+            this.labelPhoto_Applicant.AutoSize = true;
+            this.labelPhoto_Applicant.Location = new System.Drawing.Point(533, 13);
+            this.labelPhoto_Applicant.Name = "labelPhoto_Applicant";
+            this.labelPhoto_Applicant.Size = new System.Drawing.Size(101, 13);
+            this.labelPhoto_Applicant.TabIndex = 8;
+            this.labelPhoto_Applicant.Text = "Фото абитуриента";
+            // 
+            // textBoxAdmission
+            // 
+            this.textBoxAdmission.Location = new System.Drawing.Point(155, 90);
+            this.textBoxAdmission.Name = "textBoxAdmission";
+            this.textBoxAdmission.Size = new System.Drawing.Size(348, 20);
+            this.textBoxAdmission.TabIndex = 7;
+            // 
+            // textBoxPersonal_dp
+            // 
+            this.textBoxPersonal_dp.Location = new System.Drawing.Point(368, 64);
+            this.textBoxPersonal_dp.Name = "textBoxPersonal_dp";
+            this.textBoxPersonal_dp.Size = new System.Drawing.Size(135, 20);
+            this.textBoxPersonal_dp.TabIndex = 6;
+            // 
+            // labelAdmission
+            // 
+            this.labelAdmission.AutoSize = true;
+            this.labelAdmission.Location = new System.Drawing.Point(5, 93);
+            this.labelAdmission.Name = "labelAdmission";
+            this.labelAdmission.Size = new System.Drawing.Size(144, 13);
+            this.labelAdmission.TabIndex = 5;
+            this.labelAdmission.Text = "Заявление на поступление";
+            // 
+            // labelPersonal_dp
+            // 
+            this.labelPersonal_dp.AutoSize = true;
+            this.labelPersonal_dp.Location = new System.Drawing.Point(5, 67);
+            this.labelPersonal_dp.Name = "labelPersonal_dp";
+            this.labelPersonal_dp.Size = new System.Drawing.Size(357, 13);
+            this.labelPersonal_dp.TabIndex = 4;
+            this.labelPersonal_dp.Text = "Заявление на прием и согласие на обработку персональных данных";
+            // 
+            // textBoxPrevious_education
+            // 
+            this.textBoxPrevious_education.Location = new System.Drawing.Point(216, 36);
+            this.textBoxPrevious_education.Name = "textBoxPrevious_education";
+            this.textBoxPrevious_education.Size = new System.Drawing.Size(287, 20);
+            this.textBoxPrevious_education.TabIndex = 3;
+            // 
+            // labelPrevious_education
+            // 
+            this.labelPrevious_education.AutoSize = true;
+            this.labelPrevious_education.Location = new System.Drawing.Point(5, 39);
+            this.labelPrevious_education.Name = "labelPrevious_education";
+            this.labelPrevious_education.Size = new System.Drawing.Size(205, 13);
+            this.labelPrevious_education.TabIndex = 2;
+            this.labelPrevious_education.Text = "Документ о предыдущем образовании";
+            // 
+            // textBoxl_identity
+            // 
+            this.textBoxl_identity.Location = new System.Drawing.Point(202, 10);
+            this.textBoxl_identity.Name = "textBoxl_identity";
+            this.textBoxl_identity.Size = new System.Drawing.Size(301, 20);
+            this.textBoxl_identity.TabIndex = 1;
+            // 
+            // labelName_identity
+            // 
+            this.labelName_identity.AutoSize = true;
+            this.labelName_identity.Location = new System.Drawing.Point(2, 13);
+            this.labelName_identity.Name = "labelName_identity";
+            this.labelName_identity.Size = new System.Drawing.Size(197, 13);
+            this.labelName_identity.TabIndex = 0;
+            this.labelName_identity.Text = "Документ удостоверяющий личность";
+            // 
             // groupBoxDML
             // 
+            this.groupBoxDML.Controls.Add(this.buttonExecuteDML);
             this.groupBoxDML.Controls.Add(this.textBoxId_applicant);
             this.groupBoxDML.Controls.Add(this.labelId_applicant);
             this.groupBoxDML.Controls.Add(this.radioButtonDelete_applicant);
@@ -409,16 +564,43 @@
             this.groupBoxDML.TabStop = false;
             this.groupBoxDML.Text = "Операторы";
             // 
-            // radioButtonInsert_applicant
+            // buttonExecuteDML
             // 
-            this.radioButtonInsert_applicant.AutoSize = true;
-            this.radioButtonInsert_applicant.Location = new System.Drawing.Point(5, 19);
-            this.radioButtonInsert_applicant.Name = "radioButtonInsert_applicant";
-            this.radioButtonInsert_applicant.Size = new System.Drawing.Size(196, 17);
-            this.radioButtonInsert_applicant.TabIndex = 0;
-            this.radioButtonInsert_applicant.TabStop = true;
-            this.radioButtonInsert_applicant.Text = "Добавить данные по абитуриенту";
-            this.radioButtonInsert_applicant.UseVisualStyleBackColor = true;
+            this.buttonExecuteDML.Location = new System.Drawing.Point(207, 43);
+            this.buttonExecuteDML.Name = "buttonExecuteDML";
+            this.buttonExecuteDML.Size = new System.Drawing.Size(171, 23);
+            this.buttonExecuteDML.TabIndex = 5;
+            this.buttonExecuteDML.Text = "Выполнить запрос";
+            this.buttonExecuteDML.UseVisualStyleBackColor = true;
+            this.buttonExecuteDML.Click += new System.EventHandler(this.buttonExecuteDML_Click);
+            // 
+            // textBoxId_applicant
+            // 
+            this.textBoxId_applicant.Location = new System.Drawing.Point(89, 45);
+            this.textBoxId_applicant.Name = "textBoxId_applicant";
+            this.textBoxId_applicant.Size = new System.Drawing.Size(100, 20);
+            this.textBoxId_applicant.TabIndex = 4;
+            // 
+            // labelId_applicant
+            // 
+            this.labelId_applicant.AutoSize = true;
+            this.labelId_applicant.Location = new System.Drawing.Point(2, 48);
+            this.labelId_applicant.Name = "labelId_applicant";
+            this.labelId_applicant.Size = new System.Drawing.Size(81, 13);
+            this.labelId_applicant.TabIndex = 3;
+            this.labelId_applicant.Text = "id абитуриента";
+            // 
+            // radioButtonDelete_applicant
+            // 
+            this.radioButtonDelete_applicant.AutoSize = true;
+            this.radioButtonDelete_applicant.Location = new System.Drawing.Point(488, 19);
+            this.radioButtonDelete_applicant.Name = "radioButtonDelete_applicant";
+            this.radioButtonDelete_applicant.Size = new System.Drawing.Size(264, 17);
+            this.radioButtonDelete_applicant.TabIndex = 2;
+            this.radioButtonDelete_applicant.TabStop = true;
+            this.radioButtonDelete_applicant.Text = "Удалить данные по абитуриенту с заданным id";
+            this.radioButtonDelete_applicant.UseVisualStyleBackColor = true;
+            this.radioButtonDelete_applicant.CheckedChanged += new System.EventHandler(this.radioButtonDelete_applicant_CheckedChanged);
             // 
             // radioButtonUpdate_applicant
             // 
@@ -431,40 +613,32 @@
             this.radioButtonUpdate_applicant.Text = " Изменить данные по абитуриенту с заданным id";
             this.radioButtonUpdate_applicant.UseVisualStyleBackColor = true;
             // 
-            // radioButtonDelete_applicant
+            // radioButtonInsert_applicant
             // 
-            this.radioButtonDelete_applicant.AutoSize = true;
-            this.radioButtonDelete_applicant.Location = new System.Drawing.Point(488, 19);
-            this.radioButtonDelete_applicant.Name = "radioButtonDelete_applicant";
-            this.radioButtonDelete_applicant.Size = new System.Drawing.Size(264, 17);
-            this.radioButtonDelete_applicant.TabIndex = 2;
-            this.radioButtonDelete_applicant.TabStop = true;
-            this.radioButtonDelete_applicant.Text = "Удалить данные по абитуриенту с заданным id";
-            this.radioButtonDelete_applicant.UseVisualStyleBackColor = true;
+            this.radioButtonInsert_applicant.AutoSize = true;
+            this.radioButtonInsert_applicant.Location = new System.Drawing.Point(5, 19);
+            this.radioButtonInsert_applicant.Name = "radioButtonInsert_applicant";
+            this.radioButtonInsert_applicant.Size = new System.Drawing.Size(196, 17);
+            this.radioButtonInsert_applicant.TabIndex = 0;
+            this.radioButtonInsert_applicant.TabStop = true;
+            this.radioButtonInsert_applicant.Text = "Добавить данные по абитуриенту";
+            this.radioButtonInsert_applicant.UseVisualStyleBackColor = true;
             // 
-            // labelId_applicant
+            // labelScores
             // 
-            this.labelId_applicant.AutoSize = true;
-            this.labelId_applicant.Location = new System.Drawing.Point(2, 49);
-            this.labelId_applicant.Name = "labelId_applicant";
-            this.labelId_applicant.Size = new System.Drawing.Size(81, 13);
-            this.labelId_applicant.TabIndex = 3;
-            this.labelId_applicant.Text = "id абитуриента";
+            this.labelScores.AutoSize = true;
+            this.labelScores.Location = new System.Drawing.Point(8, 116);
+            this.labelScores.Name = "labelScores";
+            this.labelScores.Size = new System.Drawing.Size(170, 13);
+            this.labelScores.TabIndex = 11;
+            this.labelScores.Text = "Информация о результатах ЕГЭ";
             // 
-            // textBoxId_applicant
+            // textBoxScores
             // 
-            this.textBoxId_applicant.Location = new System.Drawing.Point(89, 46);
-            this.textBoxId_applicant.Name = "textBoxId_applicant";
-            this.textBoxId_applicant.Size = new System.Drawing.Size(100, 20);
-            this.textBoxId_applicant.TabIndex = 4;
-            // 
-            // panelApplicant
-            // 
-            this.panelApplicant.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelApplicant.Location = new System.Drawing.Point(3, 83);
-            this.panelApplicant.Name = "panelApplicant";
-            this.panelApplicant.Size = new System.Drawing.Size(786, 145);
-            this.panelApplicant.TabIndex = 1;
+            this.textBoxScores.Location = new System.Drawing.Point(184, 113);
+            this.textBoxScores.Name = "textBoxScores";
+            this.textBoxScores.Size = new System.Drawing.Size(319, 20);
+            this.textBoxScores.TabIndex = 12;
             // 
             // FormSQL
             // 
@@ -490,6 +664,10 @@
             this.groupBoxSubquery.ResumeLayout(false);
             this.groupBoxSubquery.PerformLayout();
             this.tabPageDML.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewApplicants)).EndInit();
+            this.panelApplicant.ResumeLayout(false);
+            this.panelApplicant.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto_Applicant)).EndInit();
             this.groupBoxDML.ResumeLayout(false);
             this.groupBoxDML.PerformLayout();
             this.ResumeLayout(false);
@@ -534,5 +712,22 @@
         private System.Windows.Forms.Panel panelApplicant;
         private System.Windows.Forms.TextBox textBoxId_applicant;
         private System.Windows.Forms.Label labelId_applicant;
+        private System.Windows.Forms.Button buttonOpenPhoto_Applicant;
+        private System.Windows.Forms.PictureBox pictureBoxPhoto_Applicant;
+        private System.Windows.Forms.Label labelPhoto_Applicant;
+        private System.Windows.Forms.TextBox textBoxAdmission;
+        private System.Windows.Forms.TextBox textBoxPersonal_dp;
+        private System.Windows.Forms.Label labelAdmission;
+        private System.Windows.Forms.Label labelPersonal_dp;
+        private System.Windows.Forms.TextBox textBoxPrevious_education;
+        private System.Windows.Forms.Label labelPrevious_education;
+        private System.Windows.Forms.TextBox textBoxl_identity;
+        private System.Windows.Forms.Label labelName_identity;
+        private System.Windows.Forms.OpenFileDialog openFileDialogApplicant;
+        private System.Windows.Forms.Button buttonSelectApplicants;
+        private System.Windows.Forms.DataGridView dataGridViewApplicants;
+        private System.Windows.Forms.Button buttonExecuteDML;
+        private System.Windows.Forms.TextBox textBoxScores;
+        private System.Windows.Forms.Label labelScores;
     }
 }
