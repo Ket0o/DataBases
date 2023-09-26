@@ -10,22 +10,37 @@ using System.Windows.Forms;
 
 namespace AdmissionCommitteeLabs.View
 {
-    public partial class FormApplicantsRankingLists : Form
+    public partial class FormPersonalFileAndRankingLists : Form
     {
-        private static FormApplicantsRankingLists _formApplicantRankingList;
+        private static FormPersonalFileAndRankingLists _formPersonalFileAndRankingLists;
 
-        private void FormApplicantsRankingLists_Load(object sender, EventArgs e)
+        private void personalFileBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "selection_committeeDataSet.EnrollmentOrders". При необходимости она может быть перемещена или удалена.
-            this.enrollmentOrdersTableAdapter.Fill(this.selection_committeeDataSet.EnrollmentOrders);
+            try
+            {
+                this.Validate();
+                this.personalFileBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.selection_committeeDataSet);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Ошибка", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void FormPersonalFileAndRankingLists_Load(object sender, EventArgs e)
+        {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "selection_committeeDataSet.ApplicantsRankingLists". При необходимости она может быть перемещена или удалена.
             this.applicantsRankingListsTableAdapter.Fill(this.selection_committeeDataSet.ApplicantsRankingLists);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "selection_committeeDataSet.ApplicantsRankingLists". При необходимости она может быть перемещена или удалена.
             this.applicantsRankingListsTableAdapter.Fill(this.selection_committeeDataSet.ApplicantsRankingLists);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "selection_committeeDataSet.PersonalFile". При необходимости она может быть перемещена или удалена.
+            this.personalFileTableAdapter.Fill(this.selection_committeeDataSet.PersonalFile);
 
         }
 
-        private void applicantsRankingListsBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        private void applicantsRankingListsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -38,21 +53,21 @@ namespace AdmissionCommitteeLabs.View
                 MessageBox.Show(err.Message, "Ошибка", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+
         }
 
-        public static FormApplicantsRankingLists FormApplicantRankingList
+        public static FormPersonalFileAndRankingLists FormPersonalsFileAndRankingLists
         {
             get
             {
-                if (_formApplicantRankingList == null || _formApplicantRankingList.IsDisposed)
+                if (_formPersonalFileAndRankingLists == null || _formPersonalFileAndRankingLists.IsDisposed)
                 {
-                    _formApplicantRankingList = new FormApplicantsRankingLists();
+                    _formPersonalFileAndRankingLists = new FormPersonalFileAndRankingLists();
                 }
-                return _formApplicantRankingList;
+                return _formPersonalFileAndRankingLists;
             }
         }
-
-        public FormApplicantsRankingLists()
+        public FormPersonalFileAndRankingLists()
         {
             InitializeComponent();
         }

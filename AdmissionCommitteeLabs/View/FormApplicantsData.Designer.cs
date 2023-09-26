@@ -325,7 +325,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 189);
+            this.ClientSize = new System.Drawing.Size(452, 182);
             this.Controls.Add(applicant_IDLabel);
             this.Controls.Add(this.applicant_IDTextBox);
             this.Controls.Add(identity_and_citizenship_document_codeLabel);
@@ -339,8 +339,9 @@
             this.Controls.Add(unified_State_Exam_scoresLabel);
             this.Controls.Add(this.unified_State_Exam_scoresTextBox);
             this.Controls.Add(this.applicantsDataBindingNavigator);
-            this.MaximumSize = new System.Drawing.Size(468, 228);
-            this.MinimumSize = new System.Drawing.Size(468, 228);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(468, 221);
+            this.MinimumSize = new System.Drawing.Size(468, 221);
             this.Name = "FormApplicantsData";
             this.Text = "Applicant Data";
             this.Load += new System.EventHandler(this.FormApplicantsData_Load);

@@ -38,6 +38,8 @@
             this.applicantsRankingListsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personalFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enrollmentOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personalFileToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +56,7 @@
             this.ApplicantsRankingListsButton = new System.Windows.Forms.ToolStripButton();
             this.PersonalFileButton = new System.Windows.Forms.ToolStripButton();
             this.EnrollmentOrdersButton = new System.Windows.Forms.ToolStripButton();
+            this.sQLRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.contextMenuStripMain.SuspendLayout();
             this.toolStripMain.SuspendLayout();
@@ -61,6 +64,10 @@
             // 
             // menuStrip
             // 
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.referencesToolStripMenuItem,
+            this.documentsToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(800, 24);
@@ -135,6 +142,23 @@
             this.enrollmentOrdersToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.enrollmentOrdersToolStripMenuItem.Text = "Enrollment orders";
             this.enrollmentOrdersToolStripMenuItem.Click += new System.EventHandler(this.enrollmentOrdersToolStripMenuItem_Click);
+            // 
+            // documentsToolStripMenuItem
+            // 
+            this.documentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.personalFileToolStripMenuItem2,
+            this.sQLRequestsToolStripMenuItem});
+            this.documentsToolStripMenuItem.Name = "documentsToolStripMenuItem";
+            this.documentsToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.documentsToolStripMenuItem.Text = "documents";
+            // 
+            // personalFileToolStripMenuItem2
+            // 
+            this.personalFileToolStripMenuItem2.Name = "personalFileToolStripMenuItem2";
+            this.personalFileToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
+            this.personalFileToolStripMenuItem2.Size = new System.Drawing.Size(212, 22);
+            this.personalFileToolStripMenuItem2.Text = "Personal file";
+            this.personalFileToolStripMenuItem2.Click += new System.EventHandler(this.personalFileToolStripMenuItem2_Click);
             // 
             // contextMenuStripMain
             // 
@@ -292,6 +316,14 @@
             this.EnrollmentOrdersButton.ToolTipText = "Enrollment orders button";
             this.EnrollmentOrdersButton.Click += new System.EventHandler(this.enrollmentOrdersToolStripMenuItem_Click);
             // 
+            // sQLRequestsToolStripMenuItem
+            // 
+            this.sQLRequestsToolStripMenuItem.Name = "sQLRequestsToolStripMenuItem";
+            this.sQLRequestsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Insert)));
+            this.sQLRequestsToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.sQLRequestsToolStripMenuItem.Text = "SQL requests";
+            this.sQLRequestsToolStripMenuItem.Click += new System.EventHandler(this.sQLRequestsToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,6 +376,9 @@
         private System.Windows.Forms.ToolStripButton ApplicantsRankingListsButton;
         private System.Windows.Forms.ToolStripButton PersonalFileButton;
         private System.Windows.Forms.ToolStripButton EnrollmentOrdersButton;
+        private System.Windows.Forms.ToolStripMenuItem documentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem personalFileToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem sQLRequestsToolStripMenuItem;
     }
 }
 

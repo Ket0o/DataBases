@@ -17,10 +17,18 @@ namespace AdmissionCommitteeLabs.View
 
         private void applicantsDataBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.applicantsDataBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.selection_committeeDataSet);
-
+            try
+            {
+                this.Validate();
+                this.applicantsDataBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.selection_committeeDataSet);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Ошибка", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            
         }
 
         private void FormApplicantsData_Load(object sender, EventArgs e)

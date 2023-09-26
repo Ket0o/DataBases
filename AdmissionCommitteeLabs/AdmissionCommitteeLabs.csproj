@@ -51,6 +51,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Selection_committeeDataSet.cs">
+      <DependentUpon>Selection_committeeDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="View\FormApplicantsData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +83,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Selection_committeeDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="View\FormPersonalFileAndRankingLists.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPersonalFileAndRankingLists.Designer.cs">
+      <DependentUpon>FormPersonalFileAndRankingLists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormSQL.Designer.cs">
+      <DependentUpon>FormSQL.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +119,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPersonalFileAndRankingLists.resx">
+      <DependentUpon>FormPersonalFileAndRankingLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormSQL.resx">
+      <DependentUpon>FormSQL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -138,8 +159,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\about_program_16x16.png" />
+    <Content Include="Resources\personal_file_16x16.ico" />
+    <Content Include="Resources\search_16x16.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\applicant_data_16x16.ico" />
+    <Content Include="Resources\applicant_ranking_list_16x16.ico" />
+    <Content Include="Resources\enrollment_orders_16x16.ico" />
     <Content Include="Resources\exit_16x16.png" />
   </ItemGroup>
   <ItemGroup>
