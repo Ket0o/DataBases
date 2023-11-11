@@ -20,7 +20,7 @@ namespace AdmissionCommitteeLabs.View
             {
                 this.Validate();
                 this.enrollmentOrdersBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.selection_committeeDataSet);
+                this.tableAdapterManager.UpdateAll(this.admissionCommitteeDataSet);
             }
             catch (Exception err)
             {
@@ -35,7 +35,7 @@ namespace AdmissionCommitteeLabs.View
             // "selection_committeeDataSet.EnrollmentOrders".
             // При необходимости она может быть перемещена или удалена.
             this.enrollmentOrdersTableAdapter.Fill
-                (this.selection_committeeDataSet.EnrollmentOrders);
+                (this.admissionCommitteeDataSet.EnrollmentOrders);
 
         }
 

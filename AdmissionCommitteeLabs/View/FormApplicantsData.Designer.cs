@@ -36,10 +36,10 @@
             System.Windows.Forms.Label enrollment_application_codeLabel;
             System.Windows.Forms.Label unified_State_Exam_scoresLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormApplicantsData));
-            this.selection_committeeDataSet = new AdmissionCommitteeLabs.Selection_committeeDataSet();
+            this.admissionCommitteeDataSet = new AdmissionCommitteeLabs.AdmissionCommitteeDataSet();
             this.applicantsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.applicantsDataTableAdapter = new AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.ApplicantsDataTableAdapter();
-            this.tableAdapterManager = new AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.TableAdapterManager();
+            this.applicantsDataTableAdapter = new AdmissionCommitteeLabs.AdmissionCommitteeDataSetTableAdapters.ApplicantsDataTableAdapter();
+            this.tableAdapterManager = new AdmissionCommitteeLabs.AdmissionCommitteeDataSetTableAdapters.TableAdapterManager();
             this.applicantsDataBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -65,7 +65,7 @@
             admission_application_and_personal_data_processing_consent_codeLabel = new System.Windows.Forms.Label();
             enrollment_application_codeLabel = new System.Windows.Forms.Label();
             unified_State_Exam_scoresLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.selection_committeeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admissionCommitteeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicantsDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicantsDataBindingNavigator)).BeginInit();
             this.applicantsDataBindingNavigator.SuspendLayout();
@@ -125,15 +125,15 @@
             unified_State_Exam_scoresLabel.TabIndex = 11;
             unified_State_Exam_scoresLabel.Text = "Unified State Exam scores:";
             // 
-            // selection_committeeDataSet
+            // admissionCommitteeDataSet
             // 
-            this.selection_committeeDataSet.DataSetName = "Selection_committeeDataSet";
-            this.selection_committeeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.admissionCommitteeDataSet.DataSetName = "Selection_committeeDataSet";
+            this.admissionCommitteeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // applicantsDataBindingSource
             // 
             this.applicantsDataBindingSource.DataMember = "ApplicantsData";
-            this.applicantsDataBindingSource.DataSource = this.selection_committeeDataSet;
+            this.applicantsDataBindingSource.DataSource = this.admissionCommitteeDataSet;
             // 
             // applicantsDataTableAdapter
             // 
@@ -146,7 +146,7 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.EnrollmentOrdersTableAdapter = null;
             this.tableAdapterManager.PersonalFileTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = AdmissionCommitteeLabs.AdmissionCommitteeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // applicantsDataBindingNavigator
             // 
@@ -315,7 +315,7 @@
             // 
             // unified_State_Exam_scoresTextBox
             // 
-            this.unified_State_Exam_scoresTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.applicantsDataBindingSource, "Unified_State_Exam_scores", true));
+            this.unified_State_Exam_scoresTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.applicantsDataBindingSource, "Unifield_State_Exam_scores", true));
             this.unified_State_Exam_scoresTextBox.Location = new System.Drawing.Point(339, 152);
             this.unified_State_Exam_scoresTextBox.Name = "unified_State_Exam_scoresTextBox";
             this.unified_State_Exam_scoresTextBox.Size = new System.Drawing.Size(100, 20);
@@ -345,7 +345,7 @@
             this.Name = "FormApplicantsData";
             this.Text = "Applicant Data";
             this.Load += new System.EventHandler(this.FormApplicantsData_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.selection_committeeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admissionCommitteeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicantsDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicantsDataBindingNavigator)).EndInit();
             this.applicantsDataBindingNavigator.ResumeLayout(false);
@@ -357,10 +357,10 @@
 
         #endregion
 
-        private Selection_committeeDataSet selection_committeeDataSet;
+        private AdmissionCommitteeDataSet admissionCommitteeDataSet;
         private System.Windows.Forms.BindingSource applicantsDataBindingSource;
-        private Selection_committeeDataSetTableAdapters.ApplicantsDataTableAdapter applicantsDataTableAdapter;
-        private Selection_committeeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private AdmissionCommitteeDataSetTableAdapters.ApplicantsDataTableAdapter applicantsDataTableAdapter;
+        private AdmissionCommitteeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator applicantsDataBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;

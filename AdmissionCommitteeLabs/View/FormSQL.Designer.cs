@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControlSQL = new System.Windows.Forms.TabControl();
             this.tabPagePrimer = new System.Windows.Forms.TabPage();
             this.dataGridViewSelect = new System.Windows.Forms.DataGridView();
@@ -60,6 +61,8 @@
             this.buttonSelectApplicants = new System.Windows.Forms.Button();
             this.dataGridViewApplicants = new System.Windows.Forms.DataGridView();
             this.panelApplicant = new System.Windows.Forms.Panel();
+            this.textBoxScores = new System.Windows.Forms.TextBox();
+            this.labelScores = new System.Windows.Forms.Label();
             this.buttonOpenPhoto_Applicant = new System.Windows.Forms.Button();
             this.pictureBoxPhoto_Applicant = new System.Windows.Forms.PictureBox();
             this.labelPhoto_Applicant = new System.Windows.Forms.Label();
@@ -79,8 +82,9 @@
             this.radioButtonUpdate_applicant = new System.Windows.Forms.RadioButton();
             this.radioButtonInsert_applicant = new System.Windows.Forms.RadioButton();
             this.openFileDialogApplicant = new System.Windows.Forms.OpenFileDialog();
-            this.labelScores = new System.Windows.Forms.Label();
-            this.textBoxScores = new System.Windows.Forms.TextBox();
+            this.admissionCommitteeDataSet = new AdmissionCommitteeLabs.AdmissionCommitteeDataSet();
+            this.applicantsDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.applicantsDataTableAdapter = new AdmissionCommitteeLabs.AdmissionCommitteeDataSetTableAdapters.ApplicantsDataTableAdapter();
             this.tabControlSQL.SuspendLayout();
             this.tabPagePrimer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSelect)).BeginInit();
@@ -97,6 +101,8 @@
             this.panelApplicant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto_Applicant)).BeginInit();
             this.groupBoxDML.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.admissionCommitteeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.applicantsDataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlSQL
@@ -456,6 +462,22 @@
             this.panelApplicant.Size = new System.Drawing.Size(786, 145);
             this.panelApplicant.TabIndex = 1;
             // 
+            // textBoxScores
+            // 
+            this.textBoxScores.Location = new System.Drawing.Point(184, 113);
+            this.textBoxScores.Name = "textBoxScores";
+            this.textBoxScores.Size = new System.Drawing.Size(319, 20);
+            this.textBoxScores.TabIndex = 12;
+            // 
+            // labelScores
+            // 
+            this.labelScores.AutoSize = true;
+            this.labelScores.Location = new System.Drawing.Point(8, 116);
+            this.labelScores.Name = "labelScores";
+            this.labelScores.Size = new System.Drawing.Size(170, 13);
+            this.labelScores.TabIndex = 11;
+            this.labelScores.Text = "Информация о результатах ЕГЭ";
+            // 
             // buttonOpenPhoto_Applicant
             // 
             this.buttonOpenPhoto_Applicant.Location = new System.Drawing.Point(685, 119);
@@ -468,6 +490,7 @@
             // 
             // pictureBoxPhoto_Applicant
             // 
+            this.pictureBoxPhoto_Applicant.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.applicantsDataBindingSource, "Photo", true));
             this.pictureBoxPhoto_Applicant.Location = new System.Drawing.Point(536, 29);
             this.pictureBoxPhoto_Applicant.Name = "pictureBoxPhoto_Applicant";
             this.pictureBoxPhoto_Applicant.Size = new System.Drawing.Size(133, 104);
@@ -624,21 +647,19 @@
             this.radioButtonInsert_applicant.Text = "Добавить данные по абитуриенту";
             this.radioButtonInsert_applicant.UseVisualStyleBackColor = true;
             // 
-            // labelScores
+            // admissionCommitteeDataSet
             // 
-            this.labelScores.AutoSize = true;
-            this.labelScores.Location = new System.Drawing.Point(8, 116);
-            this.labelScores.Name = "labelScores";
-            this.labelScores.Size = new System.Drawing.Size(170, 13);
-            this.labelScores.TabIndex = 11;
-            this.labelScores.Text = "Информация о результатах ЕГЭ";
+            this.admissionCommitteeDataSet.DataSetName = "AdmissionCommitteeDataSet";
+            this.admissionCommitteeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // textBoxScores
+            // applicantsDataBindingSource
             // 
-            this.textBoxScores.Location = new System.Drawing.Point(184, 113);
-            this.textBoxScores.Name = "textBoxScores";
-            this.textBoxScores.Size = new System.Drawing.Size(319, 20);
-            this.textBoxScores.TabIndex = 12;
+            this.applicantsDataBindingSource.DataMember = "ApplicantsData";
+            this.applicantsDataBindingSource.DataSource = this.admissionCommitteeDataSet;
+            // 
+            // applicantsDataTableAdapter
+            // 
+            this.applicantsDataTableAdapter.ClearBeforeFill = true;
             // 
             // FormSQL
             // 
@@ -648,6 +669,7 @@
             this.Controls.Add(this.tabControlSQL);
             this.Name = "FormSQL";
             this.Text = "Запросы";
+            this.Load += new System.EventHandler(this.FormSQL_Load);
             this.tabControlSQL.ResumeLayout(false);
             this.tabPagePrimer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSelect)).EndInit();
@@ -670,6 +692,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto_Applicant)).EndInit();
             this.groupBoxDML.ResumeLayout(false);
             this.groupBoxDML.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.admissionCommitteeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.applicantsDataBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -729,5 +753,8 @@
         private System.Windows.Forms.Button buttonExecuteDML;
         private System.Windows.Forms.TextBox textBoxScores;
         private System.Windows.Forms.Label labelScores;
+        private AdmissionCommitteeDataSet admissionCommitteeDataSet;
+        private System.Windows.Forms.BindingSource applicantsDataBindingSource;
+        private AdmissionCommitteeDataSetTableAdapters.ApplicantsDataTableAdapter applicantsDataTableAdapter;
     }
 }

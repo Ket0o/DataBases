@@ -17,11 +17,11 @@ namespace AdmissionCommitteeLabs.View
         private void FormApplicantsRankingLists_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "selection_committeeDataSet.EnrollmentOrders". При необходимости она может быть перемещена или удалена.
-            this.enrollmentOrdersTableAdapter.Fill(this.selection_committeeDataSet.EnrollmentOrders);
+            this.enrollmentOrdersTableAdapter.Fill(this.admissionCommitteeDataSet.EnrollmentOrders);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "selection_committeeDataSet.ApplicantsRankingLists". При необходимости она может быть перемещена или удалена.
-            this.applicantsRankingListsTableAdapter.Fill(this.selection_committeeDataSet.ApplicantsRankingLists);
+            this.applicantsRankingListsTableAdapter.Fill(this.admissionCommitteeDataSet.ApplicantsRankingLists);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "selection_committeeDataSet.ApplicantsRankingLists". При необходимости она может быть перемещена или удалена.
-            this.applicantsRankingListsTableAdapter.Fill(this.selection_committeeDataSet.ApplicantsRankingLists);
+            this.applicantsRankingListsTableAdapter.Fill(this.admissionCommitteeDataSet.ApplicantsRankingLists);
 
         }
 
@@ -31,7 +31,7 @@ namespace AdmissionCommitteeLabs.View
             {
                 this.Validate();
                 this.applicantsRankingListsBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.selection_committeeDataSet);
+                this.tableAdapterManager.UpdateAll(this.admissionCommitteeDataSet);
             }
             catch (Exception err)
             {
