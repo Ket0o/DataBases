@@ -20,9 +20,9 @@ namespace AdmissionCommitteeLabs {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Selection_committeeDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("AdmissionCommitteeDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Selection_committeeDataSet : global::System.Data.DataSet {
+    public partial class AdmissionCommitteeDataSet : global::System.Data.DataSet {
         
         private ApplicantsDataDataTable tableApplicantsData;
         
@@ -31,39 +31,35 @@ namespace AdmissionCommitteeLabs {
         private EnrollmentOrdersDataTable tableEnrollmentOrders;
         
         private PersonalFileDataTable tablePersonalFile;
-        
+
         private global::System.Data.DataRelation relationFK_ApplicantsRankingLists_PersonalFile;
-        
+
         private global::System.Data.DataRelation relationFK_EnrollmentOrders_ApplicantsRankingLists;
-        
+
         private global::System.Data.DataRelation relationFK_PersonalFile_ApplicantsData;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public Selection_committeeDataSet() {
+        public AdmissionCommitteeDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             base.Relations.CollectionChanged += schemaChangedHandler;
             this.EndInit();
-            this.InitExpressions();
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected Selection_committeeDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected AdmissionCommitteeDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
                 global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler1 = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
                 this.Tables.CollectionChanged += schemaChangedHandler1;
                 this.Relations.CollectionChanged += schemaChangedHandler1;
-                if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.ExcludeSchema)) {
-                    this.InitExpressions();
-                }
                 return;
             }
             string strSchema = ((string)(info.GetValue("XmlSchema", typeof(string))));
@@ -93,7 +89,6 @@ namespace AdmissionCommitteeLabs {
             }
             else {
                 this.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                this.InitExpressions();
             }
             this.GetSerializationData(info, context);
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -183,9 +178,8 @@ namespace AdmissionCommitteeLabs {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Selection_committeeDataSet cln = ((Selection_committeeDataSet)(base.Clone()));
+            AdmissionCommitteeDataSet cln = ((AdmissionCommitteeDataSet)(base.Clone()));
             cln.InitVars();
-            cln.InitExpressions();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
         }
@@ -281,35 +275,36 @@ namespace AdmissionCommitteeLabs {
             this.relationFK_ApplicantsRankingLists_PersonalFile = this.Relations["FK_ApplicantsRankingLists_PersonalFile"];
             this.relationFK_EnrollmentOrders_ApplicantsRankingLists = this.Relations["FK_EnrollmentOrders_ApplicantsRankingLists"];
             this.relationFK_PersonalFile_ApplicantsData = this.Relations["FK_PersonalFile_ApplicantsData"];
+
         }
-        
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Selection_committeeDataSet";
+            this.DataSetName = "AdmissionCommitteeDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Selection_committeeDataSet.xsd";
+            this.Namespace = "http://tempuri.org/AdmissionCommitteeDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableApplicantsData = new ApplicantsDataDataTable();
             base.Tables.Add(this.tableApplicantsData);
             this.tableApplicantsRankingLists = new ApplicantsRankingListsDataTable();
             base.Tables.Add(this.tableApplicantsRankingLists);
-            this.tableEnrollmentOrders = new EnrollmentOrdersDataTable(false);
+            this.tableEnrollmentOrders = new EnrollmentOrdersDataTable();
             base.Tables.Add(this.tableEnrollmentOrders);
             this.tablePersonalFile = new PersonalFileDataTable();
             base.Tables.Add(this.tablePersonalFile);
             this.relationFK_ApplicantsRankingLists_PersonalFile = new global::System.Data.DataRelation("FK_ApplicantsRankingLists_PersonalFile", new global::System.Data.DataColumn[] {
-                        this.tablePersonalFile.personal_file_IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableApplicantsRankingLists.personal_file_IDColumn}, false);
+                this.tablePersonalFile.Personal_file_IdColumn}, new global::System.Data.DataColumn[] {
+                this.tableApplicantsRankingLists.Personal_file_IDColumn}, false);
             this.Relations.Add(this.relationFK_ApplicantsRankingLists_PersonalFile);
             this.relationFK_EnrollmentOrders_ApplicantsRankingLists = new global::System.Data.DataRelation("FK_EnrollmentOrders_ApplicantsRankingLists", new global::System.Data.DataColumn[] {
-                        this.tableApplicantsRankingLists.ranking_list_IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEnrollmentOrders.ranking_list_IDColumn}, false);
+                this.tableApplicantsRankingLists.Ranking_list_IDColumn}, new global::System.Data.DataColumn[] {
+                this.tableEnrollmentOrders.Ranking_list_IDColumn}, false);
             this.Relations.Add(this.relationFK_EnrollmentOrders_ApplicantsRankingLists);
             this.relationFK_PersonalFile_ApplicantsData = new global::System.Data.DataRelation("FK_PersonalFile_ApplicantsData", new global::System.Data.DataColumn[] {
-                        this.tableApplicantsData.applicant_IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePersonalFile.applicant_IDColumn}, false);
+                this.tableApplicantsData.Applicant_IDColumn}, new global::System.Data.DataColumn[] {
+                this.tablePersonalFile.Applicant_IDColumn}, false);
             this.Relations.Add(this.relationFK_PersonalFile_ApplicantsData);
         }
         
@@ -348,7 +343,7 @@ namespace AdmissionCommitteeLabs {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Selection_committeeDataSet ds = new Selection_committeeDataSet();
+            AdmissionCommitteeDataSet ds = new AdmissionCommitteeDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -392,12 +387,6 @@ namespace AdmissionCommitteeLabs {
             return type;
         }
         
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitExpressions() {
-            this.EnrollmentOrders.studentColumn.Expression = "ranking_list_ID+\' \'+full_name+\' \'+university_group";
-        }
-        
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void ApplicantsDataRowChangeEventHandler(object sender, ApplicantsDataRowChangeEvent e);
         
@@ -417,7 +406,7 @@ namespace AdmissionCommitteeLabs {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ApplicantsDataDataTable : global::System.Data.TypedTableBase<ApplicantsDataRow> {
             
-            private global::System.Data.DataColumn columnapplicant_ID;
+            private global::System.Data.DataColumn columnApplicant_ID;
             
             private global::System.Data.DataColumn columnIdentity_and_citizenship_document_code;
             
@@ -427,7 +416,9 @@ namespace AdmissionCommitteeLabs {
             
             private global::System.Data.DataColumn columnEnrollment_application_code;
             
-            private global::System.Data.DataColumn columnUnified_State_Exam_scores;
+            private global::System.Data.DataColumn columnUnifield_State_Exam_scores;
+            
+            private global::System.Data.DataColumn columnPhoto;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -464,9 +455,9 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn applicant_IDColumn {
+            public global::System.Data.DataColumn Applicant_IDColumn {
                 get {
-                    return this.columnapplicant_ID;
+                    return this.columnApplicant_ID;
                 }
             }
             
@@ -504,9 +495,17 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Unified_State_Exam_scoresColumn {
+            public global::System.Data.DataColumn Unifield_State_Exam_scoresColumn {
                 get {
-                    return this.columnUnified_State_Exam_scores;
+                    return this.columnUnifield_State_Exam_scores;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PhotoColumn {
+                get {
+                    return this.columnPhoto;
                 }
             }
             
@@ -547,15 +546,16 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ApplicantsDataRow AddApplicantsDataRow(int Identity_and_citizenship_document_code, int Previous_education_document_code, int Admission_application_and_personal_data_processing_consent_code, int Enrollment_application_code, int Unified_State_Exam_scores) {
+            public ApplicantsDataRow AddApplicantsDataRow(int Applicant_ID, int Identity_and_citizenship_document_code, int Previous_education_document_code, int Admission_application_and_personal_data_processing_consent_code, int Enrollment_application_code, int Unifield_State_Exam_scores, byte[] Photo) {
                 ApplicantsDataRow rowApplicantsDataRow = ((ApplicantsDataRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        Applicant_ID,
                         Identity_and_citizenship_document_code,
                         Previous_education_document_code,
                         Admission_application_and_personal_data_processing_consent_code,
                         Enrollment_application_code,
-                        Unified_State_Exam_scores};
+                        Unifield_State_Exam_scores,
+                        Photo};
                 rowApplicantsDataRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowApplicantsDataRow);
                 return rowApplicantsDataRow;
@@ -563,9 +563,9 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ApplicantsDataRow FindByapplicant_ID(int applicant_ID) {
+            public ApplicantsDataRow FindByApplicant_ID(int Applicant_ID) {
                 return ((ApplicantsDataRow)(this.Rows.Find(new object[] {
-                            applicant_ID})));
+                            Applicant_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -585,19 +585,20 @@ namespace AdmissionCommitteeLabs {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnapplicant_ID = base.Columns["applicant_ID"];
+                this.columnApplicant_ID = base.Columns["Applicant_ID"];
                 this.columnIdentity_and_citizenship_document_code = base.Columns["Identity_and_citizenship_document_code"];
                 this.columnPrevious_education_document_code = base.Columns["Previous_education_document_code"];
                 this.columnAdmission_application_and_personal_data_processing_consent_code = base.Columns["Admission_application_and_personal_data_processing_consent_code"];
                 this.columnEnrollment_application_code = base.Columns["Enrollment_application_code"];
-                this.columnUnified_State_Exam_scores = base.Columns["Unified_State_Exam_scores"];
+                this.columnUnifield_State_Exam_scores = base.Columns["Unifield_State_Exam_scores"];
+                this.columnPhoto = base.Columns["Photo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnapplicant_ID = new global::System.Data.DataColumn("applicant_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnapplicant_ID);
+                this.columnApplicant_ID = new global::System.Data.DataColumn("Applicant_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApplicant_ID);
                 this.columnIdentity_and_citizenship_document_code = new global::System.Data.DataColumn("Identity_and_citizenship_document_code", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIdentity_and_citizenship_document_code);
                 this.columnPrevious_education_document_code = new global::System.Data.DataColumn("Previous_education_document_code", typeof(int), null, global::System.Data.MappingType.Element);
@@ -606,18 +607,14 @@ namespace AdmissionCommitteeLabs {
                 base.Columns.Add(this.columnAdmission_application_and_personal_data_processing_consent_code);
                 this.columnEnrollment_application_code = new global::System.Data.DataColumn("Enrollment_application_code", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEnrollment_application_code);
-                this.columnUnified_State_Exam_scores = new global::System.Data.DataColumn("Unified_State_Exam_scores", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUnified_State_Exam_scores);
+                this.columnUnifield_State_Exam_scores = new global::System.Data.DataColumn("Unifield_State_Exam_scores", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnifield_State_Exam_scores);
+                this.columnPhoto = new global::System.Data.DataColumn("Photo", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPhoto);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnapplicant_ID}, true));
-                this.columnapplicant_ID.AutoIncrement = true;
-                this.columnapplicant_ID.AutoIncrementSeed = 1;
-                this.columnapplicant_ID.AllowDBNull = false;
-                this.columnapplicant_ID.Unique = true;
-                this.columnIdentity_and_citizenship_document_code.AllowDBNull = false;
-                this.columnPrevious_education_document_code.AllowDBNull = false;
-                this.columnAdmission_application_and_personal_data_processing_consent_code.AllowDBNull = false;
-                this.columnUnified_State_Exam_scores.AllowDBNull = false;
+                                this.columnApplicant_ID}, true));
+                this.columnApplicant_ID.AllowDBNull = false;
+                this.columnApplicant_ID.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -685,7 +682,7 @@ namespace AdmissionCommitteeLabs {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Selection_committeeDataSet ds = new Selection_committeeDataSet();
+                AdmissionCommitteeDataSet ds = new AdmissionCommitteeDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -751,13 +748,13 @@ namespace AdmissionCommitteeLabs {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ApplicantsRankingListsDataTable : global::System.Data.TypedTableBase<ApplicantsRankingListsRow> {
             
-            private global::System.Data.DataColumn columnranking_list_ID;
+            private global::System.Data.DataColumn columnRanking_list_ID;
             
-            private global::System.Data.DataColumn columnpersonal_file_ID;
+            private global::System.Data.DataColumn columnPersonal_file_ID;
             
-            private global::System.Data.DataColumn columnscores_with_all_achievements_considered;
+            private global::System.Data.DataColumn columnScores_with_all_achievements_considered;
             
-            private global::System.Data.DataColumn columnrank_position;
+            private global::System.Data.DataColumn columnRank_position;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -794,33 +791,33 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ranking_list_IDColumn {
+            public global::System.Data.DataColumn Ranking_list_IDColumn {
                 get {
-                    return this.columnranking_list_ID;
+                    return this.columnRanking_list_ID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn personal_file_IDColumn {
+            public global::System.Data.DataColumn Personal_file_IDColumn {
                 get {
-                    return this.columnpersonal_file_ID;
+                    return this.columnPersonal_file_ID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn scores_with_all_achievements_consideredColumn {
+            public global::System.Data.DataColumn Scores_with_all_achievements_consideredColumn {
                 get {
-                    return this.columnscores_with_all_achievements_considered;
+                    return this.columnScores_with_all_achievements_considered;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn rank_positionColumn {
+            public global::System.Data.DataColumn Rank_positionColumn {
                 get {
-                    return this.columnrank_position;
+                    return this.columnRank_position;
                 }
             }
             
@@ -861,15 +858,15 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ApplicantsRankingListsRow AddApplicantsRankingListsRow(PersonalFileRow parentPersonalFileRowByFK_ApplicantsRankingLists_PersonalFile, int scores_with_all_achievements_considered, int rank_position) {
+            public ApplicantsRankingListsRow AddApplicantsRankingListsRow(int Ranking_list_ID, PersonalFileRow parentPersonalFileRowByFK__Applicant__Perso__47DBAE45, int Scores_with_all_achievements_considered, int Rank_position) {
                 ApplicantsRankingListsRow rowApplicantsRankingListsRow = ((ApplicantsRankingListsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        Ranking_list_ID,
                         null,
-                        null,
-                        scores_with_all_achievements_considered,
-                        rank_position};
-                if ((parentPersonalFileRowByFK_ApplicantsRankingLists_PersonalFile != null)) {
-                    columnValuesArray[1] = parentPersonalFileRowByFK_ApplicantsRankingLists_PersonalFile[0];
+                        Scores_with_all_achievements_considered,
+                        Rank_position};
+                if ((parentPersonalFileRowByFK__Applicant__Perso__47DBAE45 != null)) {
+                    columnValuesArray[1] = parentPersonalFileRowByFK__Applicant__Perso__47DBAE45[0];
                 }
                 rowApplicantsRankingListsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowApplicantsRankingListsRow);
@@ -878,9 +875,9 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ApplicantsRankingListsRow FindByranking_list_ID(int ranking_list_ID) {
+            public ApplicantsRankingListsRow FindByRanking_list_ID(int Ranking_list_ID) {
                 return ((ApplicantsRankingListsRow)(this.Rows.Find(new object[] {
-                            ranking_list_ID})));
+                            Ranking_list_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -900,31 +897,27 @@ namespace AdmissionCommitteeLabs {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnranking_list_ID = base.Columns["ranking_list_ID"];
-                this.columnpersonal_file_ID = base.Columns["personal_file_ID"];
-                this.columnscores_with_all_achievements_considered = base.Columns["scores_with_all_achievements_considered"];
-                this.columnrank_position = base.Columns["rank_position"];
+                this.columnRanking_list_ID = base.Columns["Ranking_list_ID"];
+                this.columnPersonal_file_ID = base.Columns["Personal_file_ID"];
+                this.columnScores_with_all_achievements_considered = base.Columns["Scores_with_all_achievements_considered"];
+                this.columnRank_position = base.Columns["Rank_position"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnranking_list_ID = new global::System.Data.DataColumn("ranking_list_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnranking_list_ID);
-                this.columnpersonal_file_ID = new global::System.Data.DataColumn("personal_file_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpersonal_file_ID);
-                this.columnscores_with_all_achievements_considered = new global::System.Data.DataColumn("scores_with_all_achievements_considered", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnscores_with_all_achievements_considered);
-                this.columnrank_position = new global::System.Data.DataColumn("rank_position", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnrank_position);
+                this.columnRanking_list_ID = new global::System.Data.DataColumn("Ranking_list_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRanking_list_ID);
+                this.columnPersonal_file_ID = new global::System.Data.DataColumn("Personal_file_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPersonal_file_ID);
+                this.columnScores_with_all_achievements_considered = new global::System.Data.DataColumn("Scores_with_all_achievements_considered", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnScores_with_all_achievements_considered);
+                this.columnRank_position = new global::System.Data.DataColumn("Rank_position", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRank_position);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnranking_list_ID}, true));
-                this.columnranking_list_ID.AutoIncrement = true;
-                this.columnranking_list_ID.AutoIncrementSeed = 1;
-                this.columnranking_list_ID.AllowDBNull = false;
-                this.columnranking_list_ID.Unique = true;
-                this.columnscores_with_all_achievements_considered.AllowDBNull = false;
-                this.columnrank_position.AllowDBNull = false;
+                                this.columnRanking_list_ID}, true));
+                this.columnRanking_list_ID.AllowDBNull = false;
+                this.columnRanking_list_ID.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -992,7 +985,7 @@ namespace AdmissionCommitteeLabs {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Selection_committeeDataSet ds = new Selection_committeeDataSet();
+                AdmissionCommitteeDataSet ds = new AdmissionCommitteeDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1058,31 +1051,22 @@ namespace AdmissionCommitteeLabs {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class EnrollmentOrdersDataTable : global::System.Data.TypedTableBase<EnrollmentOrdersRow> {
             
-            private global::System.Data.DataColumn columnenrollment_order_ID;
+            private global::System.Data.DataColumn columnEnrollment_order_ID;
             
-            private global::System.Data.DataColumn columnranking_list_ID;
+            private global::System.Data.DataColumn columnRanking_list_ID;
             
-            private global::System.Data.DataColumn columnfull_name;
+            private global::System.Data.DataColumn columnFull_name;
             
-            private global::System.Data.DataColumn columnuniversity_group;
+            private global::System.Data.DataColumn columnUniversity_group;
             
-            private global::System.Data.DataColumn columnstudent;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public EnrollmentOrdersDataTable() : 
-                    this(false) {
-            }
+            private global::System.Data.DataColumn columnStudent;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public EnrollmentOrdersDataTable(bool initExpressions) {
+            public EnrollmentOrdersDataTable() {
                 this.TableName = "EnrollmentOrders";
                 this.BeginInit();
                 this.InitClass();
-                if ((initExpressions == true)) {
-                    this.InitExpressions();
-                }
                 this.EndInit();
             }
             
@@ -1112,41 +1096,41 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn enrollment_order_IDColumn {
+            public global::System.Data.DataColumn Enrollment_order_IDColumn {
                 get {
-                    return this.columnenrollment_order_ID;
+                    return this.columnEnrollment_order_ID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ranking_list_IDColumn {
+            public global::System.Data.DataColumn Ranking_list_IDColumn {
                 get {
-                    return this.columnranking_list_ID;
+                    return this.columnRanking_list_ID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn full_nameColumn {
+            public global::System.Data.DataColumn Full_nameColumn {
                 get {
-                    return this.columnfull_name;
+                    return this.columnFull_name;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn university_groupColumn {
+            public global::System.Data.DataColumn University_groupColumn {
                 get {
-                    return this.columnuniversity_group;
+                    return this.columnUniversity_group;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn studentColumn {
+            public global::System.Data.DataColumn StudentColumn {
                 get {
-                    return this.columnstudent;
+                    return this.columnStudent;
                 }
             }
             
@@ -1187,16 +1171,16 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public EnrollmentOrdersRow AddEnrollmentOrdersRow(ApplicantsRankingListsRow parentApplicantsRankingListsRowByFK_EnrollmentOrders_ApplicantsRankingLists, string full_name, string university_group, string student) {
+            public EnrollmentOrdersRow AddEnrollmentOrdersRow(int Enrollment_order_ID, ApplicantsRankingListsRow parentApplicantsRankingListsRowByFK__Enrollmen__Ranki__4CA06362, string Full_name, string University_group, string Student) {
                 EnrollmentOrdersRow rowEnrollmentOrdersRow = ((EnrollmentOrdersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        Enrollment_order_ID,
                         null,
-                        null,
-                        full_name,
-                        university_group,
-                        student};
-                if ((parentApplicantsRankingListsRowByFK_EnrollmentOrders_ApplicantsRankingLists != null)) {
-                    columnValuesArray[1] = parentApplicantsRankingListsRowByFK_EnrollmentOrders_ApplicantsRankingLists[0];
+                        Full_name,
+                        University_group,
+                        Student};
+                if ((parentApplicantsRankingListsRowByFK__Enrollmen__Ranki__4CA06362 != null)) {
+                    columnValuesArray[1] = parentApplicantsRankingListsRowByFK__Enrollmen__Ranki__4CA06362[0];
                 }
                 rowEnrollmentOrdersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEnrollmentOrdersRow);
@@ -1205,27 +1189,9 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public EnrollmentOrdersRow AddEnrollmentOrdersRow(ApplicantsRankingListsRow parentApplicantsRankingListsRowByFK_EnrollmentOrders_ApplicantsRankingLists, string full_name, string university_group) {
-                EnrollmentOrdersRow rowEnrollmentOrdersRow = ((EnrollmentOrdersRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        null,
-                        full_name,
-                        university_group,
-                        null};
-                if ((parentApplicantsRankingListsRowByFK_EnrollmentOrders_ApplicantsRankingLists != null)) {
-                    columnValuesArray[1] = parentApplicantsRankingListsRowByFK_EnrollmentOrders_ApplicantsRankingLists[0];
-                }
-                rowEnrollmentOrdersRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowEnrollmentOrdersRow);
-                return rowEnrollmentOrdersRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public EnrollmentOrdersRow FindByenrollment_order_ID(int enrollment_order_ID) {
+            public EnrollmentOrdersRow FindByEnrollment_order_ID(int Enrollment_order_ID) {
                 return ((EnrollmentOrdersRow)(this.Rows.Find(new object[] {
-                            enrollment_order_ID})));
+                            Enrollment_order_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1245,38 +1211,33 @@ namespace AdmissionCommitteeLabs {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnenrollment_order_ID = base.Columns["enrollment_order_ID"];
-                this.columnranking_list_ID = base.Columns["ranking_list_ID"];
-                this.columnfull_name = base.Columns["full_name"];
-                this.columnuniversity_group = base.Columns["university_group"];
-                this.columnstudent = base.Columns["student"];
+                this.columnEnrollment_order_ID = base.Columns["Enrollment_order_ID"];
+                this.columnRanking_list_ID = base.Columns["Ranking_list_ID"];
+                this.columnFull_name = base.Columns["Full_name"];
+                this.columnUniversity_group = base.Columns["University_group"];
+                this.columnStudent = base.Columns["Student"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnenrollment_order_ID = new global::System.Data.DataColumn("enrollment_order_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnenrollment_order_ID);
-                this.columnranking_list_ID = new global::System.Data.DataColumn("ranking_list_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnranking_list_ID);
-                this.columnfull_name = new global::System.Data.DataColumn("full_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfull_name);
-                this.columnuniversity_group = new global::System.Data.DataColumn("university_group", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnuniversity_group);
-                this.columnstudent = new global::System.Data.DataColumn("student", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnstudent);
+                this.columnEnrollment_order_ID = new global::System.Data.DataColumn("Enrollment_order_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnrollment_order_ID);
+                this.columnRanking_list_ID = new global::System.Data.DataColumn("Ranking_list_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRanking_list_ID);
+                this.columnFull_name = new global::System.Data.DataColumn("Full_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFull_name);
+                this.columnUniversity_group = new global::System.Data.DataColumn("University_group", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUniversity_group);
+                this.columnStudent = new global::System.Data.DataColumn("Student", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStudent);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnenrollment_order_ID}, true));
-                this.columnenrollment_order_ID.AutoIncrement = true;
-                this.columnenrollment_order_ID.AutoIncrementSeed = 1;
-                this.columnenrollment_order_ID.AllowDBNull = false;
-                this.columnenrollment_order_ID.Unique = true;
-                this.columnranking_list_ID.AllowDBNull = false;
-                this.columnfull_name.AllowDBNull = false;
-                this.columnfull_name.MaxLength = 100;
-                this.columnuniversity_group.AllowDBNull = false;
-                this.columnuniversity_group.MaxLength = 10;
-                this.columnstudent.ReadOnly = true;
+                                this.columnEnrollment_order_ID}, true));
+                this.columnEnrollment_order_ID.AllowDBNull = false;
+                this.columnEnrollment_order_ID.Unique = true;
+                this.columnFull_name.MaxLength = 100;
+                this.columnUniversity_group.MaxLength = 10;
+                this.columnStudent.MaxLength = 120;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1295,12 +1256,6 @@ namespace AdmissionCommitteeLabs {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
                 return typeof(EnrollmentOrdersRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitExpressions() {
-                this.studentColumn.Expression = "ranking_list_ID+\' \'+full_name+\' \'+university_group";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1350,7 +1305,7 @@ namespace AdmissionCommitteeLabs {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Selection_committeeDataSet ds = new Selection_committeeDataSet();
+                AdmissionCommitteeDataSet ds = new AdmissionCommitteeDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1416,9 +1371,9 @@ namespace AdmissionCommitteeLabs {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class PersonalFileDataTable : global::System.Data.TypedTableBase<PersonalFileRow> {
             
-            private global::System.Data.DataColumn columnpersonal_file_ID;
+            private global::System.Data.DataColumn columnPersonal_file_Id;
             
-            private global::System.Data.DataColumn columnapplicant_ID;
+            private global::System.Data.DataColumn columnApplicant_ID;
             
             private global::System.Data.DataColumn columnDocument_submission_date;
             
@@ -1457,17 +1412,17 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn personal_file_IDColumn {
+            public global::System.Data.DataColumn Personal_file_IdColumn {
                 get {
-                    return this.columnpersonal_file_ID;
+                    return this.columnPersonal_file_Id;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn applicant_IDColumn {
+            public global::System.Data.DataColumn Applicant_IDColumn {
                 get {
-                    return this.columnapplicant_ID;
+                    return this.columnApplicant_ID;
                 }
             }
             
@@ -1516,14 +1471,14 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PersonalFileRow AddPersonalFileRow(ApplicantsDataRow parentApplicantsDataRowByFK_PersonalFile_ApplicantsData, System.DateTime Document_submission_date) {
+            public PersonalFileRow AddPersonalFileRow(int Personal_file_Id, ApplicantsDataRow parentApplicantsDataRowByFK__PersonalF__Appli__412EB0B6, System.DateTime Document_submission_date) {
                 PersonalFileRow rowPersonalFileRow = ((PersonalFileRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        Personal_file_Id,
                         null,
                         Document_submission_date};
-                if ((parentApplicantsDataRowByFK_PersonalFile_ApplicantsData != null)) {
-                    columnValuesArray[1] = parentApplicantsDataRowByFK_PersonalFile_ApplicantsData[0];
+                if ((parentApplicantsDataRowByFK__PersonalF__Appli__412EB0B6 != null)) {
+                    columnValuesArray[1] = parentApplicantsDataRowByFK__PersonalF__Appli__412EB0B6[0];
                 }
                 rowPersonalFileRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPersonalFileRow);
@@ -1532,9 +1487,9 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PersonalFileRow FindBypersonal_file_ID(int personal_file_ID) {
+            public PersonalFileRow FindByPersonal_file_Id(int Personal_file_Id) {
                 return ((PersonalFileRow)(this.Rows.Find(new object[] {
-                            personal_file_ID})));
+                            Personal_file_Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1554,28 +1509,24 @@ namespace AdmissionCommitteeLabs {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnpersonal_file_ID = base.Columns["personal_file_ID"];
-                this.columnapplicant_ID = base.Columns["applicant_ID"];
+                this.columnPersonal_file_Id = base.Columns["Personal_file_Id"];
+                this.columnApplicant_ID = base.Columns["Applicant_ID"];
                 this.columnDocument_submission_date = base.Columns["Document_submission_date"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnpersonal_file_ID = new global::System.Data.DataColumn("personal_file_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpersonal_file_ID);
-                this.columnapplicant_ID = new global::System.Data.DataColumn("applicant_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnapplicant_ID);
+                this.columnPersonal_file_Id = new global::System.Data.DataColumn("Personal_file_Id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPersonal_file_Id);
+                this.columnApplicant_ID = new global::System.Data.DataColumn("Applicant_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApplicant_ID);
                 this.columnDocument_submission_date = new global::System.Data.DataColumn("Document_submission_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDocument_submission_date);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnpersonal_file_ID}, true));
-                this.columnpersonal_file_ID.AutoIncrement = true;
-                this.columnpersonal_file_ID.AutoIncrementSeed = 1;
-                this.columnpersonal_file_ID.AllowDBNull = false;
-                this.columnpersonal_file_ID.Unique = true;
-                this.columnapplicant_ID.AllowDBNull = false;
-                this.columnDocument_submission_date.AllowDBNull = false;
+                                this.columnPersonal_file_Id}, true));
+                this.columnPersonal_file_Id.AllowDBNull = false;
+                this.columnPersonal_file_Id.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1643,7 +1594,7 @@ namespace AdmissionCommitteeLabs {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Selection_committeeDataSet ds = new Selection_committeeDataSet();
+                AdmissionCommitteeDataSet ds = new AdmissionCommitteeDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1718,12 +1669,12 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int applicant_ID {
+            public int Applicant_ID {
                 get {
-                    return ((int)(this[this.tableApplicantsData.applicant_IDColumn]));
+                    return ((int)(this[this.tableApplicantsData.Applicant_IDColumn]));
                 }
                 set {
-                    this[this.tableApplicantsData.applicant_IDColumn] = value;
+                    this[this.tableApplicantsData.Applicant_IDColumn] = value;
                 }
             }
             
@@ -1731,7 +1682,13 @@ namespace AdmissionCommitteeLabs {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Identity_and_citizenship_document_code {
                 get {
-                    return ((int)(this[this.tableApplicantsData.Identity_and_citizenship_document_codeColumn]));
+                    try {
+                        return ((int)(this[this.tableApplicantsData.Identity_and_citizenship_document_codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Identity_and_citizenship_document_code\' в таблице \'Applican" +
+                                "tsData\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableApplicantsData.Identity_and_citizenship_document_codeColumn] = value;
@@ -1742,7 +1699,13 @@ namespace AdmissionCommitteeLabs {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Previous_education_document_code {
                 get {
-                    return ((int)(this[this.tableApplicantsData.Previous_education_document_codeColumn]));
+                    try {
+                        return ((int)(this[this.tableApplicantsData.Previous_education_document_codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Previous_education_document_code\' в таблице \'ApplicantsData" +
+                                "\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableApplicantsData.Previous_education_document_codeColumn] = value;
@@ -1753,7 +1716,13 @@ namespace AdmissionCommitteeLabs {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Admission_application_and_personal_data_processing_consent_code {
                 get {
-                    return ((int)(this[this.tableApplicantsData.Admission_application_and_personal_data_processing_consent_codeColumn]));
+                    try {
+                        return ((int)(this[this.tableApplicantsData.Admission_application_and_personal_data_processing_consent_codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Admission_application_and_personal_data_processing_consent_" +
+                                "code\' в таблице \'ApplicantsData\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableApplicantsData.Admission_application_and_personal_data_processing_consent_codeColumn] = value;
@@ -1779,13 +1748,71 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Unified_State_Exam_scores {
+            public int Unifield_State_Exam_scores {
                 get {
-                    return ((int)(this[this.tableApplicantsData.Unified_State_Exam_scoresColumn]));
+                    try {
+                        return ((int)(this[this.tableApplicantsData.Unifield_State_Exam_scoresColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Unifield_State_Exam_scores\' в таблице \'ApplicantsData\' равн" +
+                                "о DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableApplicantsData.Unified_State_Exam_scoresColumn] = value;
+                    this[this.tableApplicantsData.Unifield_State_Exam_scoresColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public byte[] Photo {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableApplicantsData.PhotoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Photo\' в таблице \'ApplicantsData\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableApplicantsData.PhotoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsIdentity_and_citizenship_document_codeNull() {
+                return this.IsNull(this.tableApplicantsData.Identity_and_citizenship_document_codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetIdentity_and_citizenship_document_codeNull() {
+                this[this.tableApplicantsData.Identity_and_citizenship_document_codeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPrevious_education_document_codeNull() {
+                return this.IsNull(this.tableApplicantsData.Previous_education_document_codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPrevious_education_document_codeNull() {
+                this[this.tableApplicantsData.Previous_education_document_codeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAdmission_application_and_personal_data_processing_consent_codeNull() {
+                return this.IsNull(this.tableApplicantsData.Admission_application_and_personal_data_processing_consent_codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAdmission_application_and_personal_data_processing_consent_codeNull() {
+                this[this.tableApplicantsData.Admission_application_and_personal_data_processing_consent_codeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1802,12 +1829,36 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsUnifield_State_Exam_scoresNull() {
+                return this.IsNull(this.tableApplicantsData.Unifield_State_Exam_scoresColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetUnifield_State_Exam_scoresNull() {
+                this[this.tableApplicantsData.Unifield_State_Exam_scoresColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPhotoNull() {
+                return this.IsNull(this.tableApplicantsData.PhotoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPhotoNull() {
+                this[this.tableApplicantsData.PhotoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public PersonalFileRow[] GetPersonalFileRows() {
-                if ((this.Table.ChildRelations["FK_PersonalFile_ApplicantsData"] == null)) {
+                if ((this.Table.ChildRelations["FK__PersonalF__Appli__412EB0B6"] == null)) {
                     return new PersonalFileRow[0];
                 }
                 else {
-                    return ((PersonalFileRow[])(base.GetChildRows(this.Table.ChildRelations["FK_PersonalFile_ApplicantsData"])));
+                    return ((PersonalFileRow[])(base.GetChildRows(this.Table.ChildRelations["FK__PersonalF__Appli__412EB0B6"])));
                 }
             }
         }
@@ -1828,51 +1879,63 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int ranking_list_ID {
+            public int Ranking_list_ID {
                 get {
-                    return ((int)(this[this.tableApplicantsRankingLists.ranking_list_IDColumn]));
+                    return ((int)(this[this.tableApplicantsRankingLists.Ranking_list_IDColumn]));
                 }
                 set {
-                    this[this.tableApplicantsRankingLists.ranking_list_IDColumn] = value;
+                    this[this.tableApplicantsRankingLists.Ranking_list_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int personal_file_ID {
+            public int Personal_file_ID {
                 get {
                     try {
-                        return ((int)(this[this.tableApplicantsRankingLists.personal_file_IDColumn]));
+                        return ((int)(this[this.tableApplicantsRankingLists.Personal_file_IDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'personal_file_ID\' в таблице \'ApplicantsRankingLists\' равно " +
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Personal_file_ID\' в таблице \'ApplicantsRankingLists\' равно " +
                                 "DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableApplicantsRankingLists.personal_file_IDColumn] = value;
+                    this[this.tableApplicantsRankingLists.Personal_file_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int scores_with_all_achievements_considered {
+            public int Scores_with_all_achievements_considered {
                 get {
-                    return ((int)(this[this.tableApplicantsRankingLists.scores_with_all_achievements_consideredColumn]));
+                    try {
+                        return ((int)(this[this.tableApplicantsRankingLists.Scores_with_all_achievements_consideredColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Scores_with_all_achievements_considered\' в таблице \'Applica" +
+                                "ntsRankingLists\' равно DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableApplicantsRankingLists.scores_with_all_achievements_consideredColumn] = value;
+                    this[this.tableApplicantsRankingLists.Scores_with_all_achievements_consideredColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int rank_position {
+            public int Rank_position {
                 get {
-                    return ((int)(this[this.tableApplicantsRankingLists.rank_positionColumn]));
+                    try {
+                        return ((int)(this[this.tableApplicantsRankingLists.Rank_positionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Rank_position\' в таблице \'ApplicantsRankingLists\' равно DBN" +
+                                "ull.", e);
+                    }
                 }
                 set {
-                    this[this.tableApplicantsRankingLists.rank_positionColumn] = value;
+                    this[this.tableApplicantsRankingLists.Rank_positionColumn] = value;
                 }
             }
             
@@ -1880,33 +1943,57 @@ namespace AdmissionCommitteeLabs {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public PersonalFileRow PersonalFileRow {
                 get {
-                    return ((PersonalFileRow)(this.GetParentRow(this.Table.ParentRelations["FK_ApplicantsRankingLists_PersonalFile"])));
+                    return ((PersonalFileRow)(this.GetParentRow(this.Table.ParentRelations["FK__Applicant__Perso__47DBAE45"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_ApplicantsRankingLists_PersonalFile"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Applicant__Perso__47DBAE45"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Ispersonal_file_IDNull() {
-                return this.IsNull(this.tableApplicantsRankingLists.personal_file_IDColumn);
+            public bool IsPersonal_file_IDNull() {
+                return this.IsNull(this.tableApplicantsRankingLists.Personal_file_IDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setpersonal_file_IDNull() {
-                this[this.tableApplicantsRankingLists.personal_file_IDColumn] = global::System.Convert.DBNull;
+            public void SetPersonal_file_IDNull() {
+                this[this.tableApplicantsRankingLists.Personal_file_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsScores_with_all_achievements_consideredNull() {
+                return this.IsNull(this.tableApplicantsRankingLists.Scores_with_all_achievements_consideredColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetScores_with_all_achievements_consideredNull() {
+                this[this.tableApplicantsRankingLists.Scores_with_all_achievements_consideredColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsRank_positionNull() {
+                return this.IsNull(this.tableApplicantsRankingLists.Rank_positionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetRank_positionNull() {
+                this[this.tableApplicantsRankingLists.Rank_positionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public EnrollmentOrdersRow[] GetEnrollmentOrdersRows() {
-                if ((this.Table.ChildRelations["FK_EnrollmentOrders_ApplicantsRankingLists"] == null)) {
+                if ((this.Table.ChildRelations["FK__Enrollmen__Ranki__4CA06362"] == null)) {
                     return new EnrollmentOrdersRow[0];
                 }
                 else {
-                    return ((EnrollmentOrdersRow[])(base.GetChildRows(this.Table.ChildRelations["FK_EnrollmentOrders_ApplicantsRankingLists"])));
+                    return ((EnrollmentOrdersRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Enrollmen__Ranki__4CA06362"])));
                 }
             }
         }
@@ -1927,61 +2014,78 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int enrollment_order_ID {
+            public int Enrollment_order_ID {
                 get {
-                    return ((int)(this[this.tableEnrollmentOrders.enrollment_order_IDColumn]));
+                    return ((int)(this[this.tableEnrollmentOrders.Enrollment_order_IDColumn]));
                 }
                 set {
-                    this[this.tableEnrollmentOrders.enrollment_order_IDColumn] = value;
+                    this[this.tableEnrollmentOrders.Enrollment_order_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int ranking_list_ID {
-                get {
-                    return ((int)(this[this.tableEnrollmentOrders.ranking_list_IDColumn]));
-                }
-                set {
-                    this[this.tableEnrollmentOrders.ranking_list_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string full_name {
-                get {
-                    return ((string)(this[this.tableEnrollmentOrders.full_nameColumn]));
-                }
-                set {
-                    this[this.tableEnrollmentOrders.full_nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string university_group {
-                get {
-                    return ((string)(this[this.tableEnrollmentOrders.university_groupColumn]));
-                }
-                set {
-                    this[this.tableEnrollmentOrders.university_groupColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string student {
+            public int Ranking_list_ID {
                 get {
                     try {
-                        return ((string)(this[this.tableEnrollmentOrders.studentColumn]));
+                        return ((int)(this[this.tableEnrollmentOrders.Ranking_list_IDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'student\' в таблице \'EnrollmentOrders\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Ranking_list_ID\' в таблице \'EnrollmentOrders\' равно DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableEnrollmentOrders.studentColumn] = value;
+                    this[this.tableEnrollmentOrders.Ranking_list_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Full_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableEnrollmentOrders.Full_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Full_name\' в таблице \'EnrollmentOrders\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEnrollmentOrders.Full_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string University_group {
+                get {
+                    try {
+                        return ((string)(this[this.tableEnrollmentOrders.University_groupColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'University_group\' в таблице \'EnrollmentOrders\' равно DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableEnrollmentOrders.University_groupColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Student {
+                get {
+                    try {
+                        return ((string)(this[this.tableEnrollmentOrders.StudentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Student\' в таблице \'EnrollmentOrders\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEnrollmentOrders.StudentColumn] = value;
                 }
             }
             
@@ -1989,23 +2093,59 @@ namespace AdmissionCommitteeLabs {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ApplicantsRankingListsRow ApplicantsRankingListsRow {
                 get {
-                    return ((ApplicantsRankingListsRow)(this.GetParentRow(this.Table.ParentRelations["FK_EnrollmentOrders_ApplicantsRankingLists"])));
+                    return ((ApplicantsRankingListsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Enrollmen__Ranki__4CA06362"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_EnrollmentOrders_ApplicantsRankingLists"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Enrollmen__Ranki__4CA06362"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsstudentNull() {
-                return this.IsNull(this.tableEnrollmentOrders.studentColumn);
+            public bool IsRanking_list_IDNull() {
+                return this.IsNull(this.tableEnrollmentOrders.Ranking_list_IDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetstudentNull() {
-                this[this.tableEnrollmentOrders.studentColumn] = global::System.Convert.DBNull;
+            public void SetRanking_list_IDNull() {
+                this[this.tableEnrollmentOrders.Ranking_list_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFull_nameNull() {
+                return this.IsNull(this.tableEnrollmentOrders.Full_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFull_nameNull() {
+                this[this.tableEnrollmentOrders.Full_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsUniversity_groupNull() {
+                return this.IsNull(this.tableEnrollmentOrders.University_groupColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetUniversity_groupNull() {
+                this[this.tableEnrollmentOrders.University_groupColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsStudentNull() {
+                return this.IsNull(this.tableEnrollmentOrders.StudentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetStudentNull() {
+                this[this.tableEnrollmentOrders.StudentColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2025,23 +2165,28 @@ namespace AdmissionCommitteeLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int personal_file_ID {
+            public int Personal_file_Id {
                 get {
-                    return ((int)(this[this.tablePersonalFile.personal_file_IDColumn]));
+                    return ((int)(this[this.tablePersonalFile.Personal_file_IdColumn]));
                 }
                 set {
-                    this[this.tablePersonalFile.personal_file_IDColumn] = value;
+                    this[this.tablePersonalFile.Personal_file_IdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int applicant_ID {
+            public int Applicant_ID {
                 get {
-                    return ((int)(this[this.tablePersonalFile.applicant_IDColumn]));
+                    try {
+                        return ((int)(this[this.tablePersonalFile.Applicant_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Applicant_ID\' в таблице \'PersonalFile\' равно DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tablePersonalFile.applicant_IDColumn] = value;
+                    this[this.tablePersonalFile.Applicant_IDColumn] = value;
                 }
             }
             
@@ -2049,7 +2194,13 @@ namespace AdmissionCommitteeLabs {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.DateTime Document_submission_date {
                 get {
-                    return ((global::System.DateTime)(this[this.tablePersonalFile.Document_submission_dateColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tablePersonalFile.Document_submission_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Document_submission_date\' в таблице \'PersonalFile\' равно DB" +
+                                "Null.", e);
+                    }
                 }
                 set {
                     this[this.tablePersonalFile.Document_submission_dateColumn] = value;
@@ -2060,21 +2211,45 @@ namespace AdmissionCommitteeLabs {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ApplicantsDataRow ApplicantsDataRow {
                 get {
-                    return ((ApplicantsDataRow)(this.GetParentRow(this.Table.ParentRelations["FK_PersonalFile_ApplicantsData"])));
+                    return ((ApplicantsDataRow)(this.GetParentRow(this.Table.ParentRelations["FK__PersonalF__Appli__412EB0B6"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_PersonalFile_ApplicantsData"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__PersonalF__Appli__412EB0B6"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsApplicant_IDNull() {
+                return this.IsNull(this.tablePersonalFile.Applicant_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetApplicant_IDNull() {
+                this[this.tablePersonalFile.Applicant_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDocument_submission_dateNull() {
+                return this.IsNull(this.tablePersonalFile.Document_submission_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDocument_submission_dateNull() {
+                this[this.tablePersonalFile.Document_submission_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ApplicantsRankingListsRow[] GetApplicantsRankingListsRows() {
-                if ((this.Table.ChildRelations["FK_ApplicantsRankingLists_PersonalFile"] == null)) {
+                if ((this.Table.ChildRelations["FK__Applicant__Perso__47DBAE45"] == null)) {
                     return new ApplicantsRankingListsRow[0];
                 }
                 else {
-                    return ((ApplicantsRankingListsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ApplicantsRankingLists_PersonalFile"])));
+                    return ((ApplicantsRankingListsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Applicant__Perso__47DBAE45"])));
                 }
             }
         }
@@ -2216,7 +2391,7 @@ namespace AdmissionCommitteeLabs {
         }
     }
 }
-namespace AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters {
+namespace AdmissionCommitteeLabs.AdmissionCommitteeDataSetTableAdapters {
     
     
     /// <summary>
@@ -2340,53 +2515,86 @@ namespace AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "ApplicantsData";
-            tableMapping.ColumnMappings.Add("applicant_ID", "applicant_ID");
+            tableMapping.ColumnMappings.Add("Applicant_ID", "Applicant_ID");
             tableMapping.ColumnMappings.Add("Identity_and_citizenship_document_code", "Identity_and_citizenship_document_code");
             tableMapping.ColumnMappings.Add("Previous_education_document_code", "Previous_education_document_code");
             tableMapping.ColumnMappings.Add("Admission_application_and_personal_data_processing_consent_code", "Admission_application_and_personal_data_processing_consent_code");
             tableMapping.ColumnMappings.Add("Enrollment_application_code", "Enrollment_application_code");
-            tableMapping.ColumnMappings.Add("Unified_State_Exam_scores", "Unified_State_Exam_scores");
+            tableMapping.ColumnMappings.Add("Unifield_State_Exam_scores", "Unifield_State_Exam_scores");
+            tableMapping.ColumnMappings.Add("Photo", "Photo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ApplicantsData] WHERE (([applicant_ID] = @Original_applicant_ID) AND ([Identity_and_citizenship_document_code] = @Original_Identity_and_citizenship_document_code) AND ([Previous_education_document_code] = @Original_Previous_education_document_code) AND ([Admission_application_and_personal_data_processing_consent_code] = @Original_Admission_application_and_personal_data_processing_consent_code) AND ((@IsNull_Enrollment_application_code = 1 AND [Enrollment_application_code] IS NULL) OR ([Enrollment_application_code] = @Original_Enrollment_application_code)) AND ([Unified_State_Exam_scores] = @Original_Unified_State_Exam_scores))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [ApplicantsData] WHERE (([Applicant_ID] = @Original_Applicant_ID) AND ((@IsNull_Identity_and_citizenship_document_code = 1 AND [Identity_and_citizenship_document_code] IS NULL) OR ([Identity_and_citizenship_document_code] = @Original_Identity_and_citizenship_document_code)) AND ((@IsNull_Previous_education_document_code = 1 AND [Previous_education_document_code] IS NULL) OR ([Previous_education_document_code] = @Original_Previous_education_document_code)) AND ((@IsNull_Admission_application_and_personal_data_processing_consent_code = 1 AND [Admission_application_and_personal_data_processing_consent_code] IS NULL) OR ([Admission_application_and_personal_data_processing_consent_code] = @Original_Admission_application_and_personal_data_processing_consent_code)) AND ((@IsNull_Enrollment_application_code = 1 AND [Enrollment_application_code] IS NULL) OR ([Enrollment_application_code] = @Original_Enrollment_application_code)) AND ((@IsNull_Unifield_State_Exam_scores = 1 AND [Unifield_State_Exam_scores] IS NULL) OR ([Unifield_State_Exam_scores] = @Original_Unifield_State_Exam_scores)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "applicant_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Identity_and_citizenship_document_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Identity_and_citizenship_document_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Identity_and_citizenship_document_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Identity_and_citizenship_document_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Previous_education_document_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Previous_education_document_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Previous_education_document_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Previous_education_document_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Admission_application_and_personal_data_processing_consent_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Admission_application_and_personal_data_processing_consent_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Admission_application_and_personal_data_processing_consent_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Admission_application_and_personal_data_processing_consent_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Enrollment_application_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enrollment_application_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Enrollment_application_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enrollment_application_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Unified_State_Exam_scores", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Unified_State_Exam_scores", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Unifield_State_Exam_scores", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Unifield_State_Exam_scores", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Unifield_State_Exam_scores", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Unifield_State_Exam_scores", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ApplicantsData] ([applicant_ID], [Identity_and_citizenship_document_code], [Previous_education_document_code], [Admission_application_and_personal_data_processing_consent_code], [Enrollment_application_code], [Unified_State_Exam_scores]) VALUES (@applicant_ID, @Identity_and_citizenship_document_code, @Previous_education_document_code, @Admission_application_and_personal_data_processing_consent_code, @Enrollment_application_code, @Unified_State_Exam_scores);
-SELECT applicant_ID, Identity_and_citizenship_document_code, Previous_education_document_code, Admission_application_and_personal_data_processing_consent_code, Enrollment_application_code, Unified_State_Exam_scores FROM ApplicantsData WHERE (applicant_ID = @applicant_ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [ApplicantsData] ([Applicant_ID], [Identity_and_citizenship_document_code], [Previous_education_document_code], [Admission_application_and_personal_data_processing_consent_code], [Enrollment_application_code], [Unifield_State_Exam_scores], [Photo]) VALUES (@Applicant_ID, @Identity_and_citizenship_document_code, @Previous_education_document_code, @Admission_application_and_personal_data_processing_consent_code, @Enrollment_application_code, @Unifield_State_Exam_scores, @Photo);
+SELECT Applicant_ID, Identity_and_citizenship_document_code, Previous_education_document_code, Admission_application_and_personal_data_processing_consent_code, Enrollment_application_code, Unifield_State_Exam_scores, Photo FROM ApplicantsData WHERE (Applicant_ID = @Applicant_ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "applicant_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Identity_and_citizenship_document_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Identity_and_citizenship_document_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Previous_education_document_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Previous_education_document_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Admission_application_and_personal_data_processing_consent_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Admission_application_and_personal_data_processing_consent_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Enrollment_application_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enrollment_application_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Unified_State_Exam_scores", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Unified_State_Exam_scores", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Unifield_State_Exam_scores", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Unifield_State_Exam_scores", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Photo", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Photo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ApplicantsData] SET [applicant_ID] = @applicant_ID, [Identity_and_citizenship_document_code] = @Identity_and_citizenship_document_code, [Previous_education_document_code] = @Previous_education_document_code, [Admission_application_and_personal_data_processing_consent_code] = @Admission_application_and_personal_data_processing_consent_code, [Enrollment_application_code] = @Enrollment_application_code, [Unified_State_Exam_scores] = @Unified_State_Exam_scores WHERE (([applicant_ID] = @Original_applicant_ID) AND ([Identity_and_citizenship_document_code] = @Original_Identity_and_citizenship_document_code) AND ([Previous_education_document_code] = @Original_Previous_education_document_code) AND ([Admission_application_and_personal_data_processing_consent_code] = @Original_Admission_application_and_personal_data_processing_consent_code) AND ((@IsNull_Enrollment_application_code = 1 AND [Enrollment_application_code] IS NULL) OR ([Enrollment_application_code] = @Original_Enrollment_application_code)) AND ([Unified_State_Exam_scores] = @Original_Unified_State_Exam_scores));
-SELECT applicant_ID, Identity_and_citizenship_document_code, Previous_education_document_code, Admission_application_and_personal_data_processing_consent_code, Enrollment_application_code, Unified_State_Exam_scores FROM ApplicantsData WHERE (applicant_ID = @applicant_ID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [ApplicantsData] SET [Applicant_ID] = @Applicant_ID, [Identity_and_citizen" +
+                "ship_document_code] = @Identity_and_citizenship_document_code, [Previous_educati" +
+                "on_document_code] = @Previous_education_document_code, [Admission_application_an" +
+                "d_personal_data_processing_consent_code] = @Admission_application_and_personal_d" +
+                "ata_processing_consent_code, [Enrollment_application_code] = @Enrollment_applica" +
+                "tion_code, [Unifield_State_Exam_scores] = @Unifield_State_Exam_scores, [Photo] =" +
+                " @Photo WHERE (([Applicant_ID] = @Original_Applicant_ID) AND ((@IsNull_Identity_" +
+                "and_citizenship_document_code = 1 AND [Identity_and_citizenship_document_code] I" +
+                "S NULL) OR ([Identity_and_citizenship_document_code] = @Original_Identity_and_ci" +
+                "tizenship_document_code)) AND ((@IsNull_Previous_education_document_code = 1 AND" +
+                " [Previous_education_document_code] IS NULL) OR ([Previous_education_document_co" +
+                "de] = @Original_Previous_education_document_code)) AND ((@IsNull_Admission_appli" +
+                "cation_and_personal_data_processing_consent_code = 1 AND [Admission_application_" +
+                "and_personal_data_processing_consent_code] IS NULL) OR ([Admission_application_a" +
+                "nd_personal_data_processing_consent_code] = @Original_Admission_application_and_" +
+                "personal_data_processing_consent_code)) AND ((@IsNull_Enrollment_application_cod" +
+                "e = 1 AND [Enrollment_application_code] IS NULL) OR ([Enrollment_application_cod" +
+                "e] = @Original_Enrollment_application_code)) AND ((@IsNull_Unifield_State_Exam_s" +
+                "cores = 1 AND [Unifield_State_Exam_scores] IS NULL) OR ([Unifield_State_Exam_sco" +
+                "res] = @Original_Unifield_State_Exam_scores)));\r\nSELECT Applicant_ID, Identity_a" +
+                "nd_citizenship_document_code, Previous_education_document_code, Admission_applic" +
+                "ation_and_personal_data_processing_consent_code, Enrollment_application_code, Un" +
+                "ifield_State_Exam_scores, Photo FROM ApplicantsData WHERE (Applicant_ID = @Appli" +
+                "cant_ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "applicant_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Identity_and_citizenship_document_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Identity_and_citizenship_document_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Previous_education_document_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Previous_education_document_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Admission_application_and_personal_data_processing_consent_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Admission_application_and_personal_data_processing_consent_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Enrollment_application_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enrollment_application_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Unified_State_Exam_scores", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Unified_State_Exam_scores", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "applicant_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Unifield_State_Exam_scores", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Unifield_State_Exam_scores", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Photo", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Photo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Identity_and_citizenship_document_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Identity_and_citizenship_document_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Identity_and_citizenship_document_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Identity_and_citizenship_document_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Previous_education_document_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Previous_education_document_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Previous_education_document_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Previous_education_document_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Admission_application_and_personal_data_processing_consent_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Admission_application_and_personal_data_processing_consent_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Admission_application_and_personal_data_processing_consent_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Admission_application_and_personal_data_processing_consent_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Enrollment_application_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enrollment_application_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Enrollment_application_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enrollment_application_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Unified_State_Exam_scores", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Unified_State_Exam_scores", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Unifield_State_Exam_scores", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Unifield_State_Exam_scores", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Unifield_State_Exam_scores", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Unifield_State_Exam_scores", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2402,9 +2610,10 @@ SELECT applicant_ID, Identity_and_citizenship_document_code, Previous_education_
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT applicant_ID, Identity_and_citizenship_document_code, Previous_education_d" +
+            this._commandCollection[0].CommandText = "SELECT Applicant_ID, Identity_and_citizenship_document_code, Previous_education_d" +
                 "ocument_code, Admission_application_and_personal_data_processing_consent_code, E" +
-                "nrollment_application_code, Unified_State_Exam_scores FROM dbo.ApplicantsData";
+                "nrollment_application_code, Unifield_State_Exam_scores, Photo FROM ApplicantsDat" +
+                "a";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2412,7 +2621,7 @@ SELECT applicant_ID, Identity_and_citizenship_document_code, Previous_education_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Selection_committeeDataSet.ApplicantsDataDataTable dataTable) {
+        public virtual int Fill(AdmissionCommitteeDataSet.ApplicantsDataDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2425,9 +2634,9 @@ SELECT applicant_ID, Identity_and_citizenship_document_code, Previous_education_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Selection_committeeDataSet.ApplicantsDataDataTable GetData() {
+        public virtual AdmissionCommitteeDataSet.ApplicantsDataDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Selection_committeeDataSet.ApplicantsDataDataTable dataTable = new Selection_committeeDataSet.ApplicantsDataDataTable();
+            AdmissionCommitteeDataSet.ApplicantsDataDataTable dataTable = new AdmissionCommitteeDataSet.ApplicantsDataDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2435,14 +2644,14 @@ SELECT applicant_ID, Identity_and_citizenship_document_code, Previous_education_
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Selection_committeeDataSet.ApplicantsDataDataTable dataTable) {
+        public virtual int Update(AdmissionCommitteeDataSet.ApplicantsDataDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Selection_committeeDataSet dataSet) {
+        public virtual int Update(AdmissionCommitteeDataSet dataSet) {
             return this.Adapter.Update(dataSet, "ApplicantsData");
         }
         
@@ -2465,20 +2674,48 @@ SELECT applicant_ID, Identity_and_citizenship_document_code, Previous_education_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_applicant_ID, int Original_Identity_and_citizenship_document_code, int Original_Previous_education_document_code, int Original_Admission_application_and_personal_data_processing_consent_code, global::System.Nullable<int> Original_Enrollment_application_code, int Original_Unified_State_Exam_scores) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_applicant_ID));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Identity_and_citizenship_document_code));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Previous_education_document_code));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_Admission_application_and_personal_data_processing_consent_code));
-            if ((Original_Enrollment_application_code.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Enrollment_application_code.Value));
+        public virtual int Delete(int Original_Applicant_ID, global::System.Nullable<int> Original_Identity_and_citizenship_document_code, global::System.Nullable<int> Original_Previous_education_document_code, global::System.Nullable<int> Original_Admission_application_and_personal_data_processing_consent_code, global::System.Nullable<int> Original_Enrollment_application_code, global::System.Nullable<int> Original_Unifield_State_Exam_scores) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Applicant_ID));
+            if ((Original_Identity_and_citizenship_document_code.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Identity_and_citizenship_document_code.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Unified_State_Exam_scores));
+            if ((Original_Previous_education_document_code.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Previous_education_document_code.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Admission_application_and_personal_data_processing_consent_code.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Admission_application_and_personal_data_processing_consent_code.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Enrollment_application_code.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Enrollment_application_code.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Unifield_State_Exam_scores.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_Unifield_State_Exam_scores.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2499,18 +2736,44 @@ SELECT applicant_ID, Identity_and_citizenship_document_code, Previous_education_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int applicant_ID, int Identity_and_citizenship_document_code, int Previous_education_document_code, int Admission_application_and_personal_data_processing_consent_code, global::System.Nullable<int> Enrollment_application_code, int Unified_State_Exam_scores) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(applicant_ID));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Identity_and_citizenship_document_code));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Previous_education_document_code));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Admission_application_and_personal_data_processing_consent_code));
+        public virtual int Insert(int Applicant_ID, global::System.Nullable<int> Identity_and_citizenship_document_code, global::System.Nullable<int> Previous_education_document_code, global::System.Nullable<int> Admission_application_and_personal_data_processing_consent_code, global::System.Nullable<int> Enrollment_application_code, global::System.Nullable<int> Unifield_State_Exam_scores, byte[] Photo) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Applicant_ID));
+            if ((Identity_and_citizenship_document_code.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Identity_and_citizenship_document_code.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Previous_education_document_code.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Previous_education_document_code.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Admission_application_and_personal_data_processing_consent_code.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Admission_application_and_personal_data_processing_consent_code.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
             if ((Enrollment_application_code.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Enrollment_application_code.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Unified_State_Exam_scores));
+            if ((Unifield_State_Exam_scores.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Unifield_State_Exam_scores.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Photo == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((byte[])(Photo));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2531,31 +2794,85 @@ SELECT applicant_ID, Identity_and_citizenship_document_code, Previous_education_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int applicant_ID, int Identity_and_citizenship_document_code, int Previous_education_document_code, int Admission_application_and_personal_data_processing_consent_code, global::System.Nullable<int> Enrollment_application_code, int Unified_State_Exam_scores, int Original_applicant_ID, int Original_Identity_and_citizenship_document_code, int Original_Previous_education_document_code, int Original_Admission_application_and_personal_data_processing_consent_code, global::System.Nullable<int> Original_Enrollment_application_code, int Original_Unified_State_Exam_scores) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(applicant_ID));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Identity_and_citizenship_document_code));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Previous_education_document_code));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Admission_application_and_personal_data_processing_consent_code));
+        public virtual int Update(int Applicant_ID, global::System.Nullable<int> Identity_and_citizenship_document_code, global::System.Nullable<int> Previous_education_document_code, global::System.Nullable<int> Admission_application_and_personal_data_processing_consent_code, global::System.Nullable<int> Enrollment_application_code, global::System.Nullable<int> Unifield_State_Exam_scores, byte[] Photo, int Original_Applicant_ID, global::System.Nullable<int> Original_Identity_and_citizenship_document_code, global::System.Nullable<int> Original_Previous_education_document_code, global::System.Nullable<int> Original_Admission_application_and_personal_data_processing_consent_code, global::System.Nullable<int> Original_Enrollment_application_code, global::System.Nullable<int> Original_Unifield_State_Exam_scores) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Applicant_ID));
+            if ((Identity_and_citizenship_document_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Identity_and_citizenship_document_code.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Previous_education_document_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Previous_education_document_code.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Admission_application_and_personal_data_processing_consent_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Admission_application_and_personal_data_processing_consent_code.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
             if ((Enrollment_application_code.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Enrollment_application_code.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Unified_State_Exam_scores));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_applicant_ID));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Identity_and_citizenship_document_code));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Previous_education_document_code));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Admission_application_and_personal_data_processing_consent_code));
-            if ((Original_Enrollment_application_code.HasValue == true)) {
+            if ((Unifield_State_Exam_scores.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Unifield_State_Exam_scores.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Photo == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((byte[])(Photo));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Applicant_ID));
+            if ((Original_Identity_and_citizenship_document_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Identity_and_citizenship_document_code.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Previous_education_document_code.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Enrollment_application_code.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Previous_education_document_code.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Unified_State_Exam_scores));
+            if ((Original_Admission_application_and_personal_data_processing_consent_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Admission_application_and_personal_data_processing_consent_code.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Enrollment_application_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_Enrollment_application_code.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Unifield_State_Exam_scores.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_Unifield_State_Exam_scores.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2576,8 +2893,8 @@ SELECT applicant_ID, Identity_and_citizenship_document_code, Previous_education_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Identity_and_citizenship_document_code, int Previous_education_document_code, int Admission_application_and_personal_data_processing_consent_code, global::System.Nullable<int> Enrollment_application_code, int Unified_State_Exam_scores, int Original_applicant_ID, int Original_Identity_and_citizenship_document_code, int Original_Previous_education_document_code, int Original_Admission_application_and_personal_data_processing_consent_code, global::System.Nullable<int> Original_Enrollment_application_code, int Original_Unified_State_Exam_scores) {
-            return this.Update(Original_applicant_ID, Identity_and_citizenship_document_code, Previous_education_document_code, Admission_application_and_personal_data_processing_consent_code, Enrollment_application_code, Unified_State_Exam_scores, Original_applicant_ID, Original_Identity_and_citizenship_document_code, Original_Previous_education_document_code, Original_Admission_application_and_personal_data_processing_consent_code, Original_Enrollment_application_code, Original_Unified_State_Exam_scores);
+        public virtual int Update(global::System.Nullable<int> Identity_and_citizenship_document_code, global::System.Nullable<int> Previous_education_document_code, global::System.Nullable<int> Admission_application_and_personal_data_processing_consent_code, global::System.Nullable<int> Enrollment_application_code, global::System.Nullable<int> Unifield_State_Exam_scores, byte[] Photo, int Original_Applicant_ID, global::System.Nullable<int> Original_Identity_and_citizenship_document_code, global::System.Nullable<int> Original_Previous_education_document_code, global::System.Nullable<int> Original_Admission_application_and_personal_data_processing_consent_code, global::System.Nullable<int> Original_Enrollment_application_code, global::System.Nullable<int> Original_Unifield_State_Exam_scores) {
+            return this.Update(Original_Applicant_ID, Identity_and_citizenship_document_code, Previous_education_document_code, Admission_application_and_personal_data_processing_consent_code, Enrollment_application_code, Unifield_State_Exam_scores, Photo, Original_Applicant_ID, Original_Identity_and_citizenship_document_code, Original_Previous_education_document_code, Original_Admission_application_and_personal_data_processing_consent_code, Original_Enrollment_application_code, Original_Unifield_State_Exam_scores);
         }
     }
     
@@ -2702,43 +3019,47 @@ SELECT applicant_ID, Identity_and_citizenship_document_code, Previous_education_
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "ApplicantsRankingLists";
-            tableMapping.ColumnMappings.Add("ranking_list_ID", "ranking_list_ID");
-            tableMapping.ColumnMappings.Add("personal_file_ID", "personal_file_ID");
-            tableMapping.ColumnMappings.Add("scores_with_all_achievements_considered", "scores_with_all_achievements_considered");
-            tableMapping.ColumnMappings.Add("rank_position", "rank_position");
+            tableMapping.ColumnMappings.Add("Ranking_list_ID", "Ranking_list_ID");
+            tableMapping.ColumnMappings.Add("Personal_file_ID", "Personal_file_ID");
+            tableMapping.ColumnMappings.Add("Scores_with_all_achievements_considered", "Scores_with_all_achievements_considered");
+            tableMapping.ColumnMappings.Add("Rank_position", "Rank_position");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ApplicantsRankingLists] WHERE (([ranking_list_ID] = @Original_ranking_list_ID) AND ((@IsNull_personal_file_ID = 1 AND [personal_file_ID] IS NULL) OR ([personal_file_ID] = @Original_personal_file_ID)) AND ([scores_with_all_achievements_considered] = @Original_scores_with_all_achievements_considered) AND ([rank_position] = @Original_rank_position))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ApplicantsRankingLists] WHERE (([Ranking_list_ID] = @Original_Ranking_list_ID) AND ((@IsNull_Personal_file_ID = 1 AND [Personal_file_ID] IS NULL) OR ([Personal_file_ID] = @Original_Personal_file_ID)) AND ((@IsNull_Scores_with_all_achievements_considered = 1 AND [Scores_with_all_achievements_considered] IS NULL) OR ([Scores_with_all_achievements_considered] = @Original_Scores_with_all_achievements_considered)) AND ((@IsNull_Rank_position = 1 AND [Rank_position] IS NULL) OR ([Rank_position] = @Original_Rank_position)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ranking_list_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_personal_file_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "personal_file_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_personal_file_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "personal_file_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_scores_with_all_achievements_considered", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scores_with_all_achievements_considered", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_rank_position", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rank_position", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ranking_list_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Personal_file_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Personal_file_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Personal_file_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Personal_file_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Scores_with_all_achievements_considered", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Scores_with_all_achievements_considered", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Scores_with_all_achievements_considered", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Scores_with_all_achievements_considered", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Rank_position", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rank_position", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Rank_position", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rank_position", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ApplicantsRankingLists] ([ranking_list_ID], [personal_file_ID], [scores_with_all_achievements_considered], [rank_position]) VALUES (@ranking_list_ID, @personal_file_ID, @scores_with_all_achievements_considered, @rank_position);
-SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considered, rank_position FROM ApplicantsRankingLists WHERE (ranking_list_ID = @ranking_list_ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ApplicantsRankingLists] ([Ranking_list_ID], [Personal_file_ID], [Scores_with_all_achievements_considered], [Rank_position]) VALUES (@Ranking_list_ID, @Personal_file_ID, @Scores_with_all_achievements_considered, @Rank_position);
+SELECT Ranking_list_ID, Personal_file_ID, Scores_with_all_achievements_considered, Rank_position FROM ApplicantsRankingLists WHERE (Ranking_list_ID = @Ranking_list_ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ranking_list_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@personal_file_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "personal_file_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@scores_with_all_achievements_considered", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scores_with_all_achievements_considered", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rank_position", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rank_position", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ranking_list_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Personal_file_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Personal_file_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Scores_with_all_achievements_considered", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Scores_with_all_achievements_considered", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rank_position", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rank_position", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ApplicantsRankingLists] SET [ranking_list_ID] = @ranking_list_ID, [personal_file_ID] = @personal_file_ID, [scores_with_all_achievements_considered] = @scores_with_all_achievements_considered, [rank_position] = @rank_position WHERE (([ranking_list_ID] = @Original_ranking_list_ID) AND ((@IsNull_personal_file_ID = 1 AND [personal_file_ID] IS NULL) OR ([personal_file_ID] = @Original_personal_file_ID)) AND ([scores_with_all_achievements_considered] = @Original_scores_with_all_achievements_considered) AND ([rank_position] = @Original_rank_position));
-SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considered, rank_position FROM ApplicantsRankingLists WHERE (ranking_list_ID = @ranking_list_ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ApplicantsRankingLists] SET [Ranking_list_ID] = @Ranking_list_ID, [Personal_file_ID] = @Personal_file_ID, [Scores_with_all_achievements_considered] = @Scores_with_all_achievements_considered, [Rank_position] = @Rank_position WHERE (([Ranking_list_ID] = @Original_Ranking_list_ID) AND ((@IsNull_Personal_file_ID = 1 AND [Personal_file_ID] IS NULL) OR ([Personal_file_ID] = @Original_Personal_file_ID)) AND ((@IsNull_Scores_with_all_achievements_considered = 1 AND [Scores_with_all_achievements_considered] IS NULL) OR ([Scores_with_all_achievements_considered] = @Original_Scores_with_all_achievements_considered)) AND ((@IsNull_Rank_position = 1 AND [Rank_position] IS NULL) OR ([Rank_position] = @Original_Rank_position)));
+SELECT Ranking_list_ID, Personal_file_ID, Scores_with_all_achievements_considered, Rank_position FROM ApplicantsRankingLists WHERE (Ranking_list_ID = @Ranking_list_ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ranking_list_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@personal_file_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "personal_file_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@scores_with_all_achievements_considered", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scores_with_all_achievements_considered", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rank_position", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rank_position", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ranking_list_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_personal_file_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "personal_file_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_personal_file_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "personal_file_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_scores_with_all_achievements_considered", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scores_with_all_achievements_considered", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_rank_position", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rank_position", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ranking_list_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Personal_file_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Personal_file_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Scores_with_all_achievements_considered", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Scores_with_all_achievements_considered", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rank_position", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rank_position", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ranking_list_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Personal_file_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Personal_file_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Personal_file_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Personal_file_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Scores_with_all_achievements_considered", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Scores_with_all_achievements_considered", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Scores_with_all_achievements_considered", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Scores_with_all_achievements_considered", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Rank_position", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rank_position", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Rank_position", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rank_position", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2754,8 +3075,8 @@ SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considere
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considered" +
-                ", rank_position FROM ApplicantsRankingLists";
+            this._commandCollection[0].CommandText = "SELECT Ranking_list_ID, Personal_file_ID, Scores_with_all_achievements_considered" +
+                ", Rank_position FROM dbo.ApplicantsRankingLists";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2763,7 +3084,7 @@ SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considere
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Selection_committeeDataSet.ApplicantsRankingListsDataTable dataTable) {
+        public virtual int Fill(AdmissionCommitteeDataSet.ApplicantsRankingListsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2776,9 +3097,9 @@ SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considere
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Selection_committeeDataSet.ApplicantsRankingListsDataTable GetData() {
+        public virtual AdmissionCommitteeDataSet.ApplicantsRankingListsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Selection_committeeDataSet.ApplicantsRankingListsDataTable dataTable = new Selection_committeeDataSet.ApplicantsRankingListsDataTable();
+            AdmissionCommitteeDataSet.ApplicantsRankingListsDataTable dataTable = new AdmissionCommitteeDataSet.ApplicantsRankingListsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2786,14 +3107,14 @@ SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considere
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Selection_committeeDataSet.ApplicantsRankingListsDataTable dataTable) {
+        public virtual int Update(AdmissionCommitteeDataSet.ApplicantsRankingListsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Selection_committeeDataSet dataSet) {
+        public virtual int Update(AdmissionCommitteeDataSet dataSet) {
             return this.Adapter.Update(dataSet, "ApplicantsRankingLists");
         }
         
@@ -2816,18 +3137,32 @@ SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considere
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ranking_list_ID, global::System.Nullable<int> Original_personal_file_ID, int Original_scores_with_all_achievements_considered, int Original_rank_position) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ranking_list_ID));
-            if ((Original_personal_file_ID.HasValue == true)) {
+        public virtual int Delete(int Original_Ranking_list_ID, global::System.Nullable<int> Original_Personal_file_ID, global::System.Nullable<int> Original_Scores_with_all_achievements_considered, global::System.Nullable<int> Original_Rank_position) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Ranking_list_ID));
+            if ((Original_Personal_file_ID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_personal_file_ID.Value));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Personal_file_ID.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_scores_with_all_achievements_considered));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_rank_position));
+            if ((Original_Scores_with_all_achievements_considered.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Scores_with_all_achievements_considered.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Rank_position.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Rank_position.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2848,16 +3183,26 @@ SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considere
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ranking_list_ID, global::System.Nullable<int> personal_file_ID, int scores_with_all_achievements_considered, int rank_position) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ranking_list_ID));
-            if ((personal_file_ID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(personal_file_ID.Value));
+        public virtual int Insert(int Ranking_list_ID, global::System.Nullable<int> Personal_file_ID, global::System.Nullable<int> Scores_with_all_achievements_considered, global::System.Nullable<int> Rank_position) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Ranking_list_ID));
+            if ((Personal_file_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Personal_file_ID.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(scores_with_all_achievements_considered));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(rank_position));
+            if ((Scores_with_all_achievements_considered.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Scores_with_all_achievements_considered.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Rank_position.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Rank_position.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2878,27 +3223,51 @@ SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considere
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ranking_list_ID, global::System.Nullable<int> personal_file_ID, int scores_with_all_achievements_considered, int rank_position, int Original_ranking_list_ID, global::System.Nullable<int> Original_personal_file_ID, int Original_scores_with_all_achievements_considered, int Original_rank_position) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ranking_list_ID));
-            if ((personal_file_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(personal_file_ID.Value));
+        public virtual int Update(int Ranking_list_ID, global::System.Nullable<int> Personal_file_ID, global::System.Nullable<int> Scores_with_all_achievements_considered, global::System.Nullable<int> Rank_position, int Original_Ranking_list_ID, global::System.Nullable<int> Original_Personal_file_ID, global::System.Nullable<int> Original_Scores_with_all_achievements_considered, global::System.Nullable<int> Original_Rank_position) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Ranking_list_ID));
+            if ((Personal_file_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Personal_file_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(scores_with_all_achievements_considered));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(rank_position));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ranking_list_ID));
-            if ((Original_personal_file_ID.HasValue == true)) {
+            if ((Scores_with_all_achievements_considered.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Scores_with_all_achievements_considered.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Rank_position.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Rank_position.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Ranking_list_ID));
+            if ((Original_Personal_file_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_personal_file_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Personal_file_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_scores_with_all_achievements_considered));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_rank_position));
+            if ((Original_Scores_with_all_achievements_considered.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Scores_with_all_achievements_considered.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Rank_position.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Rank_position.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2919,8 +3288,8 @@ SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considere
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> personal_file_ID, int scores_with_all_achievements_considered, int rank_position, int Original_ranking_list_ID, global::System.Nullable<int> Original_personal_file_ID, int Original_scores_with_all_achievements_considered, int Original_rank_position) {
-            return this.Update(Original_ranking_list_ID, personal_file_ID, scores_with_all_achievements_considered, rank_position, Original_ranking_list_ID, Original_personal_file_ID, Original_scores_with_all_achievements_considered, Original_rank_position);
+        public virtual int Update(global::System.Nullable<int> Personal_file_ID, global::System.Nullable<int> Scores_with_all_achievements_considered, global::System.Nullable<int> Rank_position, int Original_Ranking_list_ID, global::System.Nullable<int> Original_Personal_file_ID, global::System.Nullable<int> Original_Scores_with_all_achievements_considered, global::System.Nullable<int> Original_Rank_position) {
+            return this.Update(Original_Ranking_list_ID, Personal_file_ID, Scores_with_all_achievements_considered, Rank_position, Original_Ranking_list_ID, Original_Personal_file_ID, Original_Scores_with_all_achievements_considered, Original_Rank_position);
         }
     }
     
@@ -3045,44 +3414,54 @@ SELECT ranking_list_ID, personal_file_ID, scores_with_all_achievements_considere
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "EnrollmentOrders";
-            tableMapping.ColumnMappings.Add("enrollment_order_ID", "enrollment_order_ID");
-            tableMapping.ColumnMappings.Add("ranking_list_ID", "ranking_list_ID");
-            tableMapping.ColumnMappings.Add("full_name", "full_name");
-            tableMapping.ColumnMappings.Add("university_group", "university_group");
+            tableMapping.ColumnMappings.Add("Enrollment_order_ID", "Enrollment_order_ID");
+            tableMapping.ColumnMappings.Add("Ranking_list_ID", "Ranking_list_ID");
+            tableMapping.ColumnMappings.Add("Full_name", "Full_name");
+            tableMapping.ColumnMappings.Add("University_group", "University_group");
+            tableMapping.ColumnMappings.Add("Student", "Student");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[EnrollmentOrders] WHERE (([enrollment_order_ID] = @Original_en" +
-                "rollment_order_ID) AND ([ranking_list_ID] = @Original_ranking_list_ID) AND ([ful" +
-                "l_name] = @Original_full_name) AND ([university_group] = @Original_university_gr" +
-                "oup))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [EnrollmentOrders] WHERE (([Enrollment_order_ID] = @Original_Enrollment_order_ID) AND ((@IsNull_Ranking_list_ID = 1 AND [Ranking_list_ID] IS NULL) OR ([Ranking_list_ID] = @Original_Ranking_list_ID)) AND ((@IsNull_Full_name = 1 AND [Full_name] IS NULL) OR ([Full_name] = @Original_Full_name)) AND ((@IsNull_University_group = 1 AND [University_group] IS NULL) OR ([University_group] = @Original_University_group)) AND ((@IsNull_Student = 1 AND [Student] IS NULL) OR ([Student] = @Original_Student)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_enrollment_order_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "enrollment_order_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ranking_list_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_full_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_university_group", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "university_group", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Enrollment_order_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enrollment_order_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ranking_list_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ranking_list_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Full_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Full_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Full_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Full_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_University_group", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "University_group", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_University_group", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "University_group", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Student", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Student", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Student", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Student", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[EnrollmentOrders] ([enrollment_order_ID], [ranking_list_ID], [full_name], [university_group]) VALUES (@enrollment_order_ID, @ranking_list_ID, @full_name, @university_group);
-SELECT enrollment_order_ID, ranking_list_ID, full_name, university_group FROM EnrollmentOrders WHERE (enrollment_order_ID = @enrollment_order_ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [EnrollmentOrders] ([Enrollment_order_ID], [Ranking_list_ID], [Full_name], [University_group], [Student]) VALUES (@Enrollment_order_ID, @Ranking_list_ID, @Full_name, @University_group, @Student);
+SELECT Enrollment_order_ID, Ranking_list_ID, Full_name, University_group, Student FROM EnrollmentOrders WHERE (Enrollment_order_ID = @Enrollment_order_ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@enrollment_order_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "enrollment_order_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ranking_list_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@full_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@university_group", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "university_group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Enrollment_order_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enrollment_order_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ranking_list_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Full_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Full_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@University_group", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "University_group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Student", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Student", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[EnrollmentOrders] SET [enrollment_order_ID] = @enrollment_order_ID, [ranking_list_ID] = @ranking_list_ID, [full_name] = @full_name, [university_group] = @university_group WHERE (([enrollment_order_ID] = @Original_enrollment_order_ID) AND ([ranking_list_ID] = @Original_ranking_list_ID) AND ([full_name] = @Original_full_name) AND ([university_group] = @Original_university_group));
-SELECT enrollment_order_ID, ranking_list_ID, full_name, university_group FROM EnrollmentOrders WHERE (enrollment_order_ID = @enrollment_order_ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [EnrollmentOrders] SET [Enrollment_order_ID] = @Enrollment_order_ID, [Ranking_list_ID] = @Ranking_list_ID, [Full_name] = @Full_name, [University_group] = @University_group, [Student] = @Student WHERE (([Enrollment_order_ID] = @Original_Enrollment_order_ID) AND ((@IsNull_Ranking_list_ID = 1 AND [Ranking_list_ID] IS NULL) OR ([Ranking_list_ID] = @Original_Ranking_list_ID)) AND ((@IsNull_Full_name = 1 AND [Full_name] IS NULL) OR ([Full_name] = @Original_Full_name)) AND ((@IsNull_University_group = 1 AND [University_group] IS NULL) OR ([University_group] = @Original_University_group)) AND ((@IsNull_Student = 1 AND [Student] IS NULL) OR ([Student] = @Original_Student)));
+SELECT Enrollment_order_ID, Ranking_list_ID, Full_name, University_group, Student FROM EnrollmentOrders WHERE (Enrollment_order_ID = @Enrollment_order_ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@enrollment_order_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "enrollment_order_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ranking_list_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@full_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@university_group", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "university_group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_enrollment_order_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "enrollment_order_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ranking_list_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_full_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_university_group", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "university_group", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Enrollment_order_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enrollment_order_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ranking_list_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Full_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Full_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@University_group", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "University_group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Student", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Student", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Enrollment_order_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enrollment_order_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ranking_list_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ranking_list_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ranking_list_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Full_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Full_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Full_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Full_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_University_group", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "University_group", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_University_group", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "University_group", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Student", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Student", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Student", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Student", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3098,8 +3477,8 @@ SELECT enrollment_order_ID, ranking_list_ID, full_name, university_group FROM En
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT enrollment_order_ID, ranking_list_ID, full_name, university_group FROM dbo" +
-                ".EnrollmentOrders";
+            this._commandCollection[0].CommandText = "SELECT Enrollment_order_ID, Ranking_list_ID, Full_name, University_group, Student" +
+                " FROM EnrollmentOrders";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3107,7 +3486,7 @@ SELECT enrollment_order_ID, ranking_list_ID, full_name, university_group FROM En
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Selection_committeeDataSet.EnrollmentOrdersDataTable dataTable) {
+        public virtual int Fill(AdmissionCommitteeDataSet.EnrollmentOrdersDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3120,9 +3499,9 @@ SELECT enrollment_order_ID, ranking_list_ID, full_name, university_group FROM En
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Selection_committeeDataSet.EnrollmentOrdersDataTable GetData() {
+        public virtual AdmissionCommitteeDataSet.EnrollmentOrdersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Selection_committeeDataSet.EnrollmentOrdersDataTable dataTable = new Selection_committeeDataSet.EnrollmentOrdersDataTable(true);
+            AdmissionCommitteeDataSet.EnrollmentOrdersDataTable dataTable = new AdmissionCommitteeDataSet.EnrollmentOrdersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3130,14 +3509,14 @@ SELECT enrollment_order_ID, ranking_list_ID, full_name, university_group FROM En
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Selection_committeeDataSet.EnrollmentOrdersDataTable dataTable) {
+        public virtual int Update(AdmissionCommitteeDataSet.EnrollmentOrdersDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Selection_committeeDataSet dataSet) {
+        public virtual int Update(AdmissionCommitteeDataSet dataSet) {
             return this.Adapter.Update(dataSet, "EnrollmentOrders");
         }
         
@@ -3160,20 +3539,39 @@ SELECT enrollment_order_ID, ranking_list_ID, full_name, university_group FROM En
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_enrollment_order_ID, int Original_ranking_list_ID, string Original_full_name, string Original_university_group) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_enrollment_order_ID));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_ranking_list_ID));
-            if ((Original_full_name == null)) {
-                throw new global::System.ArgumentNullException("Original_full_name");
+        public virtual int Delete(int Original_Enrollment_order_ID, global::System.Nullable<int> Original_Ranking_list_ID, string Original_Full_name, string Original_University_group, string Original_Student) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Enrollment_order_ID));
+            if ((Original_Ranking_list_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Ranking_list_ID.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_full_name));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_university_group == null)) {
-                throw new global::System.ArgumentNullException("Original_university_group");
+            if ((Original_Full_name == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_university_group));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Full_name));
+            }
+            if ((Original_University_group == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_University_group));
+            }
+            if ((Original_Student == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Student));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3195,20 +3593,31 @@ SELECT enrollment_order_ID, ranking_list_ID, full_name, university_group FROM En
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int enrollment_order_ID, int ranking_list_ID, string full_name, string university_group) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(enrollment_order_ID));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(ranking_list_ID));
-            if ((full_name == null)) {
-                throw new global::System.ArgumentNullException("full_name");
+        public virtual int Insert(int Enrollment_order_ID, global::System.Nullable<int> Ranking_list_ID, string Full_name, string University_group, string Student) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Enrollment_order_ID));
+            if ((Ranking_list_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Ranking_list_ID.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(full_name));
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((university_group == null)) {
-                throw new global::System.ArgumentNullException("university_group");
+            if ((Full_name == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(university_group));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Full_name));
+            }
+            if ((University_group == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(University_group));
+            }
+            if ((Student == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Student));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3230,34 +3639,64 @@ SELECT enrollment_order_ID, ranking_list_ID, full_name, university_group FROM En
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int enrollment_order_ID, int ranking_list_ID, string full_name, string university_group, int Original_enrollment_order_ID, int Original_ranking_list_ID, string Original_full_name, string Original_university_group) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(enrollment_order_ID));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(ranking_list_ID));
-            if ((full_name == null)) {
-                throw new global::System.ArgumentNullException("full_name");
+        public virtual int Update(int Enrollment_order_ID, global::System.Nullable<int> Ranking_list_ID, string Full_name, string University_group, string Student, int Original_Enrollment_order_ID, global::System.Nullable<int> Original_Ranking_list_ID, string Original_Full_name, string Original_University_group, string Original_Student) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Enrollment_order_ID));
+            if ((Ranking_list_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Ranking_list_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(full_name));
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((university_group == null)) {
-                throw new global::System.ArgumentNullException("university_group");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(university_group));
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_enrollment_order_ID));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ranking_list_ID));
-            if ((Original_full_name == null)) {
-                throw new global::System.ArgumentNullException("Original_full_name");
+            if ((Full_name == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_full_name));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Full_name));
             }
-            if ((Original_university_group == null)) {
-                throw new global::System.ArgumentNullException("Original_university_group");
+            if ((University_group == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_university_group));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(University_group));
+            }
+            if ((Student == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Student));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Enrollment_order_ID));
+            if ((Original_Ranking_list_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Ranking_list_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Full_name == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Full_name));
+            }
+            if ((Original_University_group == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_University_group));
+            }
+            if ((Original_Student == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Student));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3279,8 +3718,8 @@ SELECT enrollment_order_ID, ranking_list_ID, full_name, university_group FROM En
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ranking_list_ID, string full_name, string university_group, int Original_enrollment_order_ID, int Original_ranking_list_ID, string Original_full_name, string Original_university_group) {
-            return this.Update(Original_enrollment_order_ID, ranking_list_ID, full_name, university_group, Original_enrollment_order_ID, Original_ranking_list_ID, Original_full_name, Original_university_group);
+        public virtual int Update(global::System.Nullable<int> Ranking_list_ID, string Full_name, string University_group, string Student, int Original_Enrollment_order_ID, global::System.Nullable<int> Original_Ranking_list_ID, string Original_Full_name, string Original_University_group, string Original_Student) {
+            return this.Update(Original_Enrollment_order_ID, Ranking_list_ID, Full_name, University_group, Student, Original_Enrollment_order_ID, Original_Ranking_list_ID, Original_Full_name, Original_University_group, Original_Student);
         }
     }
     
@@ -3405,37 +3844,39 @@ SELECT enrollment_order_ID, ranking_list_ID, full_name, university_group FROM En
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "PersonalFile";
-            tableMapping.ColumnMappings.Add("personal_file_ID", "personal_file_ID");
-            tableMapping.ColumnMappings.Add("applicant_ID", "applicant_ID");
+            tableMapping.ColumnMappings.Add("Personal_file_Id", "Personal_file_Id");
+            tableMapping.ColumnMappings.Add("Applicant_ID", "Applicant_ID");
             tableMapping.ColumnMappings.Add("Document_submission_date", "Document_submission_date");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[PersonalFile] WHERE (([personal_file_ID] = @Original_personal_" +
-                "file_ID) AND ([applicant_ID] = @Original_applicant_ID) AND ([Document_submission" +
-                "_date] = @Original_Document_submission_date))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[PersonalFile] WHERE (([Personal_file_Id] = @Original_Personal_file_Id) AND ((@IsNull_Applicant_ID = 1 AND [Applicant_ID] IS NULL) OR ([Applicant_ID] = @Original_Applicant_ID)) AND ((@IsNull_Document_submission_date = 1 AND [Document_submission_date] IS NULL) OR ([Document_submission_date] = @Original_Document_submission_date)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_personal_file_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "personal_file_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "applicant_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Personal_file_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Personal_file_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Document_submission_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Document_submission_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Document_submission_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Document_submission_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[PersonalFile] ([personal_file_ID], [applicant_ID], [Document_submission_date]) VALUES (@personal_file_ID, @applicant_ID, @Document_submission_date);
-SELECT personal_file_ID, applicant_ID, Document_submission_date FROM PersonalFile WHERE (personal_file_ID = @personal_file_ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[PersonalFile] ([Personal_file_Id], [Applicant_ID], [Document_submission_date]) VALUES (@Personal_file_Id, @Applicant_ID, @Document_submission_date);
+SELECT Personal_file_Id, Applicant_ID, Document_submission_date FROM PersonalFile WHERE (Personal_file_Id = @Personal_file_Id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@personal_file_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "personal_file_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "applicant_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Personal_file_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Personal_file_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Document_submission_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Document_submission_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[PersonalFile] SET [personal_file_ID] = @personal_file_ID, [applicant_ID] = @applicant_ID, [Document_submission_date] = @Document_submission_date WHERE (([personal_file_ID] = @Original_personal_file_ID) AND ([applicant_ID] = @Original_applicant_ID) AND ([Document_submission_date] = @Original_Document_submission_date));
-SELECT personal_file_ID, applicant_ID, Document_submission_date FROM PersonalFile WHERE (personal_file_ID = @personal_file_ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[PersonalFile] SET [Personal_file_Id] = @Personal_file_Id, [Applicant_ID] = @Applicant_ID, [Document_submission_date] = @Document_submission_date WHERE (([Personal_file_Id] = @Original_Personal_file_Id) AND ((@IsNull_Applicant_ID = 1 AND [Applicant_ID] IS NULL) OR ([Applicant_ID] = @Original_Applicant_ID)) AND ((@IsNull_Document_submission_date = 1 AND [Document_submission_date] IS NULL) OR ([Document_submission_date] = @Original_Document_submission_date)));
+SELECT Personal_file_Id, Applicant_ID, Document_submission_date FROM PersonalFile WHERE (Personal_file_Id = @Personal_file_Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@personal_file_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "personal_file_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "applicant_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Personal_file_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Personal_file_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Document_submission_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Document_submission_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_personal_file_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "personal_file_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "applicant_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Personal_file_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Personal_file_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Applicant_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Document_submission_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Document_submission_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Document_submission_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Document_submission_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -3452,7 +3893,7 @@ SELECT personal_file_ID, applicant_ID, Document_submission_date FROM PersonalFil
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT personal_file_ID, applicant_ID, Document_submission_date FROM dbo.Personal" +
+            this._commandCollection[0].CommandText = "SELECT Personal_file_Id, Applicant_ID, Document_submission_date FROM dbo.Personal" +
                 "File";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -3461,7 +3902,7 @@ SELECT personal_file_ID, applicant_ID, Document_submission_date FROM PersonalFil
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Selection_committeeDataSet.PersonalFileDataTable dataTable) {
+        public virtual int Fill(AdmissionCommitteeDataSet.PersonalFileDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3474,9 +3915,9 @@ SELECT personal_file_ID, applicant_ID, Document_submission_date FROM PersonalFil
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Selection_committeeDataSet.PersonalFileDataTable GetData() {
+        public virtual AdmissionCommitteeDataSet.PersonalFileDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Selection_committeeDataSet.PersonalFileDataTable dataTable = new Selection_committeeDataSet.PersonalFileDataTable();
+            AdmissionCommitteeDataSet.PersonalFileDataTable dataTable = new AdmissionCommitteeDataSet.PersonalFileDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3484,14 +3925,14 @@ SELECT personal_file_ID, applicant_ID, Document_submission_date FROM PersonalFil
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Selection_committeeDataSet.PersonalFileDataTable dataTable) {
+        public virtual int Update(AdmissionCommitteeDataSet.PersonalFileDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Selection_committeeDataSet dataSet) {
+        public virtual int Update(AdmissionCommitteeDataSet dataSet) {
             return this.Adapter.Update(dataSet, "PersonalFile");
         }
         
@@ -3514,10 +3955,24 @@ SELECT personal_file_ID, applicant_ID, Document_submission_date FROM PersonalFil
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_personal_file_ID, int Original_applicant_ID, System.DateTime Original_Document_submission_date) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_personal_file_ID));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_applicant_ID));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Document_submission_date));
+        public virtual int Delete(int Original_Personal_file_Id, global::System.Nullable<int> Original_Applicant_ID, global::System.Nullable<global::System.DateTime> Original_Document_submission_date) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Personal_file_Id));
+            if ((Original_Applicant_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Applicant_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Document_submission_date.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_Document_submission_date.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3538,10 +3993,20 @@ SELECT personal_file_ID, applicant_ID, Document_submission_date FROM PersonalFil
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int personal_file_ID, int applicant_ID, System.DateTime Document_submission_date) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(personal_file_ID));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(applicant_ID));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Document_submission_date));
+        public virtual int Insert(int Personal_file_Id, global::System.Nullable<int> Applicant_ID, global::System.Nullable<global::System.DateTime> Document_submission_date) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Personal_file_Id));
+            if ((Applicant_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Applicant_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Document_submission_date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Document_submission_date.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3562,13 +4027,37 @@ SELECT personal_file_ID, applicant_ID, Document_submission_date FROM PersonalFil
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int personal_file_ID, int applicant_ID, System.DateTime Document_submission_date, int Original_personal_file_ID, int Original_applicant_ID, System.DateTime Original_Document_submission_date) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(personal_file_ID));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(applicant_ID));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Document_submission_date));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_personal_file_ID));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_applicant_ID));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_Document_submission_date));
+        public virtual int Update(int Personal_file_Id, global::System.Nullable<int> Applicant_ID, global::System.Nullable<global::System.DateTime> Document_submission_date, int Original_Personal_file_Id, global::System.Nullable<int> Original_Applicant_ID, global::System.Nullable<global::System.DateTime> Original_Document_submission_date) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Personal_file_Id));
+            if ((Applicant_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Applicant_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Document_submission_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Document_submission_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Personal_file_Id));
+            if ((Original_Applicant_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Applicant_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Document_submission_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_Document_submission_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3589,8 +4078,8 @@ SELECT personal_file_ID, applicant_ID, Document_submission_date FROM PersonalFil
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int applicant_ID, System.DateTime Document_submission_date, int Original_personal_file_ID, int Original_applicant_ID, System.DateTime Original_Document_submission_date) {
-            return this.Update(Original_personal_file_ID, applicant_ID, Document_submission_date, Original_personal_file_ID, Original_applicant_ID, Original_Document_submission_date);
+        public virtual int Update(global::System.Nullable<int> Applicant_ID, global::System.Nullable<global::System.DateTime> Document_submission_date, int Original_Personal_file_Id, global::System.Nullable<int> Original_Applicant_ID, global::System.Nullable<global::System.DateTime> Original_Document_submission_date) {
+            return this.Update(Original_Personal_file_Id, Applicant_ID, Document_submission_date, Original_Personal_file_Id, Original_Applicant_ID, Original_Document_submission_date);
         }
     }
     
@@ -3754,7 +4243,7 @@ SELECT personal_file_ID, applicant_ID, Document_submission_date FROM PersonalFil
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(Selection_committeeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(AdmissionCommitteeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._applicantsDataTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.ApplicantsData.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -3800,7 +4289,7 @@ SELECT personal_file_ID, applicant_ID, Document_submission_date FROM PersonalFil
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(Selection_committeeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(AdmissionCommitteeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._applicantsDataTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.ApplicantsData.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -3842,7 +4331,7 @@ SELECT personal_file_ID, applicant_ID, Document_submission_date FROM PersonalFil
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(Selection_committeeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(AdmissionCommitteeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._enrollmentOrdersTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.EnrollmentOrders.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -3908,7 +4397,7 @@ SELECT personal_file_ID, applicant_ID, Document_submission_date FROM PersonalFil
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(Selection_committeeDataSet dataSet) {
+        public virtual int UpdateAll(AdmissionCommitteeDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

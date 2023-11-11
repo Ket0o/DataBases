@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPersonalFile));
-            this.selection_committeeDataSet = new AdmissionCommitteeLabs.Selection_committeeDataSet();
+            this.admissionCommitteeDataSet = new AdmissionCommitteeLabs.AdmissionCommitteeDataSet();
             this.personalFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.personalFileTableAdapter = new AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.PersonalFileTableAdapter();
-            this.tableAdapterManager = new AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.TableAdapterManager();
+            this.personalFileTableAdapter = new AdmissionCommitteeLabs.AdmissionCommitteeDataSetTableAdapters.PersonalFileTableAdapter();
+            this.tableAdapterManager = new AdmissionCommitteeLabs.AdmissionCommitteeDataSetTableAdapters.TableAdapterManager();
             this.personalFileBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -44,7 +44,7 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.applicantsRankingListsTableAdapter = new AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.ApplicantsRankingListsTableAdapter();
+            this.applicantsRankingListsTableAdapter = new AdmissionCommitteeLabs.AdmissionCommitteeDataSetTableAdapters.ApplicantsRankingListsTableAdapter();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -57,7 +57,7 @@
             this.personalFiletoolStripTextBoxFind = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButtonFind = new System.Windows.Forms.ToolStripButton();
             this.checkBoxFind = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.selection_committeeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admissionCommitteeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalFileBindingNavigator)).BeginInit();
             this.personalFileBindingNavigator.SuspendLayout();
@@ -67,13 +67,13 @@
             // 
             // selection_committeeDataSet
             // 
-            this.selection_committeeDataSet.DataSetName = "Selection_committeeDataSet";
-            this.selection_committeeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.admissionCommitteeDataSet.DataSetName = "AdmissionCommitteeDataSet";
+            this.admissionCommitteeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // personalFileBindingSource
             // 
             this.personalFileBindingSource.DataMember = "PersonalFile";
-            this.personalFileBindingSource.DataSource = this.selection_committeeDataSet;
+            this.personalFileBindingSource.DataSource = this.admissionCommitteeDataSet;
             // 
             // personalFileTableAdapter
             // 
@@ -86,7 +86,7 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.EnrollmentOrdersTableAdapter = null;
             this.tableAdapterManager.PersonalFileTableAdapter = this.personalFileTableAdapter;
-            this.tableAdapterManager.UpdateOrder = AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = AdmissionCommitteeLabs.AdmissionCommitteeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // personalFileBindingNavigator
             // 
@@ -304,7 +304,7 @@
             this.Name = "FormPersonalFile";
             this.Text = "FormPersonalFile";
             this.Load += new System.EventHandler(this.FormPersonalFile_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.selection_committeeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admissionCommitteeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalFileBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalFileBindingNavigator)).EndInit();
             this.personalFileBindingNavigator.ResumeLayout(false);
@@ -318,10 +318,10 @@
 
         #endregion
 
-        private Selection_committeeDataSet selection_committeeDataSet;
+        private AdmissionCommitteeDataSet admissionCommitteeDataSet;
         private System.Windows.Forms.BindingSource personalFileBindingSource;
-        private Selection_committeeDataSetTableAdapters.PersonalFileTableAdapter personalFileTableAdapter;
-        private Selection_committeeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private AdmissionCommitteeDataSetTableAdapters.PersonalFileTableAdapter personalFileTableAdapter;
+        private AdmissionCommitteeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator personalFileBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -340,7 +340,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.BindingSource applicantsRankingListsBindingSource;
-        private Selection_committeeDataSetTableAdapters.ApplicantsRankingListsTableAdapter applicantsRankingListsTableAdapter;
+        private AdmissionCommitteeDataSetTableAdapters.ApplicantsRankingListsTableAdapter applicantsRankingListsTableAdapter;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripTextBox personalFiletoolStripTextBoxFind;
         private System.Windows.Forms.ToolStripButton toolStripButtonFind;

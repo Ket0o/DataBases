@@ -451,7 +451,7 @@ namespace AdmissionCommitteeLabs.View
                                "Admission_application_and_personal_data_processing_consent_code = " +
                                "@personalDp, " +
                                "Enrollment_application_code = @admission, " +
-                               "Unified_State_Exam_scores = @scores, " +
+                               "Unifield_State_Exam_scores = @scores, " +
                                "Photo = @Photo " +
                                "WHERE applicant_ID = @id";
 
@@ -585,6 +585,13 @@ namespace AdmissionCommitteeLabs.View
                     }
                 }
             }
+        }
+
+        private void FormSQL_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "admissionCommitteeDataSet.ApplicantsData". При необходимости она может быть перемещена или удалена.
+            this.applicantsDataTableAdapter.Fill(this.admissionCommitteeDataSet.ApplicantsData);
+
         }
     }
 }

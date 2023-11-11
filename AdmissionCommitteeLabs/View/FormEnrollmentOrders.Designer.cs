@@ -35,10 +35,6 @@
             System.Windows.Forms.Label university_groupLabel1;
             System.Windows.Forms.Label studentLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEnrollmentOrders));
-            this.selection_committeeDataSet = new AdmissionCommitteeLabs.Selection_committeeDataSet();
-            this.enrollmentOrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.enrollmentOrdersTableAdapter = new AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.EnrollmentOrdersTableAdapter();
-            this.tableAdapterManager = new AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.TableAdapterManager();
             this.enrollmentOrdersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -57,15 +53,19 @@
             this.full_nameTextBox1 = new System.Windows.Forms.TextBox();
             this.university_groupTextBox1 = new System.Windows.Forms.TextBox();
             this.studentTextBox = new System.Windows.Forms.TextBox();
+            this.enrollmentOrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.admissionCommitteeDataSet = new AdmissionCommitteeLabs.AdmissionCommitteeDataSet();
+            this.enrollmentOrdersTableAdapter = new AdmissionCommitteeLabs.AdmissionCommitteeDataSetTableAdapters.EnrollmentOrdersTableAdapter();
+            this.tableAdapterManager = new AdmissionCommitteeLabs.AdmissionCommitteeDataSetTableAdapters.TableAdapterManager();
             enrollment_order_IDLabel1 = new System.Windows.Forms.Label();
             ranking_list_IDLabel1 = new System.Windows.Forms.Label();
             full_nameLabel1 = new System.Windows.Forms.Label();
             university_groupLabel1 = new System.Windows.Forms.Label();
             studentLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.selection_committeeDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enrollmentOrdersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enrollmentOrdersBindingNavigator)).BeginInit();
             this.enrollmentOrdersBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enrollmentOrdersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admissionCommitteeDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // enrollment_order_IDLabel1
@@ -112,29 +112,6 @@
             studentLabel.Size = new System.Drawing.Size(45, 13);
             studentLabel.TabIndex = 17;
             studentLabel.Text = "student:";
-            // 
-            // selection_committeeDataSet
-            // 
-            this.selection_committeeDataSet.DataSetName = "Selection_committeeDataSet";
-            this.selection_committeeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // enrollmentOrdersBindingSource
-            // 
-            this.enrollmentOrdersBindingSource.DataMember = "EnrollmentOrders";
-            this.enrollmentOrdersBindingSource.DataSource = this.selection_committeeDataSet;
-            // 
-            // enrollmentOrdersTableAdapter
-            // 
-            this.enrollmentOrdersTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.ApplicantsDataTableAdapter = null;
-            this.tableAdapterManager.ApplicantsRankingListsTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.EnrollmentOrdersTableAdapter = this.enrollmentOrdersTableAdapter;
-            this.tableAdapterManager.PersonalFileTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // enrollmentOrdersBindingNavigator
             // 
@@ -263,7 +240,7 @@
             // 
             // enrollment_order_IDTextBox1
             // 
-            this.enrollment_order_IDTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enrollmentOrdersBindingSource, "enrollment_order_ID", true));
+            this.enrollment_order_IDTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enrollmentOrdersBindingSource, "Enrollment_order_ID", true));
             this.enrollment_order_IDTextBox1.Location = new System.Drawing.Point(117, 31);
             this.enrollment_order_IDTextBox1.Name = "enrollment_order_IDTextBox1";
             this.enrollment_order_IDTextBox1.Size = new System.Drawing.Size(100, 20);
@@ -295,11 +272,34 @@
             // 
             // studentTextBox
             // 
-            this.studentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enrollmentOrdersBindingSource, "student", true));
+            this.studentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enrollmentOrdersBindingSource, "Student", true));
             this.studentTextBox.Location = new System.Drawing.Point(117, 135);
             this.studentTextBox.Name = "studentTextBox";
             this.studentTextBox.Size = new System.Drawing.Size(224, 20);
             this.studentTextBox.TabIndex = 18;
+            // 
+            // enrollmentOrdersBindingSource
+            // 
+            this.enrollmentOrdersBindingSource.DataMember = "EnrollmentOrders";
+            this.enrollmentOrdersBindingSource.DataSource = this.admissionCommitteeDataSet;
+            // 
+            // admissionCommitteeDataSet
+            // 
+            this.admissionCommitteeDataSet.DataSetName = "AdmissionCommitteeDataSet";
+            this.admissionCommitteeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // enrollmentOrdersTableAdapter
+            // 
+            this.enrollmentOrdersTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.ApplicantsDataTableAdapter = null;
+            this.tableAdapterManager.ApplicantsRankingListsTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.EnrollmentOrdersTableAdapter = this.enrollmentOrdersTableAdapter;
+            this.tableAdapterManager.PersonalFileTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = AdmissionCommitteeLabs.AdmissionCommitteeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // FormEnrollmentOrders
             // 
@@ -321,11 +321,11 @@
             this.Name = "FormEnrollmentOrders";
             this.Text = "FormEnrollmentOrders";
             this.Load += new System.EventHandler(this.FormEnrollmentOrders_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.selection_committeeDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enrollmentOrdersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enrollmentOrdersBindingNavigator)).EndInit();
             this.enrollmentOrdersBindingNavigator.ResumeLayout(false);
             this.enrollmentOrdersBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enrollmentOrdersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admissionCommitteeDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,10 +333,10 @@
 
         #endregion
 
-        private Selection_committeeDataSet selection_committeeDataSet;
+        private AdmissionCommitteeDataSet admissionCommitteeDataSet;
         private System.Windows.Forms.BindingSource enrollmentOrdersBindingSource;
-        private Selection_committeeDataSetTableAdapters.EnrollmentOrdersTableAdapter enrollmentOrdersTableAdapter;
-        private Selection_committeeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private AdmissionCommitteeDataSetTableAdapters.EnrollmentOrdersTableAdapter enrollmentOrdersTableAdapter;
+        private AdmissionCommitteeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator enrollmentOrdersBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;

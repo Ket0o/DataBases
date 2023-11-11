@@ -55,19 +55,19 @@ namespace AdmissionCommitteeLabs.View
         private void FormPersonalFile_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "selection_committeeDataSet.ApplicantsRankingLists". При необходимости она может быть перемещена или удалена.
-            this.applicantsRankingListsTableAdapter.Fill(this.selection_committeeDataSet.ApplicantsRankingLists);
+            this.applicantsRankingListsTableAdapter.Fill(this.admissionCommitteeDataSet.ApplicantsRankingLists);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "selection_committeeDataSet.ApplicantsRankingLists". При необходимости она может быть перемещена или удалена.
-            this.applicantsRankingListsTableAdapter.Fill(this.selection_committeeDataSet.ApplicantsRankingLists);
+            this.applicantsRankingListsTableAdapter.Fill(this.admissionCommitteeDataSet.ApplicantsRankingLists);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "selection_committeeDataSet.ApplicantsRankingLists". При необходимости она может быть перемещена или удалена.
-            this.applicantsRankingListsTableAdapter.Fill(this.selection_committeeDataSet.ApplicantsRankingLists);
+            this.applicantsRankingListsTableAdapter.Fill(this.admissionCommitteeDataSet.ApplicantsRankingLists);
             // TODO: данная строка кода позволяет загрузить данные в таблицу
             // "selection_committeeDataSet.PersonalFile".
             // При необходимости она может быть перемещена или удалена.
-            this.personalFileTableAdapter.Fill(this.selection_committeeDataSet.PersonalFile);
+            this.personalFileTableAdapter.Fill(this.admissionCommitteeDataSet.PersonalFile);
             // TODO: данная строка кода позволяет загрузить данные в таблицу
             // "selection_committeeDataSet.PersonalFile".
             // При необходимости она может быть перемещена или удалена.
-            this.personalFileTableAdapter.Fill(this.selection_committeeDataSet.PersonalFile);
+            this.personalFileTableAdapter.Fill(this.admissionCommitteeDataSet.PersonalFile);
 
         }
 
@@ -106,7 +106,7 @@ namespace AdmissionCommitteeLabs.View
             {
                 this.Validate();
                 this.personalFileBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.selection_committeeDataSet);
+                this.tableAdapterManager.UpdateAll(this.admissionCommitteeDataSet);
             }
             catch (Exception err)
             {

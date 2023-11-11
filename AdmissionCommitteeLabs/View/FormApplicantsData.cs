@@ -21,7 +21,7 @@ namespace AdmissionCommitteeLabs.View
             {
                 this.Validate();
                 this.applicantsDataBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.selection_committeeDataSet);
+                this.tableAdapterManager.UpdateAll(this.admissionCommitteeDataSet);
             }
             catch (Exception err)
             {
@@ -36,7 +36,7 @@ namespace AdmissionCommitteeLabs.View
             // TODO: данная строка кода позволяет загрузить данные в таблицу
             // "selection_committeeDataSet.ApplicantsData".
             // При необходимости она может быть перемещена или удалена.
-            this.applicantsDataTableAdapter.Fill(this.selection_committeeDataSet.ApplicantsData);
+            this.applicantsDataTableAdapter.Fill(this.admissionCommitteeDataSet.ApplicantsData);
 
         }
 

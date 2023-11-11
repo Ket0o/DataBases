@@ -34,10 +34,10 @@
             System.Windows.Forms.Label scores_with_all_achievements_consideredLabel;
             System.Windows.Forms.Label rank_positionLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormApplicantsRankingLists));
-            this.selection_committeeDataSet = new AdmissionCommitteeLabs.Selection_committeeDataSet();
+            this.admissionCommitteeDataSet = new AdmissionCommitteeLabs.AdmissionCommitteeDataSet();
             this.applicantsRankingListsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.applicantsRankingListsTableAdapter = new AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.ApplicantsRankingListsTableAdapter();
-            this.tableAdapterManager = new AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.TableAdapterManager();
+            this.applicantsRankingListsTableAdapter = new AdmissionCommitteeLabs.AdmissionCommitteeDataSetTableAdapters.ApplicantsRankingListsTableAdapter();
+            this.tableAdapterManager = new AdmissionCommitteeLabs.AdmissionCommitteeDataSetTableAdapters.TableAdapterManager();
             this.applicantsRankingListsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -52,7 +52,7 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.applicantsRankingListsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.enrollmentOrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.enrollmentOrdersTableAdapter = new AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.EnrollmentOrdersTableAdapter();
+            this.enrollmentOrdersTableAdapter = new AdmissionCommitteeLabs.AdmissionCommitteeDataSetTableAdapters.EnrollmentOrdersTableAdapter();
             this.ranking_list_IDTextBox = new System.Windows.Forms.TextBox();
             this.personal_file_IDTextBox = new System.Windows.Forms.TextBox();
             this.scores_with_all_achievements_consideredTextBox = new System.Windows.Forms.TextBox();
@@ -61,7 +61,7 @@
             personal_file_IDLabel = new System.Windows.Forms.Label();
             scores_with_all_achievements_consideredLabel = new System.Windows.Forms.Label();
             rank_positionLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.selection_committeeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admissionCommitteeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicantsRankingListsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicantsRankingListsBindingNavigator)).BeginInit();
             this.applicantsRankingListsBindingNavigator.SuspendLayout();
@@ -104,15 +104,15 @@
             rank_positionLabel.TabIndex = 7;
             rank_positionLabel.Text = "rank position:";
             // 
-            // selection_committeeDataSet
+            // admissionCommitteeDataSet
             // 
-            this.selection_committeeDataSet.DataSetName = "Selection_committeeDataSet";
-            this.selection_committeeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.admissionCommitteeDataSet.DataSetName = "AdmissionCommitteeDataSet";
+            this.admissionCommitteeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // applicantsRankingListsBindingSource
             // 
             this.applicantsRankingListsBindingSource.DataMember = "ApplicantsRankingLists";
-            this.applicantsRankingListsBindingSource.DataSource = this.selection_committeeDataSet;
+            this.applicantsRankingListsBindingSource.DataSource = this.admissionCommitteeDataSet;
             // 
             // applicantsRankingListsTableAdapter
             // 
@@ -125,7 +125,7 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.EnrollmentOrdersTableAdapter = null;
             this.tableAdapterManager.PersonalFileTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = AdmissionCommitteeLabs.Selection_committeeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = AdmissionCommitteeLabs.AdmissionCommitteeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // applicantsRankingListsBindingNavigator
             // 
@@ -255,7 +255,7 @@
             // enrollmentOrdersBindingSource
             // 
             this.enrollmentOrdersBindingSource.DataMember = "EnrollmentOrders";
-            this.enrollmentOrdersBindingSource.DataSource = this.selection_committeeDataSet;
+            this.enrollmentOrdersBindingSource.DataSource = this.admissionCommitteeDataSet;
             // 
             // enrollmentOrdersTableAdapter
             // 
@@ -312,7 +312,7 @@
             this.Name = "FormApplicantsRankingLists";
             this.Text = "FormApplicantsRankingLists";
             this.Load += new System.EventHandler(this.FormApplicantsRankingLists_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.selection_committeeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admissionCommitteeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicantsRankingListsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicantsRankingListsBindingNavigator)).EndInit();
             this.applicantsRankingListsBindingNavigator.ResumeLayout(false);
@@ -325,10 +325,10 @@
 
         #endregion
 
-        private Selection_committeeDataSet selection_committeeDataSet;
+        private AdmissionCommitteeDataSet admissionCommitteeDataSet;
         private System.Windows.Forms.BindingSource applicantsRankingListsBindingSource;
-        private Selection_committeeDataSetTableAdapters.ApplicantsRankingListsTableAdapter applicantsRankingListsTableAdapter;
-        private Selection_committeeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private AdmissionCommitteeDataSetTableAdapters.ApplicantsRankingListsTableAdapter applicantsRankingListsTableAdapter;
+        private AdmissionCommitteeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator applicantsRankingListsBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -343,7 +343,7 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton applicantsRankingListsBindingNavigatorSaveItem;
         private System.Windows.Forms.BindingSource enrollmentOrdersBindingSource;
-        private Selection_committeeDataSetTableAdapters.EnrollmentOrdersTableAdapter enrollmentOrdersTableAdapter;
+        private AdmissionCommitteeDataSetTableAdapters.EnrollmentOrdersTableAdapter enrollmentOrdersTableAdapter;
         private System.Windows.Forms.TextBox ranking_list_IDTextBox;
         private System.Windows.Forms.TextBox personal_file_IDTextBox;
         private System.Windows.Forms.TextBox scores_with_all_achievements_consideredTextBox;
