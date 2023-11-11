@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -104,11 +103,6 @@
             // 
             // referencesToolStripMenuItem
             // 
-            this.referencesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.applicantsDataToolStripMenuItem,
-            this.applicantsRankingListsToolStripMenuItem,
-            this.personalFileToolStripMenuItem,
-            this.enrollmentOrdersToolStripMenuItem});
             this.referencesToolStripMenuItem.Name = "referencesToolStripMenuItem";
             this.referencesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.referencesToolStripMenuItem.Text = "References";
@@ -250,13 +244,6 @@
             // 
             // toolStripMain
             // 
-            this.toolStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ExitButton,
-            this.AboutProgramButton,
-            this.ApplicantsDataButton,
-            this.ApplicantsRankingListsButton,
-            this.PersonalFileButton,
-            this.EnrollmentOrdersButton});
             this.toolStripMain.Location = new System.Drawing.Point(0, 24);
             this.toolStripMain.Name = "toolStripMain";
             this.toolStripMain.Size = new System.Drawing.Size(800, 25);
@@ -346,7 +333,6 @@
             this.Controls.Add(this.toolStripMain);
             this.Controls.Add(this.menuStrip);
             this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::AdmissionCommitteeLabs.Properties.Settings.Default, "FormPos", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = global::AdmissionCommitteeLabs.Properties.Settings.Default.FormPos;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainForm";

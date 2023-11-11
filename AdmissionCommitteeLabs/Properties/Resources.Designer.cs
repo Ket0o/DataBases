@@ -22,7 +22,7 @@ namespace AdmissionCommitteeLabs.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace AdmissionCommitteeLabs.Properties {
         ///   Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AdmissionCommitteeLabs.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace AdmissionCommitteeLabs.Properties {
         ///   обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace AdmissionCommitteeLabs.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap about_program_16x16 {
+        public static System.Drawing.Bitmap about_program_16x16 {
             get {
                 object obj = ResourceManager.GetObject("about_program_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -71,9 +71,19 @@ namespace AdmissionCommitteeLabs.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        public static System.Drawing.Icon admission_committee_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("admission_committee_16x16", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap applicant_data_16x16 {
+        public static System.Drawing.Bitmap applicant_data_16x16 {
             get {
                 object obj = ResourceManager.GetObject("applicant_data_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +93,7 @@ namespace AdmissionCommitteeLabs.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap applicant_ranking_list_16x16 {
+        public static System.Drawing.Bitmap applicant_ranking_list_16x16 {
             get {
                 object obj = ResourceManager.GetObject("applicant_ranking_list_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +103,7 @@ namespace AdmissionCommitteeLabs.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap enrollment_orders_16x16 {
+        public static System.Drawing.Bitmap enrollment_orders_16x16 {
             get {
                 object obj = ResourceManager.GetObject("enrollment_orders_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +113,7 @@ namespace AdmissionCommitteeLabs.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap exit_16x16 {
+        public static System.Drawing.Bitmap exit_16x16 {
             get {
                 object obj = ResourceManager.GetObject("exit_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,19 +123,9 @@ namespace AdmissionCommitteeLabs.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap personal_file_16x16 {
+        public static System.Drawing.Bitmap personal_file_16x16 {
             get {
                 object obj = ResourceManager.GetObject("personal_file_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap search_16x16 {
-            get {
-                object obj = ResourceManager.GetObject("search_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
