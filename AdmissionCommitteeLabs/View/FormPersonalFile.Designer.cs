@@ -272,7 +272,6 @@
             // 
             // toolStripButtonFind
             // 
-            this.toolStripButtonFind.Image = global::AdmissionCommitteeLabs.Properties.Resources.search_16x16;
             this.toolStripButtonFind.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripButtonFind.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonFind.Name = "toolStripButtonFind";
