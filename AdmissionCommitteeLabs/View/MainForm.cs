@@ -71,10 +71,5 @@ namespace AdmissionCommitteeLabs.View
         {
             FormSQL.FormSql.ShowForm();
         }
-
-        private void applicantsDataToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

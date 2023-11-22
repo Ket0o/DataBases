@@ -66,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdmissionCommitteeDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Model\ConnectionStringBuilder.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -82,6 +83,12 @@
     </Compile>
     <Compile Include="View\FormApplicantsRankingLists.Designer.cs">
       <DependentUpon>FormApplicantsRankingLists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormAuthorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAuthorization.Designer.cs">
+      <DependentUpon>FormAuthorization.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormEnrollmentOrders.cs">
       <SubType>Form</SubType>
@@ -120,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormApplicantsRankingLists.resx">
       <DependentUpon>FormApplicantsRankingLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormAuthorization.resx">
+      <DependentUpon>FormAuthorization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormEnrollmentOrders.resx">
       <DependentUpon>FormEnrollmentOrders.cs</DependentUpon>
@@ -166,9 +176,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\about_program_16x16.png" />
     <Content Include="Resources\personal_file_16x16.ico" />

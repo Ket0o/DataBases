@@ -17,7 +17,7 @@ namespace AdmissionCommitteeLabs
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdmissionCommitteeLabs.View.MainForm());
+            Application.Run(new AdmissionCommitteeLabs.View.FormAuthorization());
         }
     }
 }

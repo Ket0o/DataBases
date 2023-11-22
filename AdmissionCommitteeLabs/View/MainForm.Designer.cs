@@ -37,6 +37,7 @@
             this.applicantsDataToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.applicantsRankingListsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.enrollmentOrdersToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.personalFileToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personalFileToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.sQLRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +61,6 @@
             this.ApplicantsRankingListsButton = new System.Windows.Forms.ToolStripButton();
             this.PersonalFileButton = new System.Windows.Forms.ToolStripButton();
             this.EnrollmentOrdersButton = new System.Windows.Forms.ToolStripButton();
-            this.personalFileToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.contextMenuStripMain.SuspendLayout();
             this.SuspendLayout();
@@ -141,6 +141,15 @@
             this.enrollmentOrdersToolStripMenuItem2.Size = new System.Drawing.Size(237, 22);
             this.enrollmentOrdersToolStripMenuItem2.Text = "EnrollmentOrders";
             this.enrollmentOrdersToolStripMenuItem2.Click += new System.EventHandler(this.enrollmentOrdersToolStripMenuItem_Click);
+            // 
+            // personalFileToolStripMenuItem3
+            // 
+            this.personalFileToolStripMenuItem3.Image = global::AdmissionCommitteeLabs.Properties.Resources.personal_file_16x16;
+            this.personalFileToolStripMenuItem3.Name = "personalFileToolStripMenuItem3";
+            this.personalFileToolStripMenuItem3.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
+            this.personalFileToolStripMenuItem3.Size = new System.Drawing.Size(237, 22);
+            this.personalFileToolStripMenuItem3.Text = "PersonalFile";
+            this.personalFileToolStripMenuItem3.Click += new System.EventHandler(this.personalFileToolStripMenuItem_Click);
             // 
             // documentsToolStripMenuItem
             // 
@@ -257,12 +266,8 @@
             // 
             // personalFileToolStripMenuItem1
             // 
-            this.personalFileToolStripMenuItem3.Image = global::AdmissionCommitteeLabs.Properties.Resources.personal_file_16x16;
-            this.personalFileToolStripMenuItem3.Name = "personalFileToolStripMenuItem1";
-            this.personalFileToolStripMenuItem3.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
-            this.personalFileToolStripMenuItem3.Size = new System.Drawing.Size(237, 22);
-            this.personalFileToolStripMenuItem3.Text = "Personal file";
-            this.personalFileToolStripMenuItem3.Click += new System.EventHandler(this.personalFileToolStripMenuItem_Click);
+            this.personalFileToolStripMenuItem1.Name = "personalFileToolStripMenuItem1";
+            this.personalFileToolStripMenuItem1.Size = new System.Drawing.Size(237, 22);
             // 
             // enrollmentOrdersToolStripMenuItem1
             // 
@@ -342,12 +347,6 @@
             this.EnrollmentOrdersButton.Text = "toolStripButton4";
             this.EnrollmentOrdersButton.ToolTipText = "Enrollment orders button";
             this.EnrollmentOrdersButton.Click += new System.EventHandler(this.enrollmentOrdersToolStripMenuItem_Click);
-            // 
-            // personalFileToolStripMenuItem3
-            // 
-            this.personalFileToolStripMenuItem3.Name = "personalFileToolStripMenuItem3";
-            this.personalFileToolStripMenuItem3.Size = new System.Drawing.Size(237, 22);
-            this.personalFileToolStripMenuItem3.Text = "PersonalFile";
             // 
             // MainForm
             // 
