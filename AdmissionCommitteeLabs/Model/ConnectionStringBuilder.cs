@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 
 namespace AdmissionCommitteeLabs.Model
 {
@@ -14,9 +9,9 @@ namespace AdmissionCommitteeLabs.Model
             var connectionStringBuilder =
                 new SqlConnectionStringBuilder(Properties.Settings.Default
                     .Selection_committeeConnectionString);
-            connectionStringBuilder.ConnectionString = connectionStringBuilder.ConnectionString 
-                                                       + ";Database=AdmissionCommittee" 
-                                                       + $";User ID={username}" 
+            connectionStringBuilder.ConnectionString = connectionStringBuilder.ConnectionString
+                                                       + ";Database=AdmissionCommittee"
+                                                       + $";User ID={username}"
                                                        + $";Password={password}";
             return connectionStringBuilder.ConnectionString;
         }

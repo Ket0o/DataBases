@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AdmissionCommitteeLabs.View
@@ -18,9 +11,9 @@ namespace AdmissionCommitteeLabs.View
         {
             try
             {
-                this.Validate();
-                this.personalFileBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.admissionCommitteeDataSet);
+                Validate();
+                personalFileBindingSource.EndEdit();
+                tableAdapterManager.UpdateAll(admissionCommitteeDataSet);
             }
             catch (Exception err)
             {
@@ -31,42 +24,39 @@ namespace AdmissionCommitteeLabs.View
 
         private void FormPersonalFileAndRankingLists_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "selection_committeeDataSet.ApplicantsRankingLists". При необходимости она может быть перемещена или удалена.
-            this.applicantsRankingListsTableAdapter.Fill(this.admissionCommitteeDataSet.ApplicantsRankingLists);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "selection_committeeDataSet.ApplicantsRankingLists". При необходимости она может быть перемещена или удалена.
-            this.applicantsRankingListsTableAdapter.Fill(this.admissionCommitteeDataSet.ApplicantsRankingLists);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "selection_committeeDataSet.PersonalFile". При необходимости она может быть перемещена или удалена.
-            this.personalFileTableAdapter.Fill(this.admissionCommitteeDataSet.PersonalFile);
-
+            applicantsRankingListsTableAdapter.Fill(admissionCommitteeDataSet.ApplicantsRankingLists);
+            applicantsRankingListsTableAdapter.Fill(admissionCommitteeDataSet.ApplicantsRankingLists);
+            personalFileTableAdapter.Fill(admissionCommitteeDataSet.PersonalFile);
         }
 
         private void applicantsRankingListsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             try
             {
-                this.Validate();
-                this.applicantsRankingListsBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.admissionCommitteeDataSet);
+                Validate();
+                applicantsRankingListsBindingSource.EndEdit();
+                tableAdapterManager.UpdateAll(admissionCommitteeDataSet);
             }
             catch (Exception err)
             {
                 MessageBox.Show(err.Message, "Ошибка", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-
         }
 
         public static FormPersonalFileAndRankingLists FormPersonalsFileAndRankingLists
         {
             get
             {
-                if (_formPersonalFileAndRankingLists == null || _formPersonalFileAndRankingLists.IsDisposed)
+                if (_formPersonalFileAndRankingLists is null
+                    || _formPersonalFileAndRankingLists.IsDisposed)
                 {
                     _formPersonalFileAndRankingLists = new FormPersonalFileAndRankingLists();
                 }
                 return _formPersonalFileAndRankingLists;
             }
         }
+
         public FormPersonalFileAndRankingLists()
         {
             InitializeComponent();
