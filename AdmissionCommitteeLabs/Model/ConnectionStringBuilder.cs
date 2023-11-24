@@ -9,14 +9,15 @@ namespace AdmissionCommitteeLabs.Model
 {
     public static class ConnectionStringBuilder
     {
-        public static string GetConnectionString(string Username, string Password)
+        public static string GetConnectionString(string username, string password)
         {
-            SqlConnectionStringBuilder connectionStringBuilder =
-                new SqlConnectionStringBuilder(AdmissionCommitteeLabs.Properties.Settings.Default.Selection_committeeConnectionString);
+            var connectionStringBuilder =
+                new SqlConnectionStringBuilder(Properties.Settings.Default
+                    .Selection_committeeConnectionString);
             connectionStringBuilder.ConnectionString = connectionStringBuilder.ConnectionString 
-                                                       + $";Database=AdmissionCommittee" 
-                                                       + $";User ID={Username}" 
-                                                       + $";Password={Password}";
+                                                       + ";Database=AdmissionCommittee" 
+                                                       + $";User ID={username}" 
+                                                       + $";Password={password}";
             return connectionStringBuilder.ConnectionString;
         }
     }

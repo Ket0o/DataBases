@@ -16,11 +16,11 @@ namespace AdmissionCommitteeLabs.View
 {
     public partial class FormAuthorization : Form
     {
-        static bool IsConnectionEstablished(string connectionString)
+        private static bool IsConnectionEstablished(string connectionString)
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (var connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     return true;
@@ -41,12 +41,12 @@ namespace AdmissionCommitteeLabs.View
                     passwordTextBox.Text);
                 try
                 {
-                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    using (var connection = new SqlConnection(connectionString))
                     {
                         connection.Open();
                         MessageBox.Show("Успешное подключение!");
                         this.Hide();
-                        MainForm mainForm = new MainForm();
+                        var mainForm = new MainForm();
                         mainForm.ShowDialog();
                         Application.Exit();
                     }
@@ -57,11 +57,6 @@ namespace AdmissionCommitteeLabs.View
                     break;
                 }
             } while (!IsConnectionEstablished(connectionString));
-        }
-
-        public FormAuthorization()
-        {
-            InitializeComponent();
         }
 
         private void userNameTextBox_TextChanged(object sender, EventArgs e)
@@ -78,6 +73,11 @@ namespace AdmissionCommitteeLabs.View
             {
                 enterButton.Enabled = true;
             }
+        }
+
+        public FormAuthorization()
+        {
+            InitializeComponent();
         }
     }
 }
