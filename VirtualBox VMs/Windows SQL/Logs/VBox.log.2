@@ -1,0 +1,44 @@
+00:00:02.086527 VirtualBox VM 6.1.34 r150636 win.amd64 (Mar 23 2022 00:36:21) release log
+00:00:02.086532 Log opened 2023-10-21T04:38:07.611785200Z
+00:00:02.086534 Build Type: release
+00:00:02.086538 OS Product: Windows 11
+00:00:02.086539 OS Release: 10.0.22621
+00:00:02.086540 OS Service Pack: 
+00:00:02.128423 DMI Product Name: HP Laptop 14s-fq1xxx
+00:00:02.132788 DMI Product Version:  
+00:00:02.132800 Firmware type: UEFI
+00:00:02.133194 Secure Boot: VERR_PRIVILEGE_NOT_HELD
+00:00:02.133210 Host RAM: 15693MB (15.3GB) total, 9518MB (9.2GB) available
+00:00:02.133212 Executable: C:\Program Files\Oracle\VirtualBox\VirtualBoxVM.exe
+00:00:02.133212 Process ID: 20924
+00:00:02.133212 Package type: WINDOWS_64BITS_GENERIC
+00:00:02.133933 Installed Extension Packs:
+00:00:02.133945   None installed!
+00:00:02.134402 Console: Machine state changed to 'Starting'
+00:00:02.134583 Qt version: 5.6.2
+00:00:02.137208 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:00:02.230745 SUP: seg #0: R   0x00000000 LB 0x00001000
+00:00:02.230764 SUP: seg #1: R X 0x00001000 LB 0x00109000
+00:00:02.230769 SUP: seg #2: R   0x0010a000 LB 0x0004a000
+00:00:02.230773 SUP: seg #3: RW  0x00154000 LB 0x00013000
+00:00:02.230776 SUP: seg #4: R   0x00167000 LB 0x0000e000
+00:00:02.230779 SUP: seg #5: RW  0x00175000 LB 0x00003000
+00:00:02.230782 SUP: seg #6: R   0x00178000 LB 0x0000b000
+00:00:02.230785 SUP: seg #7: RWX 0x00183000 LB 0x00002000
+00:00:02.230788 SUP: seg #8: R   0x00185000 LB 0x00007000
+00:00:02.231466 SUP: Loaded VMMR0.r0 (C:\Program Files\Oracle\VirtualBox\VMMR0.r0) at 0xXXXXXXXXXXXXXXXX - ModuleInit at XXXXXXXXXXXXXXXX and ModuleTerm at XXXXXXXXXXXXXXXX using the native ring-0 loader
+00:00:02.231496 SUP: VMMR0EntryEx located at XXXXXXXXXXXXXXXX and VMMR0EntryFast at XXXXXXXXXXXXXXXX
+00:00:02.231499 SUP: windbg> .reload /f C:\Program Files\Oracle\VirtualBox\VMMR0.r0=0xXXXXXXXXXXXXXXXX
+00:00:02.232564 Guest OS type: 'Windows2016_64'
+00:00:02.232935 fHMForced=true - No raw-mode support in this build!
+00:00:02.233975 VMSetError: F:\tinderbox\win-6.1\src\VBox\Main\src-client\ConsoleImpl2.cpp(2014) int __cdecl Console::i_configConstructorInner(struct UVM *,struct VM *,class util::AutoWriteLock *); rc=VERR_NOT_FOUND
+00:00:02.233980 VMSetError: Implementation of the USB 3.0 controller not found!
+00:00:02.233980 Because the USB 3.0 controller state is part of the saved VM state, the VM cannot be started. To fix this problem, either install the 'Oracle VM VirtualBox Extension Pack' or disable USB 3.0 support in the VM settings
+00:00:02.234088 Constructor failed with rc=VERR_NOT_FOUND pfnCFGMConstructor=00007ffa05b423b0
+00:00:02.359781 ERROR [COM]: aRC=E_FAIL (0x80004005) aIID={872da645-4a9b-1727-bee2-5585105b9eed} aComponent={ConsoleWrap} aText={Implementation of the USB 3.0 controller not found!
+00:00:02.359819 Because the USB 3.0 controller state is part of the saved VM state, the VM cannot be started. To fix this problem, either install the 'Oracle VM VirtualBox Extension Pack' or disable USB 3.0 support in the VM settings (VERR_NOT_FOUND)}, preserve=false aResultDetail=-78
+00:00:02.360054 Console: Machine state changed to 'PoweredOff'
+00:00:02.388417 Power up failed (vrc=VERR_NOT_FOUND, rc=E_FAIL (0X80004005))
+00:00:02.889300 GUI: UIMachineViewNormal::resendSizeHint: Restoring guest size-hint for screen 0 to 1366x663
+00:00:02.889361 ERROR [COM]: aRC=E_ACCESSDENIED (0x80070005) aIID={4680b2de-8690-11e9-b83d-5719e53cf1de} aComponent={DisplayWrap} aText={The console is not powered up (Display::setVideoModeHint)}, preserve=false aResultDetail=0
+00:00:02.889609 GUI: Aborting startup due to power up progress issue detected...

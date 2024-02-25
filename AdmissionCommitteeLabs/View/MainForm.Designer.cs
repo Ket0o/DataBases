@@ -34,12 +34,17 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.referencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.applicantsDataToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.applicantsRankingListsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.enrollmentOrdersToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.personalFileToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personalFileToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sQLRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.applicantsDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.applicantsRankingListsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personalFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enrollmentOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.personalFileToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,10 +61,8 @@
             this.ApplicantsRankingListsButton = new System.Windows.Forms.ToolStripButton();
             this.PersonalFileButton = new System.Windows.Forms.ToolStripButton();
             this.EnrollmentOrdersButton = new System.Windows.Forms.ToolStripButton();
-            this.sQLRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.contextMenuStripMain.SuspendLayout();
-            this.toolStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -103,27 +106,85 @@
             // 
             // referencesToolStripMenuItem
             // 
+            this.referencesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.applicantsDataToolStripMenuItem2,
+            this.applicantsRankingListsToolStripMenuItem2,
+            this.enrollmentOrdersToolStripMenuItem2,
+            this.personalFileToolStripMenuItem3});
             this.referencesToolStripMenuItem.Name = "referencesToolStripMenuItem";
             this.referencesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.referencesToolStripMenuItem.Text = "References";
             // 
+            // applicantsDataToolStripMenuItem2
+            // 
+            this.applicantsDataToolStripMenuItem2.Image = global::AdmissionCommitteeLabs.Properties.Resources.applicant_data_16x16;
+            this.applicantsDataToolStripMenuItem2.Name = "applicantsDataToolStripMenuItem2";
+            this.applicantsDataToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.W)));
+            this.applicantsDataToolStripMenuItem2.Size = new System.Drawing.Size(237, 22);
+            this.applicantsDataToolStripMenuItem2.Text = "Applicants data";
+            this.applicantsDataToolStripMenuItem2.Click += new System.EventHandler(this.applicantsDataToolStripMenuItem_Click);
+            // 
+            // applicantsRankingListsToolStripMenuItem2
+            // 
+            this.applicantsRankingListsToolStripMenuItem2.Image = global::AdmissionCommitteeLabs.Properties.Resources.applicant_ranking_list_16x16;
+            this.applicantsRankingListsToolStripMenuItem2.Name = "applicantsRankingListsToolStripMenuItem2";
+            this.applicantsRankingListsToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.B)));
+            this.applicantsRankingListsToolStripMenuItem2.Size = new System.Drawing.Size(237, 22);
+            this.applicantsRankingListsToolStripMenuItem2.Text = "ApplicantsRankingLists";
+            this.applicantsRankingListsToolStripMenuItem2.Click += new System.EventHandler(this.applicantsRankingListsToolStripMenuItem_Click);
+            // 
+            // enrollmentOrdersToolStripMenuItem2
+            // 
+            this.enrollmentOrdersToolStripMenuItem2.Image = global::AdmissionCommitteeLabs.Properties.Resources.enrollment_orders_16x16;
+            this.enrollmentOrdersToolStripMenuItem2.Name = "enrollmentOrdersToolStripMenuItem2";
+            this.enrollmentOrdersToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Y)));
+            this.enrollmentOrdersToolStripMenuItem2.Size = new System.Drawing.Size(237, 22);
+            this.enrollmentOrdersToolStripMenuItem2.Text = "EnrollmentOrders";
+            this.enrollmentOrdersToolStripMenuItem2.Click += new System.EventHandler(this.enrollmentOrdersToolStripMenuItem_Click);
+            // 
+            // personalFileToolStripMenuItem3
+            // 
+            this.personalFileToolStripMenuItem3.Image = global::AdmissionCommitteeLabs.Properties.Resources.personal_file_16x16;
+            this.personalFileToolStripMenuItem3.Name = "personalFileToolStripMenuItem3";
+            this.personalFileToolStripMenuItem3.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
+            this.personalFileToolStripMenuItem3.Size = new System.Drawing.Size(237, 22);
+            this.personalFileToolStripMenuItem3.Text = "PersonalFile";
+            this.personalFileToolStripMenuItem3.Click += new System.EventHandler(this.personalFileToolStripMenuItem_Click);
+            // 
+            // documentsToolStripMenuItem
+            // 
+            this.documentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.personalFileToolStripMenuItem2,
+            this.sQLRequestsToolStripMenuItem});
+            this.documentsToolStripMenuItem.Name = "documentsToolStripMenuItem";
+            this.documentsToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.documentsToolStripMenuItem.Text = "documents";
+            // 
+            // personalFileToolStripMenuItem2
+            // 
+            this.personalFileToolStripMenuItem2.Name = "personalFileToolStripMenuItem2";
+            this.personalFileToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
+            this.personalFileToolStripMenuItem2.Size = new System.Drawing.Size(212, 22);
+            this.personalFileToolStripMenuItem2.Text = "Personal file";
+            this.personalFileToolStripMenuItem2.Click += new System.EventHandler(this.personalFileToolStripMenuItem2_Click);
+            // 
+            // sQLRequestsToolStripMenuItem
+            // 
+            this.sQLRequestsToolStripMenuItem.Name = "sQLRequestsToolStripMenuItem";
+            this.sQLRequestsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Insert)));
+            this.sQLRequestsToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.sQLRequestsToolStripMenuItem.Text = "SQL requests";
+            this.sQLRequestsToolStripMenuItem.Click += new System.EventHandler(this.sQLRequestsToolStripMenuItem_Click);
+            // 
             // applicantsDataToolStripMenuItem
             // 
-            this.applicantsDataToolStripMenuItem.Image = global::AdmissionCommitteeLabs.Properties.Resources.applicant_data_16x16;
             this.applicantsDataToolStripMenuItem.Name = "applicantsDataToolStripMenuItem";
-            this.applicantsDataToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.W)));
-            this.applicantsDataToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.applicantsDataToolStripMenuItem.Text = "Applicants data";
-            this.applicantsDataToolStripMenuItem.Click += new System.EventHandler(this.applicantsDataToolStripMenuItem_Click);
+            this.applicantsDataToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
             // 
             // applicantsRankingListsToolStripMenuItem
             // 
-            this.applicantsRankingListsToolStripMenuItem.Image = global::AdmissionCommitteeLabs.Properties.Resources.applicant_ranking_list_16x16;
             this.applicantsRankingListsToolStripMenuItem.Name = "applicantsRankingListsToolStripMenuItem";
-            this.applicantsRankingListsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.B)));
-            this.applicantsRankingListsToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.applicantsRankingListsToolStripMenuItem.Text = "Applicants ranking lists";
-            this.applicantsRankingListsToolStripMenuItem.Click += new System.EventHandler(this.applicantsRankingListsToolStripMenuItem_Click);
+            this.applicantsRankingListsToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
             // 
             // personalFileToolStripMenuItem
             // 
@@ -142,23 +203,6 @@
             this.enrollmentOrdersToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.enrollmentOrdersToolStripMenuItem.Text = "Enrollment orders";
             this.enrollmentOrdersToolStripMenuItem.Click += new System.EventHandler(this.enrollmentOrdersToolStripMenuItem_Click);
-            // 
-            // documentsToolStripMenuItem
-            // 
-            this.documentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.personalFileToolStripMenuItem2,
-            this.sQLRequestsToolStripMenuItem});
-            this.documentsToolStripMenuItem.Name = "documentsToolStripMenuItem";
-            this.documentsToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
-            this.documentsToolStripMenuItem.Text = "documents";
-            // 
-            // personalFileToolStripMenuItem2
-            // 
-            this.personalFileToolStripMenuItem2.Name = "personalFileToolStripMenuItem2";
-            this.personalFileToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
-            this.personalFileToolStripMenuItem2.Size = new System.Drawing.Size(212, 22);
-            this.personalFileToolStripMenuItem2.Text = "Personal file";
-            this.personalFileToolStripMenuItem2.Click += new System.EventHandler(this.personalFileToolStripMenuItem2_Click);
             // 
             // contextMenuStripMain
             // 
@@ -208,12 +252,8 @@
             // 
             // applicantsDataToolStripMenuItem1
             // 
-            this.applicantsDataToolStripMenuItem1.Image = global::AdmissionCommitteeLabs.Properties.Resources.applicant_data_16x16;
             this.applicantsDataToolStripMenuItem1.Name = "applicantsDataToolStripMenuItem1";
-            this.applicantsDataToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.W)));
             this.applicantsDataToolStripMenuItem1.Size = new System.Drawing.Size(237, 22);
-            this.applicantsDataToolStripMenuItem1.Text = "Applicants data";
-            this.applicantsDataToolStripMenuItem1.Click += new System.EventHandler(this.applicantsDataToolStripMenuItem_Click);
             // 
             // applicantsRankingListsToolStripMenuItem1
             // 
@@ -226,21 +266,13 @@
             // 
             // personalFileToolStripMenuItem1
             // 
-            this.personalFileToolStripMenuItem1.Image = global::AdmissionCommitteeLabs.Properties.Resources.personal_file_16x16;
             this.personalFileToolStripMenuItem1.Name = "personalFileToolStripMenuItem1";
-            this.personalFileToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
             this.personalFileToolStripMenuItem1.Size = new System.Drawing.Size(237, 22);
-            this.personalFileToolStripMenuItem1.Text = "Personal file";
-            this.personalFileToolStripMenuItem1.Click += new System.EventHandler(this.personalFileToolStripMenuItem_Click);
             // 
             // enrollmentOrdersToolStripMenuItem1
             // 
-            this.enrollmentOrdersToolStripMenuItem1.Image = global::AdmissionCommitteeLabs.Properties.Resources.enrollment_orders_16x16;
             this.enrollmentOrdersToolStripMenuItem1.Name = "enrollmentOrdersToolStripMenuItem1";
-            this.enrollmentOrdersToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Y)));
             this.enrollmentOrdersToolStripMenuItem1.Size = new System.Drawing.Size(237, 22);
-            this.enrollmentOrdersToolStripMenuItem1.Text = "Enrollment orders";
-            this.enrollmentOrdersToolStripMenuItem1.Click += new System.EventHandler(this.enrollmentOrdersToolStripMenuItem_Click);
             // 
             // toolStripMain
             // 
@@ -316,14 +348,6 @@
             this.EnrollmentOrdersButton.ToolTipText = "Enrollment orders button";
             this.EnrollmentOrdersButton.Click += new System.EventHandler(this.enrollmentOrdersToolStripMenuItem_Click);
             // 
-            // sQLRequestsToolStripMenuItem
-            // 
-            this.sQLRequestsToolStripMenuItem.Name = "sQLRequestsToolStripMenuItem";
-            this.sQLRequestsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Insert)));
-            this.sQLRequestsToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.sQLRequestsToolStripMenuItem.Text = "SQL requests";
-            this.sQLRequestsToolStripMenuItem.Click += new System.EventHandler(this.sQLRequestsToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,8 +366,6 @@
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.contextMenuStripMain.ResumeLayout(false);
-            this.toolStripMain.ResumeLayout(false);
-            this.toolStripMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,6 +401,10 @@
         private System.Windows.Forms.ToolStripMenuItem documentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem personalFileToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem sQLRequestsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem applicantsDataToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem applicantsRankingListsToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem enrollmentOrdersToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem personalFileToolStripMenuItem3;
     }
 }
 

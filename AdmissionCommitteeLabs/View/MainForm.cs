@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AdmissionCommitteeLabs.Properties;
+using System;
 using System.Windows.Forms;
-using AdmissionCommitteeLabs.Properties;
 
 namespace AdmissionCommitteeLabs.View
 {
@@ -32,7 +25,8 @@ namespace AdmissionCommitteeLabs.View
 
         private void aboutProgramToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("(C)TUSUR, FVS, Viugin Kirill Vadimovich, 571-2, 2023", 
+            MessageBox.Show("(C)TUSUR, FVS, Viugin Kirill Vadimovich, 571-2, " +
+                            $"{DateTimeOffset.Now.Year}",
                 "About program",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

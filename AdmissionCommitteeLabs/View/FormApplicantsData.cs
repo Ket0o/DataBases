@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AdmissionCommitteeLabs.View
@@ -14,37 +7,31 @@ namespace AdmissionCommitteeLabs.View
     {
         private static FormApplicantsData _formApplicantData;
 
-
         private void applicantsDataBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             try
             {
-                this.Validate();
-                this.applicantsDataBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.admissionCommitteeDataSet);
+                Validate();
+                applicantsDataBindingSource.EndEdit();
+                tableAdapterManager.UpdateAll(admissionCommitteeDataSet);
             }
             catch (Exception err)
             {
                 MessageBox.Show(err.Message, "Ошибка", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-            
         }
 
         private void FormApplicantsData_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу
-            // "selection_committeeDataSet.ApplicantsData".
-            // При необходимости она может быть перемещена или удалена.
-            this.applicantsDataTableAdapter.Fill(this.admissionCommitteeDataSet.ApplicantsData);
-
+            applicantsDataTableAdapter.Fill(admissionCommitteeDataSet.ApplicantsData);
         }
 
         public static FormApplicantsData FormApplicantData
         {
             get
             {
-                if (_formApplicantData == null || _formApplicantData.IsDisposed)
+                if (_formApplicantData is null || _formApplicantData.IsDisposed)
                 {
                     _formApplicantData = new FormApplicantsData();
                 }
@@ -62,6 +49,5 @@ namespace AdmissionCommitteeLabs.View
         {
             InitializeComponent();
         }
-        
     }
 }
